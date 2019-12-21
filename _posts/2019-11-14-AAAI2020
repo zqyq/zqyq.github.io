@@ -1,0 +1,12 @@
+---
+layout: post
+title: "New paper accepted to AAAI 2020"
+date: 2019-11-14
+---
+
+The 3D crowd counting paper has been accepted to AAAI 2020, 
+which was first rejected by ICCV 2019 due to the lack of ablation study on the 3D ground-truth settings.
+Later, we added the ablation study and resubmitted the paper to AAAI 2020. 
+
+In AAAI 2020, 7,737 submissions were reviewed and 1,591 accepted "due to space limitations". 
+Although this year’s acceptance rate of 20.6 percent is higher than last year’s 16.2 percent.
