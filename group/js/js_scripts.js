@@ -22,11 +22,11 @@ $.ajax({
         memberList.sort(function(x, y){
             var member_x = x.split(",");
             var name_x = member_x[1].split(" ");
-            var time_x = member_x[4];
+            var time_x = member_x[4].replace('.', "");
 
             var member_y = y.split(",");
             var name_y = member_y[1].split(" ");
-            var time_y = member_y[4];
+            var time_y = member_y[4].replace('.', "");
 
             if(time_x == time_y){
                 if(name_x[1] > name_y[1])
