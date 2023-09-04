@@ -22,11 +22,11 @@ $.ajax({
         memberList.sort(function(x, y){
             var member_x = x.split(",");
             var name_x = member_x[1].split(" ");
-            var time_x = parseInt(member_x[4].substr(0,4));
+            var time_x = parseInt(member_x[4].substr(0,8));
 
             var member_y = y.split(",");
             var name_y = member_y[1].split(" ");
-            var time_y = parseInt(member_y[4].substr(0,4));
+            var time_y = parseInt(member_y[4].substr(0,8));
 
             if(time_x == time_y){
                 if(name_x[1] > name_y[1])
@@ -81,6 +81,11 @@ $.ajax({
             var member_name = document.createElement("div");
             member_name.className = "member_name";
             member_name.append(cur_member[1]);
+            member_href.appendChild(member_name);
+
+            var member_graduate_time = document.createElement("div");
+            member_name.className = "member_graduate_time";
+            member_name.append(cur_member[5]);
             member_href.appendChild(member_name);
 
             var member_research_direction = document.createElement("div");
