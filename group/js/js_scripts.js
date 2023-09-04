@@ -83,10 +83,7 @@ $.ajax({
             member_name.append(cur_member[1]);
             member_href.appendChild(member_name);
 
-            var member_graduate_time = document.createElement("div");
-            member_name.className = "member_graduate_time";
-            member_name.append(cur_member[5]);
-            member_href.appendChild(member_name);
+
 
             var member_research_direction = document.createElement("div");
             member_research_direction.className = "member_research_direction";
@@ -95,6 +92,11 @@ $.ajax({
             member_research_direction.classList.add(member_label[index]+"_tr_"+
                 (Math.floor(member_count[index] / 4)));
             member_href.appendChild(member_research_direction);
+
+            var member_graduate_time = document.createElement("div");
+            member_name.className = "member_graduate_time";
+            member_name.append(cur_member[4]);
+            member_href.appendChild(member_name);
 
             member_info.appendChild(member_href);
             //console.log(tr_list,index);
