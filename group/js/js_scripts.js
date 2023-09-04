@@ -95,8 +95,8 @@ $.ajax({
 
             
             var member_graduate_time = document.createElement("div");
-            member_name.className = "member_graduate_time";
-            member_name.append(cur_member[4]);
+            member_graduate_time.className = "member_graduate_time";
+            member_graduate_time.append(cur_member[4]);
             member_href.appendChild(member_graduate_time);
 
             
