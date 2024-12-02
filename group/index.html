@@ -5,6 +5,114 @@ title: Qi ZHANG's Group
 
 <img src="photos/Group Photo 2023.jpg" alt="" width="550" height="400">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Carousel</title>
+<style>
+  .carousel {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .carousel img {
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .active {
+    display: block;
+    opacity: 1;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    z-index: 10;
+  }
+  #prev {
+    left: 10px;
+  }
+  #next {
+    right: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel" id="carousel">
+  <!-- Images will be loaded here by JavaScript -->
+</div>
+
+<button class="carousel-btn" id="prev">&#10094;</button>
+<button class="carousel-btn" id="next">&#10095;</button>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  let currentSlide = 0;
+  const slides = [
+    'photos/Group Photo 2023.jpg',
+    'photos/Group Photo 2024.jpg',
+    // 'path/to/image3.jpg',
+    // Add more image paths as needed
+  ];
+
+  // Load images into the carousel
+  function loadImages() {
+    slides.forEach((src, index) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Slide ${index + 1}`;
+      if (index === 0) {
+        img.classList.add('active');
+      }
+      carousel.appendChild(img);
+    });
+  }
+
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel img');
+    slides.forEach((slide, idx) => {
+      slide.style.opacity = idx === index ? 1 : 0;
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  function prevSlide() {
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+  }
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+  loadImages();
+  showSlide(0); // Show the first slide by default
+</script>
+
+</body>
+</html>
+
 <h4> iMUSE Group</h4>
 
 <p>  This is the website page for the intelligent multi-sensing research group (iMUSE, where 'MUSE' means 'Inspiration'). 
