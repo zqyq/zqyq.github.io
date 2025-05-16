@@ -8,4 +8,4 @@ Congratulations to Yunfei, Kaiyi, and Jisuan for being awarded the Graduate Stud
 
 This is a highly competitive program, with only four projects approved across the entire college. 
 
-Under my supervision, they work together and explore multi-object tracking tasks in complex scenarios.
+Under my supervision, they will work together and explore multi-object tracking tasks in complex scenarios.
