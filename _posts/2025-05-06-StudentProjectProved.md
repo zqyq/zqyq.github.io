@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Graduate Student Independent Training Project!"
-date: 2024-07-02
+date: 2025-05-06
 ---
 
 Congratulations to Yunfei, Kaiyi, and Jisuan for being awarded the Graduate Student Independent Training Project at Shenzhen University, with a total funding of 50,000 RMB. 
