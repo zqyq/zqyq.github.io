@@ -4,7 +4,7 @@ title: "Graduate Student Independent Training Project!"
 date: 2024-07-02
 ---
 
-Congratulations to Yunfei, Kaiyi, and Jisuan for being awarded the Graduate Student Independent Training Project (PhD) at Shenzhen University, with a total funding of 50,000 RMB. 
+Congratulations to Yunfei, Kaiyi, and Jisuan for being awarded the Graduate Student Independent Training Project at Shenzhen University, with a total funding of 50,000 RMB. 
 
 This is a highly competitive program, with only four projects approved across the entire college. 
 
