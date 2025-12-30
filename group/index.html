@@ -3,30 +3,36 @@ layout: default
 title: Qi ZHANG's Group
 ---
 
-<h4> iMUSE Group</h4>
+
 
 <!-- 自动图片轮播区 -->
 <div class="slideshow-container" id="slideshow"></div>
 
 <style>
+  /* 轮播图容器 */
   .slideshow-container {
-    position: left;
     width: 90%;
-    max-width: 900px;
-    height: 500px;
-    margin: 20px auto;
+    max-width: 800px;
+    height: 450px;
+    margin: 24px auto;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    /* 确保内部左对齐（虽非必须，但更明确） */
+    text-align: left;
   }
+
+  /* 关键：让图片靠左显示，不居中 */
   .slide-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;          /* 保持覆盖 */
+    object-position: left;      /* ← 核心：图片内容靠左对齐 */
     display: none;
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
+
   .slide-image.active {
     display: block;
     opacity: 1;
@@ -73,6 +79,7 @@ title: Qi ZHANG's Group
 
 
 
+<h4> iMUSE Group</h4>
 
 <p>  This is the website page for the intelligent multi-sensing research group (iMUSE, where 'MUSE' means 'Inspiration'). 
 	We are a research group of researchers dedicated to solving real-world problems, benefiting the people and the community,  
@@ -214,6 +221,7 @@ title: Qi ZHANG's Group
 	</ul>
 
 Acknowledgment: This group page is finished with the help of my wife. Thank you a lot, my dear.
+
 
 
 
