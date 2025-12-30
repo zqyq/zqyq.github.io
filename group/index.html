@@ -3,7 +3,122 @@ layout: default
 title: Qi ZHANG's Group
 ---
 
-<img src="photos/Group Photo 2024.jpg" alt="" width="550" height="400">
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Photos>Group>G
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      height: 60vh;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide-image.active {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slideshow-container" id="slideshow">
+    <!-- 图片将由 JavaScript 动态插入 -->
+  </div>
+
+  <script>
+    // === 配置区 ===
+    const imageFolder = 'photos/GroupPhotos/'; // 图片所在文件夹（相对路径）
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif']; // 支持的格式
+    const imageCount = 4; // 假设你有 5 张图片，命名为 1.jpg, 2.jpg ... 5.jpg
+    const intervalTime = 5000; // 5 秒切换
+
+    // === 自动构建图片列表 ===
+    const slideshow = document.getElementById('slideshow');
+    const images = [];
+
+    for (let i = 1; i <= imageCount; i++) {
+      const img = document.createElement('img');
+      img.className = 'slide-image';
+      img.src = `${imageFolder}${i}.${imageExtensions[0]}`; // 默认用 .jpg
+      img.alt = `图片 ${i}`;
+      slideshow.appendChild(img);
+      images.push(img);
+    }
+
+    // 如果你知道具体文件名，也可以直接写死：
+    /*
+    const imagePaths = [
+      'images/photo1.jpg',
+      'images/photo2.png',
+      'images/summer.gif'
+    ];
+    imagePaths.forEach(src => {
+      const img = document.createElement('img');
+      img.className = 'slide-image';
+      img.src = src;
+      img.alt = '轮播图';
+      slideshow.appendChild(img);
+      images.push(img);
+    });
+    */
+
+    // === 轮播逻辑 ===
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      images.forEach((img, i) => {
+        if (i === index) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showSlide(currentIndex);
+    }
+
+    // 初始显示第一张
+    if (images.length > 0) {
+      showSlide(0);
+      // 开始自动播放
+      setInterval(nextSlide, intervalTime);
+    } else {
+      console.error('未找到任何图片，请检查 imageFolder 和 imageCount 设置');
+    }
+  </script>
+
+</body>
+</html>
 
 
 <h4> iMUSE Group</h4>
@@ -148,6 +263,7 @@ title: Qi ZHANG's Group
 	</ul>
 
 Acknowledgment: This group page is finished with the help of my wife. Thank you a lot, my dear.
+
 
 
 
