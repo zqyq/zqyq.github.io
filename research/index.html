@@ -6,6 +6,9 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
 ---
 
 {%- assign papers = site.data.publications.papers -%}
+{%- assign n_crowd = papers | where: "topic", "crowd" | size -%}
+{%- assign n_3d = papers | where: "topic", "3d" | size -%}
+{%- assign n_driving = papers | where: "topic", "driving" | size -%}
 
 <h1 class="hero-name" style="padding-top:2.6rem">Research</h1>
 
@@ -21,7 +24,6 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
   This agenda builds on my doctoral and postdoctoral work on wide-area multi-view crowd counting at City University
   of Hong Kong with <a href="http://www.cs.cityu.edu.hk/~abchan/" rel="noopener">{{ site.data.profile.advisor }}</a>
   &mdash; the CVPR&nbsp;2019 and IJCV&nbsp;2022 papers below are where the ground-plane fusion idea came from.
-  Everything since 2022 has been carried out here, with our own students and our own funding.
 </p>
 
 <section class="section">
@@ -30,33 +32,34 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     <a class="section-more" href="/publications/">All papers &rarr;</a>
   </div>
   <p class="agenda-label">Problem</p>
-  <p>Measure a crowd the way a city would want it measured: total, per location, per person over time, and ahead of
-    time &mdash; from several fixed cameras covering a plaza, a stadium forecourt or a shoreline.</p>
+  <p>Recover population, location, identity and motion over large areas from multiple cameras &mdash; despite
+    unknown calibration, unsynchronized streams, occlusion and the cost of annotation.</p>
   <p class="agenda-label">What we have established</p>
-  <p>Fusing views onto a single ground-plane density map makes wide-area counting work
-    (CVPR&nbsp;2019, IJCV&nbsp;2022) and survive being moved to a new scene or a new camera layout
-    (CVPR&nbsp;2021). We removed the calibration requirement (ECCV&nbsp;2022), moved counting into the 3D domain
-    (AAAI&nbsp;2020, IJCV&nbsp;2022), and then moved from totals to identities and positions: people detection with
-    learned view-wise weights (AAAI&nbsp;2024), localization by Mahalanobis-distance multi-view optimal transport
-    (ECCV&nbsp;2024), weakly-supervised counting (PRCV&nbsp;2025), and SynMVCrowd, a synthetic benchmark built to
-    serve counting and localization at once (IJCV&nbsp;2026).</p>
+  <p>Our earlier work established ground-plane multi-view fusion for wide-area counting and showed that it survives
+    being moved to a new scene or a new camera layout. We then removed the explicit calibration requirement and
+    extended the formulation from global counts into 3D, and from totals to identities and positions. SynMVCrowd
+    now gives the field a scalable benchmark for studying counting and localization jointly.</p>
   <p class="agenda-label">What we are pursuing now</p>
   <p>Following people rather than detecting them &mdash; multi-view tracking with explicit view&ndash;ground
     interaction (CVPR&nbsp;2026) &mdash; and simulating them, so a system can be tested on situations no camera has
     recorded (EnvSocial-Diff, ICLR&nbsp;2026). Two label-cost studies are in progress in the same direction:
     ranking fusion models under partial labels, and choosing which views are worth labeling.</p>
+  {%- assign crowd_anchors = "wacc-cvpr19,mvot-eccv24,mvtracktrans-cvpr26" | split: "," -%}
   {%- for p in papers %}
-    {%- if p.topic == "crowd" %}{% include pub.html paper=p %}{% endif %}
+    {%- if crowd_anchors contains p.id %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
+  <p class="small" style="margin-top:.7rem">
+    <a href="/publications/">All {{ n_crowd }} papers in this line &rarr;</a>
+  </p>
 </section>
 
 <section class="section">
   <div class="section-head">
-    <h2>Core programme &middot; Dynamic 3D scene understanding</h2>
+    <h2>Core programme &middot; Robust 3D scene understanding</h2>
   </div>
   <p class="agenda-label">Problem</p>
-  <p>The same camera networks have to produce geometry: what the scene looks like in 3D, and what it looks like when
-    the views you were given are few, badly placed, or partly occluded.</p>
+  <p>Recover reliable 3D structure when the observations are incomplete, poorly placed, heavily occluded, or too
+    large to process uniformly.</p>
   <p class="agenda-label">What we have established</p>
   <p>Selecting views by the reconstruction error they cause makes multi-view 3D reconstruction robust to view
     transformation (AAAI&nbsp;2025); a diffusion prior plus farthest-view selection recovers a full object from a
@@ -64,11 +67,15 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     fine-grained building instance segmentation (SIGGRAPH&nbsp;2023), extended with adaptive region dividing and
     spatially-supervised contrastive learning.</p>
   <p class="agenda-label">What we are pursuing now</p>
-  <p>People as 3D objects in a scene: recovering many meshes at once under occlusion across views, and treating
-    reconstruction and generation as one problem rather than two.</p>
+  <p>Human-centric 3D reconstruction at scene scale, particularly under severe occlusion and cross-view ambiguity,
+    with reconstruction and generation treated as one problem rather than two.</p>
+  {%- assign three_d_anchors = "vtr-aaai25,urbanbis-siggraph23,mesh-recovery-arxiv26" | split: "," -%}
   {%- for p in papers %}
-    {%- if p.topic == "3d" %}{% include pub.html paper=p %}{% endif %}
+    {%- if three_d_anchors contains p.id %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
+  <p class="small" style="margin-top:.7rem">
+    <a href="/publications/">All {{ n_3d }} papers in this line &rarr;</a>
+  </p>
 </section>
 
 <section class="section">
@@ -76,11 +83,8 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     <h2>Emerging &middot; Street scenes and 4D occupancy</h2>
   </div>
   <p class="agenda-label">Problem</p>
-  <p>Predict which space a road user will need next, from cameras, and get enough diverse scene data to train and
-    test such a model. This is a different problem from fixed-camera crowd analysis &mdash; the rig itself moves, the
-    calibration is supplied rather than unknown, and the field of view is far narrower &mdash; so we keep it as its
-    own emerging line rather than a continuation of the crowd programme. What carries over is the method: reasoning
-    about occupied space across several views without trusting any single one.</p>
+  <p>We are extending multi-view dynamic-scene reasoning from fixed camera networks to ego-centric driving cameras,
+    with a current focus on future occupied space and multi-view scene generation.</p>
   <p class="agenda-label">What we have so far</p>
   <p>InterOCF couples 2D image evidence with 3D structure over time for camera-only 4D occupancy forecasting;
     StreetDiff generates multi-view consistent street scenes from structure prompts. Both are currently preprints
@@ -110,8 +114,7 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     <h2>Research resources</h2>
   </div>
   <p class="small muted" style="margin-bottom:.8rem">
-    Datasets, benchmarks and code released by the group. Collaborations on any of these are welcome &mdash;
-    write to me rather than going through a form.
+    Datasets, benchmarks and code released by the group. Collaborations around these resources are welcome.
   </p>
   <ul class="rule-list">
     <li><a href="https://github.com/zqyq/SynMVCrowd" rel="noopener">SynMVCrowd</a> &mdash; synthetic benchmark for
@@ -139,7 +142,7 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
   <p>
     Students who join work on one of the three programmes above, usually on the part that is still open:
     tracking and simulation for the crowd programme, generation and reconstruction for the 3D programme, and
-    occupancy forecasting for the emerging one. We are comfortable being measured on code and data &mdash;
-    every project above ships both.
+    occupancy forecasting for the emerging one. We release code, datasets and benchmarks where we can;
+    representative resources are listed above.
   </p>
 </section>

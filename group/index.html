@@ -6,7 +6,7 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
 ---
 
 {%- assign papers = site.data.publications.papers -%}
-{%- assign picks = "mvtracktrans-cvpr26,synmvcrowd-ijcv26,envsocial-diff-iclr26,rgbt-dualmod-icassp26,tp-mvcc-chinamm26,streetdiff-arxiv26,interocf-arxiv26,mesh-recovery-arxiv26,urban-buildings-arxiv26,semi-mvcc-arxiv25,active-view-arxiv25,weak-mvcc-prcv25,vtr-aaai25,single-view-icig25,mvot-eccv24,mvd-aaai24" | split: "," -%}
+{%- assign picks = "mvtracktrans-cvpr26,envsocial-diff-iclr26,synmvcrowd-ijcv26,mvot-eccv24,weak-mvcc-prcv25,single-view-icig25" | split: "," -%}
 {%- assign students = "" -%}
 {%- for m in site.data.members.phd -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
 {%- for m in site.data.members.master -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
@@ -19,17 +19,13 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
 </p>
 
 <p style="margin-top:1.2rem">
-  iMUSE Lab is a computer vision group at Shenzhen University, <strong>founded in 2022 and led by
-  {{ site.name }} {{ site.name_cn }}</strong>. We study what a network of cameras can know about a large, moving
-  scene: crowd counting, localization, tracking and simulation; multi-view 3D reconstruction and generation; and,
-  newest, camera-only 4D occupancy forecasting.
+  iMUSE Lab is a computer vision research group at Shenzhen University working on multi-view crowd intelligence,
+  robust 3D scene understanding, and camera-only 4D occupancy forecasting.
 </p>
 <p>
   The lab has <strong>{{ site.data.members.phd | size }} Ph.D. and {{ site.data.members.master | size }}
   master&rsquo;s students</strong>. The {{ site.data.members.alumni | size }} who have graduated went to Ph.D.
   programs (Shenzhen University, NJUPT) or to Huawei, Bilibili, Qihoo&nbsp;360 and Alibaba&rsquo;s Linxi Games.
-  Undergraduates who work with us compete as well: provincial competition prizes, graduation projects selected among
-  the university&rsquo;s outstanding undergraduate theses, and co-authored papers.
 </p>
 
 <img src="/group/photos/GroupPhotos/2025.jpg" alt="iMUSE Lab group photo, 2025"
@@ -43,10 +39,9 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
     <div>
       <div class="pi-name">{{ site.name }} {{ site.name_cn }}</div>
       <p class="small muted" style="margin-top:.3rem">
-        {{ site.position }} and doctoral supervisor, Shenzhen University; holder of the Shenzhen
-        &ldquo;Pengcheng Peacock&rdquo; distinguished talent post. Ph.D. and postdoctoral research at City University
-        of Hong Kong (VISAL lab), then Distinguished Associate Researcher at Guangming Lab before founding
-        {{ site.lab }} in 2022.
+        {{ site.position }} and doctoral supervisor, Shenzhen University. Founder and principal investigator of
+        {{ site.lab }}. Research: multi-view crowd intelligence, robust 3D scene understanding, and dynamic-scene
+        modelling.
       </p>
       <p class="chips" style="margin-top:.6rem">
         <a class="chip" href="/about/">Full profile</a>
@@ -54,6 +49,20 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
       </p>
     </div>
   </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Research by group members</h2>
+    <a class="section-more" href="/publications/">All {{ papers | size }} papers &rarr;</a>
+  </div>
+  <p class="small muted" style="margin-bottom:.6rem">
+    Six papers across the lab&rsquo;s directions with group members as first author or key contributor; bold marks
+    the group members.
+  </p>
+  {%- for p in papers %}
+    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
+  {%- endfor %}
 </section>
 
 <section class="section">
@@ -102,49 +111,37 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
   </table>
 </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2>What the group has produced</h2>
-    <a class="section-more" href="/publications/">All papers &rarr;</a>
-  </div>
-  <p class="small muted" style="margin-bottom:.6rem">
-    Papers with group members as first author or key contributor; bold marks the group members.
-  </p>
-  {%- for p in papers %}
-    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
-  {%- endfor %}
-</section>
-
 <section class="section" id="recruiting">
   <div class="section-head"><h2>Join iMUSE</h2></div>
   <p>
-    We take Ph.D. and master&rsquo;s students every year, and host visiting undergraduates who want a project that
-    ends in something published. Prospective students normally join one of three efforts:
+    We take Ph.D. and master&rsquo;s students every year. Prospective students normally join one of three efforts:
     <strong>crowd simulation and generation</strong>, <strong>multi-view 3D reconstruction</strong>, or
-    <strong>4D occupancy forecasting from cameras only</strong>. Undergraduates join either a research project or a
-    competition team, and often start on the applied side of the lab &mdash; embedded AI and mobile application
-    development &mdash; before taking on a paper.
+    <strong>4D occupancy forecasting from cameras only</strong>. We also host motivated undergraduates on research
+    or competition projects &mdash; computer vision, embedded AI and mobile application work &mdash; with the
+    opportunity to develop that work toward a publication when it is ready. Undergraduates working with us have won
+    provincial competition prizes and had graduation projects selected among the university&rsquo;s outstanding
+    undergraduate theses.
   </p>
   <p class="small" style="border-left:3px solid var(--copper);padding:.55rem .8rem;background:rgba(163,84,31,.06);margin-top:1rem">
-    <strong>Ph.D. intake.</strong> The 2026 quota is full. Pre-admission for the 2027 entry opens in the second half
-    of 2026, with university and college scholarships available. Write to
-    <a href="mailto:{{ site.email_szu }}">{{ site.email_szu }}</a> (my institutional address, and the one the
-    college&rsquo;s admissions office recognises) before the round opens rather than after it.
+    <strong>Ph.D. intake.</strong> The 2026 quota is full. Enquiries for 2027 are welcome now; pre-admission follows
+    the college&rsquo;s own schedule, and university and college scholarships are available. Write to
+    <a href="mailto:{{ site.email_szu }}">{{ site.email_szu }}</a>, my institutional address and the one the
+    college&rsquo;s admissions office recognises.
   </p>
   <p>
     What matters to us: you can read a paper and reproduce part of it, you are comfortable with PyTorch and
-    geometry, and you are willing to ship code and data with whatever you write. If that describes you, write to
-    <a href="mailto:{{ site.email }}">{{ site.email }}</a> with a transcript, one project you are proud of, and
-    which of the three above you want to work on.
+    geometry, and you are willing to build reproducible research and release code or data when appropriate. If that
+    describes you, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a> with a transcript, one project you
+    are proud of, and which of the three above you want to work on.
   </p>
   <p class="chips">
     <a class="chip" href="mailto:{{ site.email }}">Write to me</a>
     <a class="chip" href="/research/">Research agenda</a>
-    <a class="chip" href="/group/CFS/CFS2024.pdf">Earlier call (2024, PDF)</a>
-    <a class="chip" href="/group/CFS/CFS2023.pdf">Earlier call (2023, PDF)</a>
   </p>
 </section>
 
 <p class="small muted" style="margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1rem">
+  Past calls: <a href="/group/CFS/CFS2024.pdf">2024 (PDF)</a> &middot;
+  <a href="/group/CFS/CFS2023.pdf">2023 (PDF)</a>.
   The earlier version of this page was built with the help of my wife. Thank you.
 </p>

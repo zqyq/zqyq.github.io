@@ -10,8 +10,8 @@ slug: home
 {%- assign n_master = site.data.members.master | size -%}
 {%- assign n_alumni = site.data.members.alumni | size -%}
 {%- assign n_students = n_phd | plus: n_master -%}
-{%- assign n_grants_pi = site.data.profile.grants | where: "role", "PI" | size -%}
-{%- assign n_grants = site.data.profile.grants | where: "role", "Sub-project leader" | size | plus: n_grants_pi -%}
+{%- assign n_pi = site.data.profile.grants | where: "role", "PI" | size -%}
+{%- assign n_sub = site.data.profile.grants | where: "role", "Sub-project leader" | size -%}
 {%- assign n_conf = papers | where: "kind", "conference" | size -%}
 {%- assign n_journal = papers | where: "kind", "journal" | size -%}
 {%- assign n_peer = n_conf | plus: n_journal -%}
@@ -43,13 +43,10 @@ slug: home
 </section>
 
 <p class="lede">
-  I founded and have led the <strong>iMUSE Lab</strong> at Shenzhen University since 2022. The lab studies what a
-  network of cameras can know about a large, moving scene: how many people are there, where each of them is, where
-  they are going, and what happens next. The programme grew out of my doctoral work on wide-area multi-view counting
-  and has since taken its own direction &mdash; calibration-free counting (ECCV&rsquo;22) and optimal-transport
-  localization (ECCV&rsquo;24) gave way to a synthetic benchmark for the field (IJCV&rsquo;26), diffusion-based crowd
-  simulation (ICLR&rsquo;26) and multi-view tracking (CVPR&rsquo;26); the current frontier is 4D occupancy
-  forecasting and generating the street scenes that train it.
+  I lead the <strong>iMUSE Lab</strong> at Shenzhen University, which I founded in 2022. We study multi-view
+  understanding of large, dynamic scenes: crowd analysis and simulation, robust 3D scene understanding, and emerging
+  work on camera-only 4D occupancy forecasting. Our recent work has moved from measuring where people are to
+  tracking, reconstructing and modelling how those scenes evolve.
 </p>
 
 <div class="interests" style="margin-top:1.5rem">
@@ -58,37 +55,16 @@ slug: home
 
 <section class="evidence">
   <div class="stats">
-    <div class="stat"><b>{{ n_students }}</b><span>Graduate researchers now</span></div>
-    <div class="stat"><b>{{ n_phd }}</b><span>Ph.D. students</span></div>
-    <div class="stat"><b>{{ n_alumni }}</b><span>Students graduated</span></div>
-    <div class="stat"><b>{{ n_grants }}</b><span>Grants led</span></div>
+    <div class="stat"><b>{{ n_students }}</b><span>Graduate researchers</span></div>
+    <div class="stat"><b>{{ n_alumni }}</b><span>Alumni</span></div>
+    <div class="stat"><b>{{ n_pi }} + {{ n_sub }}</b><span>PI grants + national R&amp;D sub-project</span></div>
     <div class="stat"><b>{{ n_peer }}</b><span>Peer-reviewed papers</span></div>
-    <div class="stat"><b>{{ papers | size }}</b><span>Publications listed</span></div>
   </div>
   <p class="evidence-note">
-    {{ site.lab }} was founded and is led by me: {{ n_phd }} Ph.D. and {{ n_master }} master&rsquo;s students,
-    {{ n_alumni }} alumni now in Ph.D. programs or industry, and group papers at CVPR, ICLR, IJCV, ECCV and AAAI
-    within the last twelve months. Funded as PI or sub-project leader by an NSFC Young Scientists Fund (300K CNY), a
-    Shenzhen Young Talents Start-Up Grant (3M CNY) and a sub-project of the National Key R&amp;D Program of China.
-    Ten granted invention patents, and a Shenzhen &ldquo;Pengcheng Peacock&rdquo; distinguished talent post (2023).
-    <a href="{{ site.data.scholar.profile }}" rel="noopener">{{ site.data.scholar.citations }} citations</a>
-    (Google Scholar, {{ site.data.scholar.snapshot }}).
+    Recent group work has appeared at CVPR, ICLR, IJCV, ECCV and AAAI, with students as first authors or key
+    contributors across the lab&rsquo;s directions.
+    <span class="muted">Cited by {{ site.data.scholar.citations }} (Google Scholar, {{ site.data.scholar.snapshot }}).</span>
   </p>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <h2>News</h2>
-    <a class="section-more" href="/blog/">All updates &rarr;</a>
-  </div>
-  <ul class="news">
-    {%- for post in site.posts limit: 5 %}
-    <li>
-      <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
-      <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
-    </li>
-    {%- endfor %}
-  </ul>
 </section>
 
 <section class="section">
@@ -106,10 +82,9 @@ slug: home
   </div>
 
   <div class="dir dir--core">
-    <h3>Dynamic 3D scene understanding</h3>
-    <p>Choosing and trusting views: reconstruction-error-guided selection, completing a shape from a single image
-      with a diffusion prior, recovering many people&rsquo;s meshes under occlusion, and segmenting building
-      instances at city scale.</p>
+    <h3>Robust 3D scene understanding</h3>
+    <p>Recovering reliable geometry when the observations are uncooperative: badly placed or transformed views, a
+      single image, heavy occlusion across cameras, and city-scale scenes too large to process uniformly.</p>
     <p class="dir-count">Core programme &middot; {{ n_3d }} papers</p>
   </div>
 
@@ -134,11 +109,15 @@ slug: home
     <a class="section-more" href="/publications/">All {{ papers | size }} papers &rarr;</a>
   </div>
   <p class="small muted" style="margin-bottom:.8rem">
-    Peer-reviewed work only; preprints appear on the publications page.
+    Recent work from the group; peer-reviewed only, preprints appear on the publications page.
     Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
   </p>
   {%- for p in selected %}
-    {% include pub.html paper=p %}
+    {%- unless p.foundational %}{% include pub.html paper=p %}{% endunless %}
+  {%- endfor %}
+  <p class="small muted" style="margin:1.2rem 0 .5rem">Where this programme started</p>
+  {%- for p in selected %}
+    {%- if p.foundational %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
 </section>
 
@@ -150,13 +129,29 @@ slug: home
   <p>
     {{ site.lab }} takes Ph.D. and master&rsquo;s students every year and hosts visiting undergraduates.
     Current openings are in crowd simulation and generation, multi-view 3D reconstruction, and 4D occupancy
-    forecasting. The 2026 Ph.D. intake is full; pre-admission for 2027 opens in the second half of 2026.
+    forecasting. The 2026 Ph.D. intake is full; enquiries for 2027 are welcome now, and pre-admission follows the
+    college&rsquo;s own schedule.
   </p>
   <p class="chips">
     <a class="chip" href="/group/">Students &amp; alumni</a>
     <a class="chip" href="/group/#recruiting">What we look for</a>
     <a class="chip" href="mailto:{{ site.email }}">Apply / inquire</a>
   </p>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>News</h2>
+    <a class="section-more" href="/blog/">All updates &rarr;</a>
+  </div>
+  <ul class="news">
+    {%- for post in site.posts limit: 5 %}
+    <li>
+      <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
+      <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+    </li>
+    {%- endfor %}
+  </ul>
 </section>
 
 <section class="section">
