@@ -1,7 +1,24 @@
-# 全站唯一的论文数据源。首页 / About / Publications / Group / CV / Research 全部由此渲染。
-# status: published | accepted | to_appear | preprint     corr: 通讯作者（页面上以 * 标注）
-# citations: Google Scholar 计数，快照日期见 _data/scholar.yml；未核实的字段一律留空。
-# ccf 字段暂空 —— CCF 等级需经核实后才写入页面，不凭印象填。
+# 全站唯一的论文数据源。首页 / About / Publications / Group / CV / Research 全部由此渲染，
+# 模板里不再出现任何论文 id —— 想改哪一页显示什么，只改这个文件的标记。
+#
+# 加一篇论文（约一分钟）：
+#   1. 在 papers: 下按年份从新到旧插入一个块，照抄下面任一块的字段。
+#   2. 必填：id / title / year / venue / kind / status / authors / topic / thumb。
+#      - id：小写连字符，全站唯一，同时是图片文件名 assets/img/papers/<id>.jpg。
+#      - kind：conference | journal | preprint（决定首页"同行评审"计数与 CV 的拆分）。
+#      - status：published | accepted | to_appear | preprint（自动长 badge，别在标题里自己写"Accepted"）。
+#      - topic：crowd | 3d | driving | beyond（决定它出现在 Research 页哪一条研究线）。
+#      - authors：数组，把你的名字写成 "Qi Zhang"，页面会自动加粗；通讯作者另用 corr: ["Qi Zhang"] 标 *。
+#      - links：只放 arxiv / pdf / doi / landing / code / dataset / project / video 里真实存在的键。
+#   3. 选显示位置（不显示就不写这一行）：
+#        selected: true     首页 Selected Publications
+#        foundational: true 首页"Where this programme started"那一格
+#        group_pick: true   Group 页 Research by group members
+#        anchor: true       Research 页该研究线展示的锚点论文
+#   4. 跑工作区里的校验脚本：python ../tools/check_pubs.py（它不在本仓库内，是本地开发工具）。
+#
+# 规矩：未核实的字段一律留空，不凭印象填。citations 是 Google Scholar 计数，快照日期见 _data/scholar.yml。
+# ccf 字段暂空 —— CCF 等级需核实后才写入页面。
 
 papers:
   - id: mvtracktrans-cvpr26
@@ -21,6 +38,9 @@ papers:
       code: "https://github.com/zqyq/MVTrackTrans"
     thumb: /assets/img/papers/mvtracktrans-cvpr26.jpg
     selected: true
+
+    group_pick: true
+    anchor: true
     topic: crowd
 
   - id: synmvcrowd-ijcv26
@@ -42,6 +62,8 @@ papers:
       code: "https://github.com/zqyq/SynMVCrowd"
     thumb: /assets/img/papers/synmvcrowd-ijcv26.jpg
     selected: true
+
+    group_pick: true
     topic: crowd
 
   - id: envsocial-diff-iclr26
@@ -60,6 +82,8 @@ papers:
       code: "https://github.com/zqyq/EnvSocial-Diff"
     thumb: /assets/img/papers/envsocial-diff-iclr26.jpg
     selected: true
+
+    group_pick: true
     topic: crowd
 
   - id: rgbt-dualmod-icassp26
@@ -76,7 +100,6 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2509.17079"
     thumb: /assets/img/papers/rgbt-dualmod-icassp26.jpg
-    selected: false
     topic: crowd
 
   - id: streetdiff-arxiv26
@@ -92,7 +115,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2609.09890"
       pdf: "https://arxiv.org/pdf/2609.09890"
     thumb: /assets/img/papers/streetdiff-arxiv26.jpg
-    selected: false
+    anchor: true
     topic: driving
 
   - id: interocf-arxiv26
@@ -108,7 +131,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2607.24431"
       pdf: "https://arxiv.org/pdf/2607.24431"
     thumb: /assets/img/papers/interocf-arxiv26.jpg
-    selected: false
+    anchor: true
     topic: driving
 
   - id: mesh-recovery-arxiv26
@@ -124,7 +147,8 @@ papers:
       arxiv: "https://arxiv.org/abs/2607.24302"
       pdf: "https://arxiv.org/pdf/2607.24302"
     thumb: /assets/img/papers/mesh-recovery-arxiv26.jpg
-    selected: false
+
+    anchor: true
     topic: 3d
 
   - id: urban-buildings-arxiv26
@@ -140,7 +164,6 @@ papers:
       arxiv: "https://arxiv.org/abs/2609.19631"
       pdf: "https://arxiv.org/pdf/2609.19631"
     thumb: /assets/img/papers/urban-buildings-arxiv26.jpg
-    selected: false
     topic: 3d
 
   - id: tp-mvcc-chinamm26
@@ -157,7 +180,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2509.24329"
     thumb: /assets/img/papers/tp-mvcc-chinamm26.jpg
-    selected: false
+    anchor: true
     topic: beyond
 
   - id: semi-mvcc-arxiv25
@@ -174,7 +197,6 @@ papers:
       arxiv: "https://arxiv.org/abs/2512.16243"
       pdf: "https://arxiv.org/pdf/2512.16243"
     thumb: /assets/img/papers/semi-mvcc-arxiv25.jpg
-    selected: false
     topic: crowd
 
   - id: active-view-arxiv25
@@ -190,7 +212,6 @@ papers:
       arxiv: "https://arxiv.org/abs/2509.16684"
       pdf: "https://arxiv.org/pdf/2509.16684"
     thumb: /assets/img/papers/active-view-arxiv25.jpg
-    selected: false
     topic: crowd
 
   - id: weak-mvcc-prcv25
@@ -210,7 +231,8 @@ papers:
       arxiv: "https://arxiv.org/abs/2512.02359"
       code: "https://github.com/zqyq/Weakly-MVCC"
     thumb: /assets/img/papers/weak-mvcc-prcv25.jpg
-    selected: false
+
+    group_pick: true
     topic: crowd
 
   - id: vtr-aaai25
@@ -233,6 +255,8 @@ papers:
       code: "https://github.com/zqyq/VTR"
     thumb: /assets/img/papers/vtr-aaai25.jpg
     selected: true
+
+    anchor: true
     topic: 3d
 
   - id: single-view-icig25
@@ -249,7 +273,8 @@ papers:
     links:
       doi: "https://doi.org/10.1007/978-981-95-3393-0_43"
     thumb: /assets/img/papers/single-view-icig25.jpg
-    selected: false
+
+    group_pick: true
     topic: 3d
 
   - id: mvot-eccv24
@@ -268,6 +293,9 @@ papers:
       project: "https://vcc.tech/research/2024/MVOT"
     thumb: /assets/img/papers/mvot-eccv24.jpg
     selected: true
+
+    group_pick: true
+    anchor: true
     topic: crowd
 
   - id: mvd-aaai24
@@ -287,7 +315,6 @@ papers:
       pdf: "https://arxiv.org/pdf/2405.19943"
       project: "https://vcc.tech/research/2024/MVD"
     thumb: /assets/img/papers/mvd-aaai24.jpg
-    selected: false
     topic: crowd
 
   - id: urbanbis-siggraph23
@@ -303,7 +330,8 @@ papers:
     links:
       project: "https://vcc.tech/UrbanBIS"
     thumb: /assets/img/papers/urbanbis-siggraph23.jpg
-    selected: false
+
+    anchor: true
     topic: 3d
 
   - id: view-sync-tnnls23
@@ -323,7 +351,6 @@ papers:
       project: "http://visal.cs.cityu.edu.hk/research/umvcc/"
       code: "https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS"
     thumb: /assets/img/papers/view-sync-tnnls23.jpg
-    selected: false
     topic: crowd
 
   - id: 3d-counting-ijcv22
@@ -341,7 +368,6 @@ papers:
       doi: "https://link.springer.com/article/10.1007/s11263-022-01685-7"
       project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
     thumb: /assets/img/papers/3d-counting-ijcv22.jpg
-    selected: false
     topic: crowd
 
   - id: cfmvcc-eccv22
@@ -356,7 +382,6 @@ papers:
     links:
       project: "http://visal.cs.cityu.edu.hk/research/cfmvcc/"
     thumb: /assets/img/papers/cfmvcc-eccv22.jpg
-    selected: false
     topic: crowd
 
   - id: wacc-ijcv22
@@ -375,7 +400,6 @@ papers:
       doi: "https://link.springer.com/article/10.1007/s11263-022-01626-4"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
     thumb: /assets/img/papers/wacc-ijcv22.jpg
-    selected: false
     topic: crowd
 
   - id: dolphin-mmasia21
@@ -392,7 +416,7 @@ papers:
       doi: "https://doi.org/10.1145/3469877.3490574"
       project: "http://visal.cs.cityu.edu.hk/research/cwd/"
     thumb: /assets/img/papers/dolphin-mmasia21.jpg
-    selected: false
+    anchor: true
     topic: beyond
 
   - id: cvcs-cvpr21
@@ -428,7 +452,6 @@ papers:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/aaai20-3dmvcc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
     thumb: /assets/img/papers/3d-mvcc-aaai20.jpg
-    selected: false
     topic: crowd
 
   - id: wacc-cvpr19
@@ -446,6 +469,8 @@ papers:
     thumb: /assets/img/papers/wacc-cvpr19.jpg
     selected: true
     foundational: true
+
+    anchor: true
     topic: crowd
 
   - id: de-fencing-cits16
@@ -460,5 +485,5 @@ papers:
     links:
       doi: "https://ieeexplore.ieee.org/abstract/document/7546396/"
     thumb: /assets/img/papers/de-fencing-cits16.jpg
-    selected: false
+    anchor: true
     topic: beyond

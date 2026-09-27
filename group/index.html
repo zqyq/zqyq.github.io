@@ -6,7 +6,6 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
 ---
 
 {%- assign papers = site.data.publications.papers -%}
-{%- assign picks = "mvtracktrans-cvpr26,envsocial-diff-iclr26,synmvcrowd-ijcv26,mvot-eccv24,weak-mvcc-prcv25,single-view-icig25" | split: "," -%}
 {%- assign students = "" -%}
 {%- for m in site.data.members.phd -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
 {%- for m in site.data.members.master -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
@@ -61,7 +60,7 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
     the group members.
   </p>
   {%- for p in papers %}
-    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
+    {%- if p.group_pick %}{% include pub.html paper=p bold=students %}{% endif %}
   {%- endfor %}
 </section>
 

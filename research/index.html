@@ -9,6 +9,7 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
 {%- assign n_crowd = papers | where: "topic", "crowd" | size -%}
 {%- assign n_3d = papers | where: "topic", "3d" | size -%}
 {%- assign n_driving = papers | where: "topic", "driving" | size -%}
+{%- assign n_beyond = papers | where: "topic", "beyond" | size -%}
 
 <h1 class="hero-name" style="padding-top:2.6rem">Research</h1>
 
@@ -44,9 +45,8 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     interaction (CVPR&nbsp;2026) &mdash; and simulating them, so a system can be tested on situations no camera has
     recorded (EnvSocial-Diff, ICLR&nbsp;2026). Two label-cost studies are in progress in the same direction:
     ranking fusion models under partial labels, and choosing which views are worth labeling.</p>
-  {%- assign crowd_anchors = "wacc-cvpr19,mvot-eccv24,mvtracktrans-cvpr26" | split: "," -%}
   {%- for p in papers %}
-    {%- if crowd_anchors contains p.id %}{% include pub.html paper=p %}{% endif %}
+    {%- if p.topic == "crowd" and p.anchor %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
   <p class="small" style="margin-top:.7rem">
     <a href="/publications/">All {{ n_crowd }} papers in this line &rarr;</a>
@@ -69,9 +69,8 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
   <p class="agenda-label">What we are pursuing now</p>
   <p>Human-centric 3D reconstruction at scene scale, particularly under severe occlusion and cross-view ambiguity,
     with reconstruction and generation treated as one problem rather than two.</p>
-  {%- assign three_d_anchors = "vtr-aaai25,urbanbis-siggraph23,mesh-recovery-arxiv26" | split: "," -%}
   {%- for p in papers %}
-    {%- if three_d_anchors contains p.id %}{% include pub.html paper=p %}{% endif %}
+    {%- if p.topic == "3d" and p.anchor %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
   <p class="small" style="margin-top:.7rem">
     <a href="/publications/">All {{ n_3d }} papers in this line &rarr;</a>
@@ -90,8 +89,11 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     StreetDiff generates multi-view consistent street scenes from structure prompts. Both are currently preprints
     and are listed as such.</p>
   {%- for p in papers %}
-    {%- if p.topic == "driving" %}{% include pub.html paper=p %}{% endif %}
+    {%- if p.topic == "driving" and p.anchor %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
+  <p class="small" style="margin-top:.7rem">
+    <a href="/publications/">All {{ n_driving }} papers in this line &rarr;</a>
+  </p>
 </section>
 
 <section class="section">
@@ -105,8 +107,11 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     publication list begins.
   </p>
   {%- for p in papers %}
-    {%- if p.topic == "beyond" %}{% include pub.html paper=p %}{% endif %}
+    {%- if p.topic == "beyond" and p.anchor %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
+  <p class="small" style="margin-top:.7rem">
+    <a href="/publications/">All {{ n_beyond }} papers in this line &rarr;</a>
+  </p>
 </section>
 
 <section class="section">
