@@ -80,7 +80,7 @@ slug: home
     <a class="section-more" href="/blog/">All updates &rarr;</a>
   </div>
   <ul class="news">
-    {%- for post in site.posts limit: 3 %}
+    {%- for post in site.posts limit: 5 %}
     <li>
       <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
       <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>

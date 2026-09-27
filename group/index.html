@@ -35,19 +35,6 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
 <p class="small muted">Group photo, 2025.</p>
 
 <section class="section">
-  <div class="section-head">
-    <h2>What the group has produced</h2>
-    <a class="section-more" href="/publications/">All papers &rarr;</a>
-  </div>
-  <p class="small muted" style="margin-bottom:.6rem">
-    Papers with group members as first author or key contributor; bold marks the group members.
-  </p>
-  {%- for p in papers %}
-    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
-  {%- endfor %}
-</section>
-
-<section class="section">
   <div class="section-head"><h2>Principal Investigator</h2></div>
   <div class="pi-card">
     <img class="pi-portrait" src="/assets/img/portrait.jpg" alt="Qi Zhang" width="224" height="280" loading="lazy">
@@ -109,6 +96,19 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
     {%- endfor %}
     </tbody>
   </table>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>What the group has produced</h2>
+    <a class="section-more" href="/publications/">All papers &rarr;</a>
+  </div>
+  <p class="small muted" style="margin-bottom:.6rem">
+    Papers with group members as first author or key contributor; bold marks the group members.
+  </p>
+  {%- for p in papers %}
+    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
+  {%- endfor %}
 </section>
 
 <section class="section" id="recruiting">
