@@ -301,6 +301,7 @@ papers:
     citations: 79
     links:
       project: "https://vcc.tech/UrbanBIS"
+    thumb: /assets/img/papers/urbanbis-siggraph23.jpg
     selected: false
     topic: 3d
 
@@ -338,6 +339,7 @@ papers:
     links:
       doi: "https://link.springer.com/article/10.1007/s11263-022-01685-7"
       project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
+    thumb: /assets/img/papers/3d-counting-ijcv22.jpg
     selected: false
     topic: crowd
 
@@ -371,6 +373,7 @@ papers:
     links:
       doi: "https://link.springer.com/article/10.1007/s11263-022-01626-4"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
+    thumb: /assets/img/papers/wacc-ijcv22.jpg
     selected: false
     topic: crowd
 
