@@ -3,7 +3,8 @@
 #
 # 加一篇论文（约一分钟）：
 #   1. 在 papers: 下按年份从新到旧插入一个块，照抄下面任一块的字段。
-#   2. 必填：id / title / year / venue / kind / status / authors / topic / thumb。
+#   2. 必填：id / title / year / venue / kind / status / authors / topic。thumb（论文原图）应填，
+#      暂时没有图可以整行不写，校验脚本会 warn 但不拦。
 #      - id：小写连字符，全站唯一，同时是图片文件名 assets/img/papers/<id>.jpg。
 #      - kind：conference | journal | preprint（决定首页"同行评审"计数与 CV 的拆分）。
 #      - status：published | accepted | to_appear | preprint（自动长 badge，别在标题里自己写"Accepted"）。
@@ -181,6 +182,17 @@ papers:
       arxiv: "https://arxiv.org/abs/2509.24329"
     thumb: /assets/img/papers/tp-mvcc-chinamm26.jpg
     anchor: true
+    topic: beyond
+
+  - id: listen-count-ijcai26
+    title: "Listen and Count: Expanding the Frontier of Zero-shot Object Counting to Sound-centric Counting"
+    year: 2026
+    venue: IJCAI
+    venue_full: "International Joint Conference on Artificial Intelligence"
+    kind: conference
+    status: accepted
+    authors: ["Mingjie Wang", "Zhuohang Li", "Qi Zhang", "Jun Zhou", "Zili Yi"]
+    citations: 0
     topic: beyond
 
   - id: semi-mvcc-arxiv25
