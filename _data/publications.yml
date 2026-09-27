@@ -92,7 +92,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2609.09890"
       pdf: "https://arxiv.org/pdf/2609.09890"
     thumb: /assets/img/papers/streetdiff-arxiv26.jpg
-    selected: true
+    selected: false
     topic: driving
 
   - id: interocf-arxiv26
@@ -108,7 +108,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2607.24431"
       pdf: "https://arxiv.org/pdf/2607.24431"
     thumb: /assets/img/papers/interocf-arxiv26.jpg
-    selected: true
+    selected: false
     topic: driving
 
   - id: mesh-recovery-arxiv26
