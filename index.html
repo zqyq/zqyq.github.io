@@ -80,26 +80,12 @@ slug: home
 
 <section class="section">
   <div class="section-head">
-    <h2>Selected Publications</h2>
-    <a class="section-more" href="/publications/">All {{ n_papers }} papers &rarr;</a>
-  </div>
-  <p class="small muted" style="margin-bottom:.8rem">
-    Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
-    Full list with links to code and datasets is on the <a href="/publications/">publications</a> page.
-  </p>
-  {%- for p in selected %}
-    {% include pub.html paper=p %}
-  {%- endfor %}
-</section>
-
-<section class="section">
-  <div class="section-head">
     <h2>Research</h2>
     <a class="section-more" href="/research/">Details &rarr;</a>
   </div>
   <div class="dir">
     <h3>Multi-view Crowd Analysis &amp; Simulation</h3>
-    <p>Counting, detection, localization, tracking and simulation of people in large scenes seen by many
+<p>Counting, detection, localization, tracking and simulation of people in large scenes seen by many
       cameras &mdash; without per-scene calibration, and with benchmarks the community can build on.</p>
     <p class="dir-count">{{ n_crowd }} listed paper{%- if n_crowd != 1 %}s{% endif %}</p>
   </div>
@@ -121,6 +107,20 @@ slug: home
       detection problems beyond crowds.</p>
     <p class="dir-count">{{ n_beyond }} listed paper{%- if n_beyond != 1 %}s{% endif %}</p>
   </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Selected Publications</h2>
+    <a class="section-more" href="/publications/">All {{ n_papers }} papers &rarr;</a>
+  </div>
+  <p class="small muted" style="margin-bottom:.8rem">
+    Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
+    Full list with links to code and datasets is on the <a href="/publications/">publications</a> page.
+  </p>
+  {%- for p in selected %}
+    {% include pub.html paper=p %}
+  {%- endfor %}
 </section>
 
 <section class="section">
