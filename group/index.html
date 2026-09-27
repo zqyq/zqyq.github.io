@@ -90,10 +90,15 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
     <a class="section-more" href="/publications/">All papers &rarr;</a>
   </div>
   <p class="small muted" style="margin-bottom:.6rem">
-    Papers with group members as first author or key contributor; bold marks my name.
+    Papers with group members as first author or key contributor; bold marks the group members.
   </p>
+  {%- assign students = "" -%}
+  {%- for m in site.data.members.phd -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
+  {%- for m in site.data.members.master -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
+  {%- for m in site.data.members.alumni -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
+  {%- assign students = students | append: ",Sirui Chen,Hongtao Chen," | split: "," -%}
   {%- for p in papers %}
-    {%- if picks contains p.id %}{% include pub.html paper=p %}{% endif %}
+    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
   {%- endfor %}
 </section>
 

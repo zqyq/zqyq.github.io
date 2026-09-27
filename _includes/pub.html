@@ -4,9 +4,10 @@
 {%- elsif p.status == 'to_appear' -%}{%- assign status_label = 'To appear' -%}
 {%- elsif p.status == 'preprint' -%}{%- assign status_label = 'Preprint' -%}
 {%- else -%}{%- assign status_label = '' -%}{%- endif -%}
+{%- assign emph = include.bold | default: site.name -%}
 {%- assign authors = '' -%}
 {%- for a in p.authors -%}
-  {%- if a == site.name -%}{%- assign piece = '<strong class="me">' | append: a | append: '</strong>' -%}
+  {%- if emph contains a -%}{%- assign piece = '<strong class="me">' | append: a | append: '</strong>' -%}
   {%- else -%}{%- assign piece = a -%}{%- endif -%}
   {%- if p.corr and p.corr contains a -%}{%- assign piece = piece | append: '<span class="corr">*</span>' -%}{%- endif -%}
   {%- if forloop.first -%}{%- assign authors = authors | append: piece -%}
