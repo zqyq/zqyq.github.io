@@ -18,7 +18,7 @@ description: Curriculum vitae of Qi Zhang, Associate Professor at Shenzhen Unive
 
 <div class="print-only" style="margin-top:1.2rem">
   <h1 style="font-size:1.6rem">{{ site.name }} {{ site.name_cn }}</h1>
-  <p class="small">{{ site.position }}, {{ site.affiliation_full }} &middot; {{ site.email }}</p>
+  <p class="small">{{ site.position }}, {{ site.affiliation_full }} &middot; {{ site.email_szu }} &middot; {{ site.email }}</p>
 </div>
 
 <section class="section">
@@ -34,6 +34,15 @@ description: Curriculum vitae of Qi Zhang, Associate Professor at Shenzhen Unive
     {%- endfor %}
     </tbody>
   </table>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Honors &amp; Awards</h2></div>
+  <ul class="rule-list">
+    {%- for h in site.data.profile.honors %}
+    <li><span class="muted tabnum">{{ h.year }}</span> &nbsp; {{ h.text }}</li>
+    {%- endfor %}
+  </ul>
 </section>
 
 <section class="section">
@@ -66,6 +75,7 @@ description: Curriculum vitae of Qi Zhang, Associate Professor at Shenzhen Unive
 
 <section class="section">
   <div class="section-head"><h2>Patents</h2></div>
+  <p class="small muted" style="margin-bottom:.5rem">{{ site.data.profile.patent_summary }}</p>
   <ul class="rule-list">
     {%- for pt in site.data.profile.patents %}
     <li>{{ pt.title }} &mdash; <span class="muted">{{ pt.inventors | join: ", " }} &middot; {{ pt.number }}</span></li>
@@ -103,5 +113,8 @@ description: Curriculum vitae of Qi Zhang, Associate Professor at Shenzhen Unive
   </p>
   <p class="small muted">
     Journal reviewer: {{ site.data.profile.service_journals | join: ", " }}.
+  </p>
+  <p class="small muted" style="margin-top:.6rem">
+    Committee memberships: {{ site.data.profile.professional_memberships | join: " &middot; " }}.
   </p>
 </section>

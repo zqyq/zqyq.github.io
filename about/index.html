@@ -25,8 +25,10 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
 
 <address class="chips" style="font-style:normal;margin-top:1.4rem">
   <a class="chip" href="mailto:{{ site.email }}">{{ site.email }}</a>
+  <a class="chip" href="mailto:{{ site.email_szu }}">{{ site.email_szu }}</a>
   <span class="chip">VCC, CSSE, Shenzhen University</span>
   <span class="chip">PI, {{ site.lab }}</span>
+  <span class="chip">Doctoral supervisor</span>
 </address>
 
 <section class="section">
@@ -34,6 +36,11 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
     <h2>Appointments</h2>
     <a class="section-more" href="/cv/">Printable CV &rarr;</a>
   </div>
+  <p class="small muted" style="margin-bottom:.9rem">
+    Promoted to tenured associate professor in April 2026 and a doctoral supervisor from the same year. Within the
+    college I also serve as an inspector for postgraduate education, reviewing teaching quality across its graduate
+    programmes.
+  </p>
   <ul class="timeline">
     {%- for j in site.data.profile.positions %}
     <li>
@@ -42,6 +49,17 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
       <div class="where">{{ j.place }}</div>
       {%- if j.note %}<div class="note muted">{{ j.note }}</div>{% endif %}
     </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Honors &amp; Awards</h2>
+  </div>
+  <ul class="rule-list">
+    {%- for h in site.data.profile.honors %}
+    <li><span class="muted tabnum">{{ h.year }}</span> &nbsp; {{ h.text }}</li>
     {%- endfor %}
   </ul>
 </section>
@@ -63,6 +81,11 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
     {%- endfor %}
     </tbody>
   </table>
+  <p class="small muted" style="margin-top:.7rem">
+    Held as PI: 3.5M CNY across three start-up and young-scientist grants. I also lead a sub-project within the
+    National Key R&amp;D Program of China; the provincial and municipal projects are institutional awards that I
+    contribute to.
+  </p>
 </section>
 
 <section class="section">
@@ -80,6 +103,7 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
   <div class="section-head">
     <h2>Patents</h2>
   </div>
+  <p class="small muted" style="margin-bottom:.7rem">{{ site.data.profile.patent_summary }}</p>
   <ul class="rule-list">
     {%- for pt in site.data.profile.patents %}
     <li>
@@ -111,6 +135,13 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
 
   <h3 style="font-size:1.05rem;margin:1.6rem 0 .6rem">Journal reviewer</h3>
   <p class="small muted">{{ site.data.profile.service_journals | join: " &middot; " }}</p>
+
+  <h3 style="font-size:1.05rem;margin:1.6rem 0 .6rem">Committee memberships</h3>
+  <ul class="rule-list">
+    {%- for c in site.data.profile.professional_memberships %}
+    <li>{{ c }}</li>
+    {%- endfor %}
+  </ul>
 </section>
 
 <section class="section">

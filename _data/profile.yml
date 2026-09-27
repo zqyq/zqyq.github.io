@@ -3,9 +3,9 @@
 positions:
   - from: "2026.04"
     to: "now"
-    role: "Associate Professor (Tenured)"
+    role: "Associate Professor (Tenured) & Doctoral Supervisor"
     place: "Visual Computing Research Center, College of Computer Science and Software Engineering, Shenzhen University"
-    note: "Principal Investigator, iMUSE Lab"
+    note: "Principal Investigator, iMUSE Lab &middot; Inspector for postgraduate education, CSSE"
   - from: "2022.08"
     to: "2026.04"
     role: "Assistant Professor"
@@ -46,10 +46,22 @@ grants:
     amount: "200K CNY"
     period: "2023-2025"
     role: "PI"
+  - name: "National Key R&D Program of China, sub-project"
+    amount: "&mdash;"
+    period: "&mdash;"
+    role: "Sub-project leader"
   - name: "Shenzhen Peacock Research Group Project"
     amount: "15M CNY"
     period: "2022-2027"
     role: "Core Member"
+  - name: "Guangdong Provincial Flagship Project on Next-Generation Artificial Intelligence"
+    amount: "12M CNY"
+    period: "&mdash;"
+    role: "Participant"
+  - name: "Shenzhen Municipal Major Science and Technology Special Project"
+    amount: "8M CNY"
+    period: "&mdash;"
+    role: "Participant"
 
 teaching:
   - course: "College Computer Science"
@@ -61,6 +73,8 @@ teaching:
   - course: "Optimization Methods"
     level: "Postgraduate"
     terms: "2023, 2024, Spring"
+
+patent_summary: "Ten granted invention patents to date; the five with public application numbers are listed here."
 
 patents:
   - inventors: ["Antoni B. Chan", "Qi Zhang"]
@@ -83,6 +97,20 @@ patents:
     title: "Point supervision-based multi-view optimal transmission crowd detection method, system and terminal (基于点监督的多视角最优传输人群检测方法、系统及终端)"
     number: "ZL20241089136, 2024"
     link: "https://patents.google.com/patent/CN118429781A"
+
+honors:
+  - year: 2023
+    text: "Appointed to the Shenzhen &ldquo;Pengcheng Peacock&rdquo; Distinguished Talent Post (鹏城孔雀特聘岗位), a municipal high-level talent designation; member of the Shenzhen Peacock High-level Talent Innovation Team."
+  - year: 2023
+    text: "UrbanBIS received the Outstanding Open-Source Dataset Award of the CCF Technical Committee on Computer Aided Design (CCF-CAD)."
+  - year: 2023
+    text: "The teaching team I belong to at CSSE was named a national &ldquo;Huang Danian-style&rdquo; Faculty Team (全国高校黄大年式教师团队) by the Ministry of Education."
+  - year: 2022
+    text: "Silver Medal at Inventions Geneva Evaluation Days (IGED) for &ldquo;Automatic Wide-area Crowd Surveillance Using Multiple Cameras&rdquo;."
+
+professional_memberships:
+  - "Technical Committee on 3D Vision, China Society of Image and Graphics (CSIG)"
+  - "Technical Committee on Multimodal Interaction and Cognitive Simulation, China Simulation Society"
 
 service_roles:
   - { what: "Area Chair", venue: "NeurIPS", year: 2026 }
