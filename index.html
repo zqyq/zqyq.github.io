@@ -76,6 +76,21 @@ slug: home
 
 <section class="section">
   <div class="section-head">
+    <h2>News</h2>
+    <a class="section-more" href="/blog/">All updates &rarr;</a>
+  </div>
+  <ul class="news">
+    {%- for post in site.posts limit: 3 %}
+    <li>
+      <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
+      <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <div class="section-head">
     <h2>Research</h2>
     <a class="section-more" href="/research/">Full agenda &rarr;</a>
   </div>
@@ -158,17 +173,3 @@ slug: home
   </p>
 </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2>News</h2>
-    <a class="section-more" href="/blog/">All updates &rarr;</a>
-  </div>
-  <ul class="news">
-    {%- for post in site.posts limit: 3 %}
-    <li>
-      <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
-      <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
-    </li>
-    {%- endfor %}
-  </ul>
-</section>
