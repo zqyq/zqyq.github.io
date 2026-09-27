@@ -8,13 +8,15 @@ description: Publications of Qi Zhang, multi-view crowd analysis and simulation,
 {%- assign papers = site.data.publications.papers -%}
 {%- assign n_journal = papers | where: "kind", "journal" | size -%}
 {%- assign n_conf = papers | where: "kind", "conference" | size -%}
+{%- assign n_pre = papers | where: "kind", "preprint" | size -%}
 
 <h1 class="hero-name" style="padding-top:2.6rem">Publications</h1>
 
 <p class="muted" style="margin-top:.6rem">
-  {{ papers | size }} peer-reviewed papers &mdash; {{ n_conf }} conference, {{ n_journal }} journal.
+  {{ n_conf }} conference and {{ n_journal }} journal papers, plus {{ n_pre }} preprints.
   Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
-  Every entry links to the official record where one is available; code and dataset links are given when released.
+  Citation counts are a <a href="{{ site.data.scholar.profile }}" rel="noopener">Google Scholar</a> snapshot
+  taken {{ site.data.scholar.snapshot }}. Entries without a link have no verified public record yet.
 </p>
 
 {%- assign groups = papers | group_by: "year" | sort: "name" | reverse -%}

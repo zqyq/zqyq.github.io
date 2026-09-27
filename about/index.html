@@ -123,7 +123,9 @@ description: Qi Zhang (张琦), Associate Professor at Shenzhen University, PI o
     <li><a href="http://visal.cs.cityu.edu.hk/" rel="noopener">VISAL, Department of Computer Science, CityU</a></li>
     <li><a href="https://www.gml.ac.cn/" rel="noopener">Guangdong Laboratory of AI and Digital Economy (SZ)</a></li>
     <li><a href="{{ site.github }}" rel="noopener">Code and datasets on GitHub</a></li>
-    {%- if site.scholar %}<li><a href="{{ site.scholar }}" rel="noopener">Google Scholar</a></li>{% endif %}
-    {%- if site.orcid %}<li><a href="{{ site.orcid }}" rel="noopener">ORCID</a></li>{% endif %}
+    {%- if site.scholar %}<li><a href="{{ site.scholar }}" rel="noopener">Google Scholar</a> &middot; cited by {{ site.data.scholar.citations }} ({{ site.data.scholar.snapshot }})</li>{% endif %}
+    {%- if site.orcid %}<li><a href="{{ site.orcid }}" rel="noopener">ORCID {{ site.orcid | split: '/' | last }}</a></li>{% endif %}
+    {%- if site.cityu_page %}<li><a href="{{ site.cityu_page }}" rel="noopener">CityUHK Scholars (Ph.D. &amp; postdoc record)</a></li>{% endif %}
+    {%- if site.szu_page %}<li><a href="{{ site.szu_page }}" rel="noopener">CSSE staff page (SZU)</a></li>{% endif %}
   </ul>
 </section>

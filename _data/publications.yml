@@ -1,5 +1,6 @@
-# 全站唯一的论文数据源。首页 / About / Publications / Group / CV 全部由此渲染。
-# status: published | accepted | to_appear        corr: 通讯作者（页面上以 * 标注）
+# 全站唯一的论文数据源。首页 / About / Publications / Group / CV / Research 全部由此渲染。
+# status: published | accepted | to_appear | preprint     corr: 通讯作者（页面上以 * 标注）
+# citations: Google Scholar 计数，快照日期见 _data/scholar.yml；未核实的字段一律留空。
 # ccf 字段暂空 —— CCF 等级需经核实后才写入页面，不凭印象填。
 
 papers:
@@ -12,7 +13,9 @@ papers:
     status: published
     pages: "13626-13635"
     authors: ["Qi Zhang", "Jixuan Chen", "Kaiyi Zhang", "Xinquan Yu", "Antoni B. Chan", "Hui Huang"]
+    citations: 0
     links:
+      arxiv: "https://arxiv.org/abs/2604.19318"
       landing: "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.html"
       pdf: "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.pdf"
       code: "https://github.com/zqyq/MVTrackTrans"
@@ -25,10 +28,16 @@ papers:
     venue: IJCV
     venue_full: "International Journal of Computer Vision"
     kind: journal
-    status: accepted
+    status: published
+    volume: "134"
+    issue: "4"
+    pages: "191"
     authors: ["Qi Zhang", "Daijie Chen", "Yunfei Gong", "Hui Huang"]
     corr: ["Hui Huang"]
+    citations: 2
     links:
+      doi: "https://doi.org/10.1007/s11263-026-02778-3"
+      arxiv: "https://arxiv.org/abs/2603.23956"
       code: "https://github.com/zqyq/SynMVCrowd"
     selected: true
     topic: crowd
@@ -42,7 +51,10 @@ papers:
     status: accepted
     authors: ["Bingxue Zhao", "Qi Zhang", "Hui Huang"]
     corr: ["Qi Zhang", "Hui Huang"]
+    citations: 0
     links:
+      landing: "https://iclr.cc/virtual/2026/poster/10011733"
+      arxiv: "https://arxiv.org/abs/2603.23874"
       code: "https://github.com/zqyq/EnvSocial-Diff"
     selected: true
     topic: crowd
@@ -53,12 +65,75 @@ papers:
     venue: ICASSP
     venue_full: "IEEE International Conference on Acoustics, Speech and Signal Processing"
     kind: conference
-    status: to_appear
+    status: published
+    pages: "10202-10206"
     authors: ["Yuhong Feng", "Hongtao Chen", "Qi Zhang", "Jie Chen", "Zhaoxi He", "Mingzhe Liu", "Jianghai Liao"]
     corr: ["Qi Zhang"]
-    links: {}
+    citations: 0
+    links:
+      arxiv: "https://arxiv.org/abs/2509.17079"
     selected: false
     topic: crowd
+
+  - id: streetdiff-arxiv26
+    title: "StreetDiff: Multi-view Street Scenes Generation via Cross-view Consistent Multi-view Stable Diffusion with Structure Prompts"
+    year: 2026
+    venue: arXiv
+    venue_full: "arXiv preprint 2609.09890"
+    kind: preprint
+    status: preprint
+    authors: ["Qi Zhang", "Yanyifan Wang", "Weiyuan Zhang", "Hui Huang"]
+    citations: 0
+    links:
+      arxiv: "https://arxiv.org/abs/2609.09890"
+      pdf: "https://arxiv.org/pdf/2609.09890"
+    selected: true
+    topic: 3d
+
+  - id: interocf-arxiv26
+    title: "InterOCF: Spatio-Temporal 2D-3D Interaction for Camera-Only 4D Occupancy Forecasting"
+    year: 2026
+    venue: arXiv
+    venue_full: "arXiv preprint 2607.24431"
+    kind: preprint
+    status: preprint
+    authors: ["Qi Zhang", "Xinquan Yu", "Kaiyi Zhang", "Hui Huang"]
+    citations: 0
+    links:
+      arxiv: "https://arxiv.org/abs/2607.24431"
+      pdf: "https://arxiv.org/pdf/2607.24431"
+    selected: true
+    topic: driving
+
+  - id: mesh-recovery-arxiv26
+    title: "Multiview Multi-Person Human Mesh Recovery Under Large Scenes with Occlusions"
+    year: 2026
+    venue: arXiv
+    venue_full: "arXiv preprint 2607.24302"
+    kind: preprint
+    status: preprint
+    authors: ["Qi Zhang", "Tao Yu", "Jiechao He", "Antoni B. Chan", "Hui Huang"]
+    citations: 0
+    links:
+      arxiv: "https://arxiv.org/abs/2607.24302"
+      pdf: "https://arxiv.org/pdf/2607.24302"
+    selected: false
+    topic: 3d
+
+  - id: urban-buildings-arxiv26
+    title: "Instance Segmentation and Fine-grained Classification for Urban Buildings with Adaptive Region Dividing and Spatially-Supervised Contrastive Learning"
+    year: 2026
+    venue: arXiv
+    venue_full: "arXiv preprint 2609.19631"
+    kind: preprint
+    status: preprint
+    authors: ["Weiyuan Zhang", "Qi Zhang", "Hui Huang"]
+    citations: 0
+    links:
+      arxiv: "https://arxiv.org/abs/2609.19631"
+      pdf: "https://arxiv.org/pdf/2609.19631"
+    selected: false
+    topic: 3d
 
   - id: tp-mvcc-chinamm26
     title: "TP-MVCC: Tri-plane Multi-view Fusion Model for Silkie Chicken Counting"
@@ -67,24 +142,61 @@ papers:
     venue_full: "Chinese Conference on Multimedia and Expo"
     kind: conference
     status: accepted
-    authors: ["Sirui Chen", "Yifeng Wang", "Yuhong Feng", "Jianghai Liao", "Qi Zhang"]
+    authors: ["Sirui Chen", "Yuhong Feng", "Yifeng Wang", "Jianghai Liao", "Qi Zhang"]
     corr: ["Qi Zhang"]
+    citations: 0
+    note: "Undergraduate final-year project"
     links:
       arxiv: "https://arxiv.org/abs/2509.24329"
-    note: "Undergraduate final-year project"
     selected: false
     topic: beyond
 
+  - id: semi-mvcc-arxiv25
+    title: "Semi-Supervised Multi-View Crowd Counting by Ranking Multi-View Fusion Models"
+    year: 2025
+    venue: arXiv
+    venue_full: "arXiv preprint 2512.16243"
+    kind: preprint
+    status: preprint
+    authors: ["Qi Zhang", "Yunfei Gong", "Zhidan Xie", "Zhizi Wang", "Antoni B. Chan", "Hui Huang"]
+    citations: 2
+    note: "under review"
+    links:
+      arxiv: "https://arxiv.org/abs/2512.16243"
+      pdf: "https://arxiv.org/pdf/2512.16243"
+    selected: false
+    topic: crowd
+
+  - id: active-view-arxiv25
+    title: "Active View Selection for Scene-level Multi-view Crowd Counting and Localization with Limited Labeling Budget"
+    year: 2025
+    venue: arXiv
+    venue_full: "arXiv preprint 2509.16684"
+    kind: preprint
+    status: preprint
+    authors: ["Qi Zhang", "Bin Li", "Antoni B. Chan", "Hui Huang"]
+    citations: 0
+    links:
+      arxiv: "https://arxiv.org/abs/2509.16684"
+      pdf: "https://arxiv.org/pdf/2509.16684"
+    selected: false
+    topic: crowd
+
   - id: weak-mvcc-prcv25
-    title: "Weakly-supervised Calibration-free Multi-view Crowd Counting"
+    title: "WSCF-MVCC: Weakly-supervised Calibration-free Multi-view Crowd Counting"
     year: 2025
     venue: PRCV
     venue_full: "Chinese Conference on Pattern Recognition and Computer Vision"
     kind: conference
     status: published
+    pages: "83-98"
     authors: ["Bin Li", "Daijie Chen", "Qi Zhang"]
     corr: ["Qi Zhang"]
+    citations: 1
+    note: "LNCS 16287"
     links:
+      doi: "https://doi.org/10.1007/978-981-95-5755-4_6"
+      arxiv: "https://arxiv.org/abs/2512.02359"
       code: "https://github.com/zqyq/Weakly-MVCC"
     selected: false
     topic: crowd
@@ -101,12 +213,29 @@ papers:
     pages: "10076-10084"
     authors: ["Qi Zhang", "Zhouhang Luo", "Tao Yu", "Hui Huang"]
     corr: ["Hui Huang"]
+    citations: 1
     links:
       arxiv: "https://arxiv.org/abs/2412.11428"
       pdf: "https://arxiv.org/pdf/2412.11428"
       project: "https://vcc.tech/research/2025/VTR"
       code: "https://github.com/zqyq/VTR"
     selected: true
+    topic: 3d
+
+  - id: single-view-icig25
+    title: "Robust Single-View 3D Object Reconstruction with Stable Diffusion Generation and Farthest View Selection"
+    year: 2025
+    venue: ICIG
+    venue_full: "International Conference on Image and Graphics (LNCS)"
+    kind: conference
+    status: published
+    pages: "529-540"
+    authors: ["Zhouhang Luo", "Qian Yu", "Qi Zhang"]
+    corr: ["Qi Zhang"]
+    citations: 0
+    links:
+      doi: "https://doi.org/10.1007/978-981-95-3393-0_43"
+    selected: false
     topic: 3d
 
   - id: mvot-eccv24
@@ -118,6 +247,7 @@ papers:
     status: published
     authors: ["Qi Zhang", "Kaiyi Zhang", "Antoni B. Chan", "Hui Huang"]
     corr: ["Hui Huang"]
+    citations: 15
     links:
       arxiv: "https://arxiv.org/abs/2409.01726"
       pdf: "https://arxiv.org/pdf/2409.01726"
@@ -132,8 +262,11 @@ papers:
     venue_full: "AAAI Conference on Artificial Intelligence"
     kind: conference
     status: published
+    volume: "38"
+    pages: "7242-7250"
     authors: ["Qi Zhang", "Yunfei Gong", "Daijie Chen", "Antoni B. Chan", "Hui Huang"]
     corr: ["Hui Huang"]
+    citations: 11
     links:
       arxiv: "https://arxiv.org/abs/2405.19943"
       pdf: "https://arxiv.org/pdf/2405.19943"
@@ -150,6 +283,7 @@ papers:
     status: published
     authors: ["Guoqing Yang", "Fuyou Xue", "Qi Zhang", "Ke Xie", "Chi-Wing Fu", "Hui Huang"]
     corr: ["Hui Huang"]
+    citations: 79
     links:
       project: "https://vcc.tech/UrbanBIS"
     selected: false
@@ -166,6 +300,7 @@ papers:
     issue: "12"
     pages: "10653-10667"
     authors: ["Qi Zhang", "Antoni B. Chan"]
+    citations: 10
     links:
       doi: "https://ieeexplore.ieee.org/document/9775149"
       project: "http://visal.cs.cityu.edu.hk/research/umvcc/"
@@ -183,6 +318,7 @@ papers:
     volume: "130"
     pages: "3123-3139"
     authors: ["Qi Zhang", "Antoni B. Chan"]
+    citations: 11
     links:
       doi: "https://link.springer.com/article/10.1007/s11263-022-01685-7"
       project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
@@ -197,6 +333,7 @@ papers:
     kind: conference
     status: published
     authors: ["Qi Zhang", "Antoni B. Chan"]
+    citations: 22
     links:
       project: "http://visal.cs.cityu.edu.hk/research/cfmvcc/"
     selected: false
@@ -210,8 +347,10 @@ papers:
     kind: journal
     status: published
     volume: "130"
+    issue: "8"
     pages: "1938-1960"
     authors: ["Qi Zhang", "Antoni B. Chan"]
+    citations: 34
     links:
       doi: "https://link.springer.com/article/10.1007/s11263-022-01626-4"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
@@ -227,6 +366,7 @@ papers:
     status: published
     authors: ["Hao Zhang", "Qi Zhang", "Anh Nguyen Phuong", "Victor Lee", "Antoni B. Chan"]
     corr: ["Qi Zhang"]
+    citations: 6
     links:
       doi: "https://doi.org/10.1145/3469877.3490574"
       project: "http://visal.cs.cityu.edu.hk/research/cwd/"
@@ -242,6 +382,7 @@ papers:
     status: published
     pages: "557-567"
     authors: ["Qi Zhang", "Wei Lin", "Antoni B. Chan"]
+    citations: 103
     links:
       pdf: "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Cross-View_Cross-Scene_Multi-View_Crowd_Counting_CVPR_2021_paper.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvcs/"
@@ -256,7 +397,11 @@ papers:
     venue_full: "AAAI Conference on Artificial Intelligence"
     kind: conference
     status: published
+    volume: "34"
+    issue: "07"
+    pages: "12837-12844"
     authors: ["Qi Zhang", "Antoni B. Chan"]
+    citations: 52
     links:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/aaai20-3dmvcc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
@@ -271,6 +416,7 @@ papers:
     kind: conference
     status: published
     authors: ["Qi Zhang", "Antoni B. Chan"]
+    citations: 201
     links:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/cvpr19-wacc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
@@ -285,6 +431,7 @@ papers:
     kind: conference
     status: published
     authors: ["Qi Zhang", "Yuan Yuan", "Xiaoqiang Lu"]
+    citations: 4
     links:
       doi: "https://ieeexplore.ieee.org/abstract/document/7546396/"
     selected: false

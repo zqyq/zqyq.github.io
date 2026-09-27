@@ -31,7 +31,9 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
     calibration-free counting (PRCV&nbsp;2025) and multi-view tracking under large real-world scenes
     (CVPR&nbsp;2026). Two recent threads push the setting outward: a large synthetic benchmark that covers
     counting and localization together (IJCV&nbsp;2026), and a diffusion model that simulates crowd motion with
-    environmental conditioning and individual-group interaction (ICLR&nbsp;2026).
+    environmental conditioning and individual-group interaction (ICLR&nbsp;2026). Label cost is the bottleneck
+    in real deployments, so two further studies rank fusion models under partial labels and select the views
+    worth labeling when the budget is small.
   </p>
   <p class="small muted">Also in this group: RGB-T crowd counting with an external collaboration (ICASSP&nbsp;2026).</p>
 
@@ -46,12 +48,31 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
   </div>
   <p>
     Multi-view reconstruction is only as good as the views you feed it. We select views by the reconstruction
-    error they cause, which makes pipelines robust to view transformation (AAAI&nbsp;2025); and we work on
-    large-scale urban scene understanding, where fine-grained building instances must be recovered from
-    aerial data (SIGGRAPH&nbsp;2023, UrbanBIS).
+    error they cause, which makes pipelines robust to view transformation (AAAI&nbsp;2025), and we push the
+    opposite direction too: recovering a full object from a single image by combining stable-diffusion
+    generation with farthest-view selection (ICIG&nbsp;2025), and recovering many people&rsquo;s meshes in a
+    large scene despite occlusion. Scene-level work targets the city itself &mdash; fine-grained building
+    instance segmentation at scale (SIGGRAPH&nbsp;2023, UrbanBIS) and its extension to adaptive region
+    dividing with spatially-supervised contrastive learning &mdash; and, newest, generating multi-view
+    consistent street scenes from structure prompts (StreetDiff).
   </p>
   {%- for p in papers %}
     {%- if p.topic == "3d" %}{% include pub.html paper=p %}{% endif %}
+  {%- endfor %}
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Autonomous Driving &amp; Occupancy Forecasting</h2>
+  </div>
+  <p>
+    Driving scenes are the hardest version of the same problem: many moving agents, no calibration you can
+    trust, and predictions that must hold over time. We start from cameras only and couple 2D image evidence
+    with 3D structure to forecast how occupied space evolves (InterOCF), and generate multi-view consistent
+    street data to train and test such models.
+  </p>
+  {%- for p in papers %}
+    {%- if p.topic == "driving" %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
 </section>
 
@@ -79,8 +100,9 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
     <a class="section-more" href="/group/">Join us &rarr;</a>
   </div>
   <p>
-    We are expanding into large-scene point cloud analysis and autonomous driving, listed among my research
-    interests; representative results will be added to this page as they appear.
+    Autonomous driving and large-scene point cloud analysis are the group&rsquo;s newest lines; the
+    camera-only occupancy forecasting work above is the first result from them. Entries marked
+    <em>Preprint</em> are posted on arXiv and have not been peer-reviewed yet.
   </p>
   <p>
     Prospective Ph.D. and master&rsquo;s students with solid coding skills and an interest in geometry,

@@ -2,6 +2,7 @@
 {%- assign target = p.links.landing | default: p.links.pdf | default: p.links.arxiv | default: p.links.doi | default: p.links.project -%}
 {%- if p.status == 'accepted' -%}{%- assign status_label = 'Accepted' -%}
 {%- elsif p.status == 'to_appear' -%}{%- assign status_label = 'To appear' -%}
+{%- elsif p.status == 'preprint' -%}{%- assign status_label = 'Preprint' -%}
 {%- else -%}{%- assign status_label = '' -%}{%- endif -%}
 {%- assign authors = '' -%}
 {%- for a in p.authors -%}
@@ -25,6 +26,7 @@
     {%- if p.volume -%}<span class="biblio">{{ p.volume }}({{ p.issue }}): {{ p.pages }}</span>
     {%- elsif p.pages -%}<span class="biblio">pp. {{ p.pages }}</span>{%- endif -%}
     {%- if p.note -%}<span class="biblio">{{ p.note }}</span>{%- endif -%}
+    {%- if p.citations and p.citations > 0 -%}<span class="cites"><strong>{{ p.citations }}</strong> citations</span>{%- endif -%}
     <span class="plinks">
       {%- if p.links.pdf -%}<a href="{{ p.links.pdf }}" rel="noopener">PDF</a>{%- endif -%}
       {%- if p.links.arxiv -%}<a href="{{ p.links.arxiv }}" rel="noopener">arXiv</a>{%- endif -%}

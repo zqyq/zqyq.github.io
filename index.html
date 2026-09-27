@@ -13,6 +13,7 @@ slug: home
 {%- assign n_crowd = papers | where: "topic", "crowd" | size -%}
 {%- assign n_3d = papers | where: "topic", "3d" | size -%}
 {%- assign n_beyond = papers | where: "topic", "beyond" | size -%}
+{%- assign n_driving = papers | where: "topic", "driving" | size -%}
 
 <section class="hero">
   <img class="portrait" src="/assets/img/portrait.jpg" alt="Qi Zhang" width="132" height="165">
@@ -26,6 +27,8 @@ slug: home
     </div>
     <div class="chips">
       <a class="chip" href="mailto:{{ site.email }}">Email</a>
+      {%- if site.scholar %}<a class="chip" href="{{ site.scholar }}" rel="noopener">Google Scholar</a>{% endif %}
+      {%- if site.orcid %}<a class="chip" href="{{ site.orcid }}" rel="noopener">ORCID</a>{% endif %}
       <a class="chip" href="/publications/">Publications</a>
       <a class="chip" href="https://github.com/{{ site.github_user }}" rel="noopener">GitHub</a>
       {%- if site.linkedin %}<a class="chip" href="{{ site.linkedin }}" rel="noopener">LinkedIn</a>{% endif %}
@@ -41,11 +44,23 @@ slug: home
   This line runs from wide-area multi-view counting (CVPR&rsquo;19, IJCV&rsquo;22) through cross-scene and
   calibration-free counting (CVPR&rsquo;21, ECCV&rsquo;22), optimal-transport localization (ECCV&rsquo;24) and a
   synthetic benchmark for the field (IJCV&rsquo;26), to diffusion-based crowd simulation (ICLR&rsquo;26) and
-  multi-view crowd tracking (CVPR&rsquo;26).
+  multi-view crowd tracking (CVPR&rsquo;26). The same machinery now reaches street scenes: cross-view
+  consistent generation, camera-only 4D occupancy forecasting, and human mesh recovery at scene scale.
 </p>
 
 <div class="interests" style="margin-top:1.6rem">
   {%- for it in site.interests %}<span class="interest">{{ it }}</span>{% endfor -%}
+</div>
+
+<div class="stats">
+  <div class="stat"><b>{{ site.data.scholar.citations }}</b><span>Citations</span></div>
+  <div class="stat"><b>{{ site.data.scholar.h_index }}</b><span>h-index</span></div>
+  <div class="stat"><b>{{ site.data.scholar.i10_index }}</b><span>i10-index</span></div>
+  <div class="stat"><b>{{ n_papers }}</b><span>Publications</span></div>
+  <div class="stat"><b>{{ n_phd }}&nbsp;/&nbsp;{{ n_master }}</b><span>Ph.D. / master&rsquo;s students</span></div>
+  <div class="stat"><b>{{ n_alumni }}</b><span>Students graduated</span></div>
+  <a class="stats-src" href="{{ site.data.scholar.profile }}" rel="noopener">
+    Scholar metrics, {{ site.data.scholar.snapshot }}</a>
 </div>
 
 <section class="section">
@@ -93,6 +108,12 @@ slug: home
     <p>View-selection and reconstruction-error-guided robustness for multi-view 3D object reconstruction,
       and large-scale fine-grained urban scene understanding.</p>
     <p class="dir-count">{{ n_3d }} listed paper{%- if n_3d != 1 %}s{% endif %}</p>
+  </div>
+  <div class="dir">
+    <h3>Autonomous Driving &amp; Occupancy Forecasting</h3>
+    <p>Camera-only driving perception: predicting how occupied space evolves by coupling 2D image evidence
+      with 3D structure, and generating multi-view consistent street scenes.</p>
+    <p class="dir-count">{{ n_driving }} listed paper{%- if n_driving != 1 %}s{% endif %}</p>
   </div>
   <div class="dir">
     <h3>Multi-camera Systems &amp; Cross-domain Detection</h3>
