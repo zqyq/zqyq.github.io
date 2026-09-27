@@ -190,9 +190,16 @@ papers:
     venue: IJCAI
     venue_full: "International Joint Conference on Artificial Intelligence"
     kind: conference
-    status: accepted
-    authors: ["Mingjie Wang", "Zhuohang Li", "Qi Zhang", "Jun Zhou", "Zili Yi"]
+    status: published
+    pages: "1740-1748"
+    authors: ["Mingjie Wang", "Zhuohang Li", "Qi Zhang", "Jun Zhou", "Zili Yi", "Minglun Gong"]
     citations: 0
+    note: "Collaboration with Zhejiang Sci-Tech University; sound-guided zero-shot counting"
+    links:
+      doi: "https://doi.org/10.24963/ijcai.2026/194"
+      pdf: "https://www.ijcai.org/proceedings/2026/0194.pdf"
+      code: "https://github.com/ZSTU-CV-Lab/S2ICount"
+    thumb: /assets/img/papers/listen-count-ijcai26.jpg
     topic: beyond
 
   - id: semi-mvcc-arxiv25
