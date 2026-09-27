@@ -46,7 +46,7 @@ interests:
   - Large-scene Point Cloud Analysis
 
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title/
 exclude:
   - README.md
   - group/js/jquery-3.6.0.min.js
