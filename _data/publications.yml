@@ -323,7 +323,7 @@ papers:
       code: "https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS"
     thumb: /assets/img/papers/view-sync-tnnls23.jpg
     selected: false
-    topic: beyond
+    topic: crowd
 
   - id: 3d-counting-ijcv22
     title: "3D Crowd Counting via Geometric Attention-guided Multi-View Fusion"

@@ -33,7 +33,8 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
     counting and localization together (IJCV&nbsp;2026), and a diffusion model that simulates crowd motion with
     environmental conditioning and individual-group interaction (ICLR&nbsp;2026). Label cost is the bottleneck
     in real deployments, so two further studies rank fusion models under partial labels and select the views
-    worth labeling when the budget is small.
+    worth labeling when the budget is small. None of it holds unless the cameras share a clock, which is why
+    single-frame deep view synchronization and its dataset (TNNLS&nbsp;2023) sit at the bottom of this stack.
   </p>
   <p class="small muted">Also in this group: RGB-T crowd counting with an external collaboration (ICASSP&nbsp;2026).</p>
 
@@ -77,14 +78,13 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
 
 <section class="section">
   <div class="section-head">
-    <h2>Multi-camera Systems &amp; Detection Beyond Crowds</h2>
+    <h2>Detection Beyond Crowds</h2>
   </div>
   <p>
-    Real deployments are unsynchronized and uncalibrated, so we also study the plumbing: single-frame deep view
-    synchronization for multicamera surveillance (TNNLS&nbsp;2023), with the accompanying dataset. The same
-    fusion machinery transfers to other counting and detection targets &mdash; Chinese white dolphins in the
-    wild (ACM&nbsp;MMAsia&nbsp;2021) and tri-plane multi-view counting of silkie chickens
-    (ChinaMM&nbsp;2026, an undergraduate final-year project).
+    The fusion machinery transfers to other counting and detection targets: Chinese white dolphins in the wild
+    (ACM&nbsp;MMAsia&nbsp;2021), which began as a conservation request, and tri-plane multi-view counting of
+    silkie chickens (ChinaMM&nbsp;2026, an undergraduate final-year project). The 2016 hyperspectral
+    de-fencing paper is where the list begins.
   </p>
   {%- for p in papers %}
     {%- if p.topic == "beyond" %}
