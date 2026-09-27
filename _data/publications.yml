@@ -93,7 +93,7 @@ papers:
       pdf: "https://arxiv.org/pdf/2609.09890"
     thumb: /assets/img/papers/streetdiff-arxiv26.jpg
     selected: true
-    topic: 3d
+    topic: driving
 
   - id: interocf-arxiv26
     title: "InterOCF: Spatio-Temporal 2D-3D Interaction for Camera-Only 4D Occupancy Forecasting"
