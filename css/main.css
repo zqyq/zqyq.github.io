@@ -336,13 +336,13 @@ img { max-width: 100%; height: auto; }
 .cites strong { color: var(--copper); font-weight: 700; }
 
 .stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 1rem 1.2rem;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--paper-raised);
-  padding: 1rem 1.3rem;
+  padding: 1.1rem 1.3rem;
   margin-top: 1.6rem;
 }
 .stat b {
@@ -364,7 +364,6 @@ img { max-width: 100%; height: auto; }
 .evidence-note a { color: var(--muted); border-bottom: 1px solid var(--line); }
 .evidence-note a:hover { color: var(--copper); }
 
-.stats-src { font-size: 0.72rem; color: var(--muted); align-self: flex-end; margin-left: auto; }
 
 .plinks { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-left: auto; }
 .plinks a {
