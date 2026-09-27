@@ -19,6 +19,7 @@ papers:
       landing: "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.html"
       pdf: "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.pdf"
       code: "https://github.com/zqyq/MVTrackTrans"
+    thumb: /assets/img/papers/mvtracktrans-cvpr26.jpg
     selected: true
     topic: crowd
 
@@ -39,6 +40,7 @@ papers:
       doi: "https://doi.org/10.1007/s11263-026-02778-3"
       arxiv: "https://arxiv.org/abs/2603.23956"
       code: "https://github.com/zqyq/SynMVCrowd"
+    thumb: /assets/img/papers/synmvcrowd-ijcv26.jpg
     selected: true
     topic: crowd
 
@@ -56,6 +58,7 @@ papers:
       landing: "https://iclr.cc/virtual/2026/poster/10011733"
       arxiv: "https://arxiv.org/abs/2603.23874"
       code: "https://github.com/zqyq/EnvSocial-Diff"
+    thumb: /assets/img/papers/envsocial-diff-iclr26.jpg
     selected: true
     topic: crowd
 
@@ -72,6 +75,7 @@ papers:
     citations: 0
     links:
       arxiv: "https://arxiv.org/abs/2509.17079"
+    thumb: /assets/img/papers/rgbt-dualmod-icassp26.jpg
     selected: false
     topic: crowd
 
@@ -87,6 +91,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2609.09890"
       pdf: "https://arxiv.org/pdf/2609.09890"
+    thumb: /assets/img/papers/streetdiff-arxiv26.jpg
     selected: true
     topic: 3d
 
@@ -102,6 +107,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2607.24431"
       pdf: "https://arxiv.org/pdf/2607.24431"
+    thumb: /assets/img/papers/interocf-arxiv26.jpg
     selected: true
     topic: driving
 
@@ -117,6 +123,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2607.24302"
       pdf: "https://arxiv.org/pdf/2607.24302"
+    thumb: /assets/img/papers/mesh-recovery-arxiv26.jpg
     selected: false
     topic: 3d
 
@@ -132,6 +139,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2609.19631"
       pdf: "https://arxiv.org/pdf/2609.19631"
+    thumb: /assets/img/papers/urban-buildings-arxiv26.jpg
     selected: false
     topic: 3d
 
@@ -148,6 +156,7 @@ papers:
     note: "Undergraduate final-year project"
     links:
       arxiv: "https://arxiv.org/abs/2509.24329"
+    thumb: /assets/img/papers/tp-mvcc-chinamm26.jpg
     selected: false
     topic: beyond
 
@@ -164,6 +173,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2512.16243"
       pdf: "https://arxiv.org/pdf/2512.16243"
+    thumb: /assets/img/papers/semi-mvcc-arxiv25.jpg
     selected: false
     topic: crowd
 
@@ -179,6 +189,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2509.16684"
       pdf: "https://arxiv.org/pdf/2509.16684"
+    thumb: /assets/img/papers/active-view-arxiv25.jpg
     selected: false
     topic: crowd
 
@@ -198,6 +209,7 @@ papers:
       doi: "https://doi.org/10.1007/978-981-95-5755-4_6"
       arxiv: "https://arxiv.org/abs/2512.02359"
       code: "https://github.com/zqyq/Weakly-MVCC"
+    thumb: /assets/img/papers/weak-mvcc-prcv25.jpg
     selected: false
     topic: crowd
 
@@ -219,6 +231,7 @@ papers:
       pdf: "https://arxiv.org/pdf/2412.11428"
       project: "https://vcc.tech/research/2025/VTR"
       code: "https://github.com/zqyq/VTR"
+    thumb: /assets/img/papers/vtr-aaai25.jpg
     selected: true
     topic: 3d
 
@@ -252,6 +265,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2409.01726"
       pdf: "https://arxiv.org/pdf/2409.01726"
       project: "https://vcc.tech/research/2024/MVOT"
+    thumb: /assets/img/papers/mvot-eccv24.jpg
     selected: true
     topic: crowd
 
@@ -271,6 +285,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2405.19943"
       pdf: "https://arxiv.org/pdf/2405.19943"
       project: "https://vcc.tech/research/2024/MVD"
+    thumb: /assets/img/papers/mvd-aaai24.jpg
     selected: false
     topic: crowd
 
@@ -305,6 +320,7 @@ papers:
       doi: "https://ieeexplore.ieee.org/document/9775149"
       project: "http://visal.cs.cityu.edu.hk/research/umvcc/"
       code: "https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS"
+    thumb: /assets/img/papers/view-sync-tnnls23.jpg
     selected: false
     topic: beyond
 
@@ -336,6 +352,7 @@ papers:
     citations: 22
     links:
       project: "http://visal.cs.cityu.edu.hk/research/cfmvcc/"
+    thumb: /assets/img/papers/cfmvcc-eccv22.jpg
     selected: false
     topic: crowd
 
@@ -370,6 +387,7 @@ papers:
     links:
       doi: "https://doi.org/10.1145/3469877.3490574"
       project: "http://visal.cs.cityu.edu.hk/research/cwd/"
+    thumb: /assets/img/papers/dolphin-mmasia21.jpg
     selected: false
     topic: beyond
 
@@ -387,6 +405,7 @@ papers:
       pdf: "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Cross-View_Cross-Scene_Multi-View_Crowd_Counting_CVPR_2021_paper.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvcs/"
       dataset: "http://visal.cs.cityu.edu.hk/research/cvcs_dataset/"
+    thumb: /assets/img/papers/cvcs-cvpr21.jpg
     selected: true
     topic: crowd
 
@@ -405,6 +424,7 @@ papers:
     links:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/aaai20-3dmvcc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
+    thumb: /assets/img/papers/3d-mvcc-aaai20.jpg
     selected: false
     topic: crowd
 
@@ -420,6 +440,7 @@ papers:
     links:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/cvpr19-wacc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
+    thumb: /assets/img/papers/wacc-cvpr19.jpg
     selected: true
     topic: crowd
 

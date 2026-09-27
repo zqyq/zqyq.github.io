@@ -14,6 +14,12 @@
   {%- else -%}{%- assign authors = authors | append: ', ' | append: piece -%}{%- endif -%}
 {%- endfor -%}
 <div class="paper">
+  {%- if p.thumb -%}
+  <a class="paper-thumb" href="{%- if target -%}{{ target }}{%- else -%}{{ p.thumb }}{%- endif -%}" rel="noopener">
+    <img src="{{ p.thumb }}" alt="Figure from {{ p.title }}" loading="lazy" width="184" height="116">
+  </a>
+  {%- endif -%}
+  <div class="paper-body">
   <div class="paper-title">
     {%- if target -%}<a href="{{ target }}" rel="noopener">{{ p.title }}</a>
     {%- else -%}{{ p.title }} <span class="tbd">link pending</span>{%- endif -%}
@@ -36,5 +42,6 @@
       {%- if p.links.project -%}<a href="{{ p.links.project }}" rel="noopener">Project</a>{%- endif -%}
       {%- if p.links.video -%}<a href="{{ p.links.video }}" rel="noopener">Video</a>{%- endif -%}
     </span>
+  </div>
   </div>
 </div>
