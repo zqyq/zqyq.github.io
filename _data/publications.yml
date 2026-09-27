@@ -248,6 +248,7 @@ papers:
     citations: 0
     links:
       doi: "https://doi.org/10.1007/978-981-95-3393-0_43"
+    thumb: /assets/img/papers/single-view-icig25.jpg
     selected: false
     topic: 3d
 
@@ -458,5 +459,6 @@ papers:
     citations: 4
     links:
       doi: "https://ieeexplore.ieee.org/abstract/document/7546396/"
+    thumb: /assets/img/papers/de-fencing-cits16.jpg
     selected: false
     topic: beyond
