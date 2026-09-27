@@ -9,11 +9,15 @@ slug: home
 {%- assign n_phd = site.data.members.phd | size -%}
 {%- assign n_master = site.data.members.master | size -%}
 {%- assign n_alumni = site.data.members.alumni | size -%}
-{%- assign n_papers = papers | size -%}
+{%- assign n_students = n_phd | plus: n_master -%}
+{%- assign n_grants = site.data.profile.grants | where: "role", "PI" | size -%}
+{%- assign n_conf = papers | where: "kind", "conference" | size -%}
+{%- assign n_journal = papers | where: "kind", "journal" | size -%}
+{%- assign n_peer = n_conf | plus: n_journal -%}
 {%- assign n_crowd = papers | where: "topic", "crowd" | size -%}
 {%- assign n_3d = papers | where: "topic", "3d" | size -%}
-{%- assign n_beyond = papers | where: "topic", "beyond" | size -%}
 {%- assign n_driving = papers | where: "topic", "driving" | size -%}
+{%- assign n_beyond = papers | where: "topic", "beyond" | size -%}
 
 <section class="hero">
   <img class="portrait" src="/assets/img/portrait.jpg" alt="Qi Zhang" width="132" height="165">
@@ -38,87 +42,83 @@ slug: home
 </section>
 
 <p class="lede">
-  I lead the <strong>iMUSE Lab</strong> at Shenzhen University. Our work asks how a fleet of cameras can
-  understand crowds in large, real-world scenes &mdash; counting, localizing, tracking and simulating people &mdash;
-  and how multi-view 3D reconstruction can be made robust to the viewpoints that produce it.
-  This line runs from wide-area multi-view counting (CVPR&rsquo;19, IJCV&rsquo;22) through cross-scene and
-  calibration-free counting (CVPR&rsquo;21, ECCV&rsquo;22), optimal-transport localization (ECCV&rsquo;24) and a
-  synthetic benchmark for the field (IJCV&rsquo;26), to diffusion-based crowd simulation (ICLR&rsquo;26) and
-  multi-view crowd tracking (CVPR&rsquo;26). The same machinery now reaches street scenes: cross-view
-  consistent generation, camera-only 4D occupancy forecasting, and human mesh recovery at scene scale.
+  I founded and have led the <strong>iMUSE Lab</strong> at Shenzhen University since 2022. The lab studies what a
+  network of cameras can know about a large, moving scene: how many people are there, where each of them is, where
+  they are going, and what happens next. The programme grew out of my doctoral work on wide-area multi-view counting
+  and has since taken its own direction &mdash; calibration-free counting (ECCV&rsquo;22) and optimal-transport
+  localization (ECCV&rsquo;24) gave way to a synthetic benchmark for the field (IJCV&rsquo;26), diffusion-based crowd
+  simulation (ICLR&rsquo;26) and multi-view tracking (CVPR&rsquo;26); the current frontier is 4D occupancy
+  forecasting and generating the street scenes that train it.
 </p>
 
-<div class="interests" style="margin-top:1.6rem">
+<div class="interests" style="margin-top:1.5rem">
   {%- for it in site.interests %}<span class="interest">{{ it }}</span>{% endfor -%}
 </div>
 
-<div class="stats">
-  <div class="stat"><b>{{ site.data.scholar.citations }}</b><span>Citations</span></div>
-  <div class="stat"><b>{{ site.data.scholar.h_index }}</b><span>h-index</span></div>
-  <div class="stat"><b>{{ site.data.scholar.i10_index }}</b><span>i10-index</span></div>
-  <div class="stat"><b>{{ n_papers }}</b><span>Publications</span></div>
-  <div class="stat"><b>{{ n_phd }}&nbsp;/&nbsp;{{ n_master }}</b><span>Ph.D. / master&rsquo;s students</span></div>
-  <div class="stat"><b>{{ n_alumni }}</b><span>Students graduated</span></div>
-  <a class="stats-src" href="{{ site.data.scholar.profile }}" rel="noopener">
-    Scholar metrics, {{ site.data.scholar.snapshot }}</a>
-</div>
-
-<section class="section">
-  <div class="section-head">
-    <h2>News</h2>
-    <a class="section-more" href="/blog/">All updates &rarr;</a>
+<section class="evidence">
+  <div class="stats">
+    <div class="stat"><b>{{ n_students }}</b><span>Graduate researchers now</span></div>
+    <div class="stat"><b>{{ n_phd }}</b><span>Ph.D. students</span></div>
+    <div class="stat"><b>{{ n_alumni }}</b><span>Students graduated</span></div>
+    <div class="stat"><b>{{ n_grants }}</b><span>Grants as PI</span></div>
+    <div class="stat"><b>{{ n_peer }}</b><span>Peer-reviewed papers</span></div>
+    <div class="stat"><b>{{ papers | size }}</b><span>Publications listed</span></div>
   </div>
-  <ul class="news">
-    {%- for post in site.posts limit: 5 %}
-    <li>
-      <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
-      <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
-    </li>
-    {%- endfor %}
-  </ul>
+  <p class="evidence-note">
+    {{ site.lab }} was founded and is led by me: {{ n_phd }} Ph.D. and {{ n_master }} master&rsquo;s students,
+    {{ n_alumni }} alumni now in Ph.D. programs or industry, and group papers at CVPR, ICLR, IJCV, ECCV and AAAI
+    within the last twelve months. Funded as PI by an NSFC Young Scientists Fund (300K CNY) and a Shenzhen Young
+    Talents Start-Up Grant (3M CNY).
+    <a href="{{ site.data.scholar.profile }}" rel="noopener">{{ site.data.scholar.citations }} citations</a>
+    (Google Scholar, {{ site.data.scholar.snapshot }}).
+  </p>
 </section>
 
 <section class="section">
   <div class="section-head">
     <h2>Research</h2>
-    <a class="section-more" href="/research/">Details &rarr;</a>
+    <a class="section-more" href="/research/">Full agenda &rarr;</a>
   </div>
-  <div class="dir">
-    <h3>Multi-view Crowd Analysis &amp; Simulation</h3>
-<p>Counting, detection, localization, tracking and simulation of people in large scenes seen by many
-      cameras &mdash; getting unsynchronized streams onto one clock first, then working without per-scene
-      calibration and with benchmarks the community can build on.</p>
-    <p class="dir-count">{{ n_crowd }} listed paper{%- if n_crowd != 1 %}s{% endif %}</p>
+
+  <div class="dir dir--core">
+    <h3>Multi-view crowd intelligence</h3>
+    <p>Counting, detection, localization, tracking and simulation of people seen by many cameras at once &mdash;
+      fused onto one ground plane, without per-scene calibration, across views and scenes, and with as little
+      labeled data as possible.</p>
+    <p class="dir-count">Core programme &middot; {{ n_crowd }} papers</p>
   </div>
-  <div class="dir">
-    <h3>3D Reconstruction, Generation &amp; Scene Understanding</h3>
-    <p>Reconstruction-error-guided view selection for multi-view 3D objects, completing a shape from a
-      single image with a diffusion prior, recovering many people&rsquo;s meshes under occlusion, and
-      segmenting building instances at city scale.</p>
-    <p class="dir-count">{{ n_3d }} listed paper{%- if n_3d != 1 %}s{% endif %}</p>
+
+  <div class="dir dir--core">
+    <h3>Dynamic 3D scene understanding</h3>
+    <p>Choosing and trusting views: reconstruction-error-guided selection, completing a shape from a single image
+      with a diffusion prior, recovering many people&rsquo;s meshes under occlusion, and segmenting building
+      instances at city scale.</p>
+    <p class="dir-count">Core programme &middot; {{ n_3d }} papers</p>
   </div>
-  <div class="dir">
-    <h3>Autonomous Driving &amp; Occupancy Forecasting</h3>
-    <p>Camera-only driving perception: predicting how occupied space evolves by coupling 2D image evidence
-      with 3D structure, and generating multi-view consistent street scenes.</p>
-    <p class="dir-count">{{ n_driving }} listed paper{%- if n_driving != 1 %}s{% endif %}</p>
+
+  <div class="dir dir--emerging">
+    <h3>Emerging: street scenes and 4D occupancy</h3>
+    <p>Camera-only forecasting of how occupied space evolves, and cross-view consistent generation of the street
+      scenes that train and test such models.</p>
+    <p class="dir-count">{{ n_driving }} papers &middot; preprints, in progress</p>
   </div>
-  <div class="dir">
-    <h3>Detection Beyond Crowds</h3>
-    <p>The same fusion machinery pointed at other targets &mdash; wildlife in the open sea and poultry in a
-      field &mdash; plus the optics work this line began from.</p>
-    <p class="dir-count">{{ n_beyond }} listed paper{%- if n_beyond != 1 %}s{% endif %}</p>
+
+  <div class="dir dir--other">
+    <h3>Other applications &amp; collaborations</h3>
+    <p>The same fusion machinery pointed at conservation and agriculture &mdash; dolphins in the open sea, poultry
+      in a field &mdash; and the hyperspectral work this line began from.</p>
+    <p class="dir-count">{{ n_beyond }} papers</p>
   </div>
 </section>
 
 <section class="section">
   <div class="section-head">
     <h2>Selected Publications</h2>
-    <a class="section-more" href="/publications/">All {{ n_papers }} papers &rarr;</a>
+    <a class="section-more" href="/publications/">All {{ papers | size }} papers &rarr;</a>
   </div>
   <p class="small muted" style="margin-bottom:.8rem">
+    Peer-reviewed work only; preprints appear on the publications page.
     Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
-    Full list with links to code and datasets is on the <a href="/publications/">publications</a> page.
   </p>
   {%- for p in selected %}
     {% include pub.html paper=p %}
@@ -131,13 +131,13 @@ slug: home
     <a class="section-more" href="/group/">iMUSE Lab &rarr;</a>
   </div>
   <p>
-    iMUSE Lab currently has <strong>{{ n_phd }} Ph.D. and {{ n_master }} master&rsquo;s students</strong>;
-    {{ n_alumni }} graduates have moved on to Ph.D. programs or industry.
-    We recruit self-motivated Ph.D. and master&rsquo;s students every year, and welcome visiting undergraduates.
+    {{ site.lab }} takes Ph.D. and master&rsquo;s students every year and hosts visiting undergraduates.
+    Current openings are in crowd simulation and generation, multi-view 3D reconstruction, and 4D occupancy
+    forecasting.
   </p>
   <p class="chips">
     <a class="chip" href="/group/">Students &amp; alumni</a>
-    <a class="chip" href="/group/CFS/CFS2024.pdf">Call for Students (PDF)</a>
+    <a class="chip" href="/group/#recruiting">What we look for</a>
     <a class="chip" href="mailto:{{ site.email }}">Apply / inquire</a>
   </p>
 </section>
@@ -156,4 +156,19 @@ slug: home
     Program committee: {{ site.data.profile.service_conferences | map: "name" | join: ", " }}.
     Regular journal reviewer for IJCV, TIP, TNNLS, TMM, TCSVT, Information Fusion and others.
   </p>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>News</h2>
+    <a class="section-more" href="/blog/">All updates &rarr;</a>
+  </div>
+  <ul class="news">
+    {%- for post in site.posts limit: 3 %}
+    <li>
+      <span class="news-date">{{ post.date | date: "%Y.%m" }}</span>
+      <span class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+    </li>
+    {%- endfor %}
+  </ul>
 </section>

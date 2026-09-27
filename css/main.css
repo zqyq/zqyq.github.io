@@ -286,6 +286,12 @@ img { max-width: 100%; height: auto; }
 .paper-thumb:hover { border-color: var(--copper-soft); }
 .paper-body { flex: 1 1 auto; min-width: 0; }
 
+.paper--archive { gap: 0.9rem; padding: 0.62rem 0; }
+.paper--archive .paper-thumb { flex-basis: 140px; height: 88px; }
+.paper--archive .paper-title { font-size: 0.97rem; line-height: 1.45; }
+.paper--archive .paper-authors { font-size: 0.84rem; }
+.paper--archive .paper-meta { margin-top: 0.3rem; gap: 0.45rem; }
+
 .paper-title {
   font-size: 1.02rem;
   font-weight: 600;
@@ -353,6 +359,11 @@ img { max-width: 100%; height: auto; }
   letter-spacing: 0.09em;
   color: var(--muted);
 }
+.evidence { margin-top: 1.9rem; }
+.evidence-note { font-size: 0.86rem; color: var(--muted); line-height: 1.65; margin-top: 0.85rem; }
+.evidence-note a { color: var(--muted); border-bottom: 1px solid var(--line); }
+.evidence-note a:hover { color: var(--copper); }
+
 .stats-src { font-size: 0.72rem; color: var(--muted); align-self: flex-end; margin-left: auto; }
 
 .plinks { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-left: auto; }
@@ -443,8 +454,28 @@ img { max-width: 100%; height: auto; }
 .dir p { font-size: 0.95rem; }
 .dir .dir-count { font-size: 0.76rem; color: var(--muted); }
 
+.agenda-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-weight: 700;
+  color: var(--copper);
+  margin: 1.1rem 0 0.1rem;
+}
+
+.dir--core h3 { font-size: 1.3rem; }
+.dir--core p { font-size: 1rem; }
+.dir--emerging { border-left-color: var(--copper); background: rgba(163, 84, 31, 0.035); }
+.dir--other { background: transparent; border-style: dashed; border-left: 3px solid var(--line); padding: 0.85rem 1.1rem; }
+.dir--other h3 { font-size: 1.02rem; color: var(--navy-soft); }
+.dir--other p { font-size: 0.9rem; color: var(--muted); }
+.dir--other .dir-count { font-size: 0.74rem; }
+
 
 /* ---------- group ---------- */
+
+.pi-card { display: flex; gap: 1.4rem; align-items: flex-start; }
+.pi-card img { width: 224px; height: 280px; object-fit: cover; object-position: top center; border: 1px solid var(--line); border-radius: 3px; }
 
 .member-grid {
   display: grid;
@@ -515,6 +546,7 @@ img { max-width: 100%; height: auto; }
   .hero-name { font-size: 1.65rem; }
   .plinks { margin-left: 0; }
   .member-grid { grid-template-columns: repeat(2, 1fr); }
+  .pi-card { flex-direction: column; }
   .paper { flex-direction: column; }
   .paper-thumb { flex: none; width: 100%; height: 158px; }
   .news li { flex-direction: column; gap: 0.1rem; }

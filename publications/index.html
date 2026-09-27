@@ -21,13 +21,15 @@ description: Publications of Qi Zhang, multi-view crowd analysis and simulation,
 
 {%- assign groups = papers | group_by: "year" | sort: "name" | reverse -%}
 {%- for g in groups %}
+  {%- assign pre = g.items | where: "kind", "preprint" | size -%}
+  {%- assign peer = g.size | minus: pre -%}
   <div class="year-head">
     <h3>{{ g.name }}</h3>
     <span class="rule"></span>
-    <span class="count">{{ g.size }} {%- if g.size == 1 %} paper{%- else %} papers{% endif %}</span>
+    <span class="count">{{ peer }} peer-reviewed{%- if pre > 0 %} &middot; {{ pre }} preprint{%- if pre > 1 %}s{% endif %}{%- endif -%}</span>
   </div>
   {%- for p in g.items %}
-    {% include pub.html paper=p %}
+    {% include pub.html paper=p archive=true %}
   {%- endfor %}
 {%- endfor %}
 

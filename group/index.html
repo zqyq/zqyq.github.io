@@ -2,38 +2,68 @@
 layout: default
 title: Group
 slug: group
-description: iMUSE Lab — intelligent multi-sensing research at Shenzhen University. Members, student publications and openings.
+description: iMUSE Lab — intelligent multi-sensing research at Shenzhen University. Founded and led by Qi Zhang since 2022. Members, group publications and openings.
 ---
 
 {%- assign papers = site.data.publications.papers -%}
 {%- assign picks = "mvtracktrans-cvpr26,synmvcrowd-ijcv26,envsocial-diff-iclr26,rgbt-dualmod-icassp26,tp-mvcc-chinamm26,streetdiff-arxiv26,interocf-arxiv26,mesh-recovery-arxiv26,urban-buildings-arxiv26,semi-mvcc-arxiv25,active-view-arxiv25,weak-mvcc-prcv25,vtr-aaai25,single-view-icig25,mvot-eccv24,mvd-aaai24" | split: "," -%}
+{%- assign students = "" -%}
+{%- for m in site.data.members.phd -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
+{%- for m in site.data.members.master -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
+{%- for m in site.data.members.alumni -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
+{%- assign students = students | append: ",Sirui Chen,Hongtao Chen," | split: "," -%}
 
 <h1 class="hero-name" style="padding-top:2.6rem">{{ site.lab }}</h1>
 <p class="muted" style="margin-top:.4rem">
   intelligent MUlti-Sensing lab &mdash; where &ldquo;MUSE&rdquo; also means inspiration.
 </p>
 
+<p style="margin-top:1.2rem">
+  iMUSE Lab is a computer vision group at Shenzhen University, <strong>founded in 2022 and led by
+  {{ site.name }} {{ site.name_cn }}</strong>. We study what a network of cameras can know about a large, moving
+  scene: crowd counting, localization, tracking and simulation; multi-view 3D reconstruction and generation; and,
+  newest, camera-only 4D occupancy forecasting.
+</p>
+<p>
+  The lab has <strong>{{ site.data.members.phd | size }} Ph.D. and {{ site.data.members.master | size }}
+  master&rsquo;s students</strong>. The {{ site.data.members.alumni | size }} who have graduated went to Ph.D.
+  programs (Shenzhen University, NJUPT) or to Huawei, Bilibili, Qihoo&nbsp;360 and Alibaba&rsquo;s Linxi Games.
+</p>
+
 <img src="/group/photos/GroupPhotos/2025.jpg" alt="iMUSE Lab group photo, 2025"
      style="width:100%;border:1px solid var(--line);border-radius:3px;margin:1.6rem 0 .4rem" loading="lazy">
 <p class="small muted">Group photo, 2025.</p>
 
-<p style="margin-top:1.2rem">
-  We are a research group dedicated to solving real-world problems, benefiting people and the community, and
-  broadening the knowledge edge of computer vision, graphics and AI &mdash; currently focused on crowd analysis
-  and simulation, 3D vision, 3D reconstruction and large-scale scene understanding.
-  {{ site.data.members.phd | size }} Ph.D. and {{ site.data.members.master | size }} master&rsquo;s students
-  are with the group, and {{ site.data.members.alumni | size }} graduates have moved on to
-  <a href="https://www.szu.edu.cn/" rel="noopener">SZU</a>, industry and other programs.
-</p>
+<section class="section">
+  <div class="section-head">
+    <h2>What the group has produced</h2>
+    <a class="section-more" href="/publications/">All papers &rarr;</a>
+  </div>
+  <p class="small muted" style="margin-bottom:.6rem">
+    Papers with group members as first author or key contributor; bold marks the group members.
+  </p>
+  {%- for p in papers %}
+    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
+  {%- endfor %}
+</section>
 
 <section class="section">
   <div class="section-head"><h2>Principal Investigator</h2></div>
-  <div class="member-grid" style="grid-template-columns:minmax(0,14rem)">
+  <div class="pi-card">
     <a class="member" href="/">
       <img src="/assets/img/portrait.jpg" alt="Qi Zhang" loading="lazy" width="224" height="280">
-      <div class="member-name">Qi Zhang 张琦</div>
-      <div class="member-meta">{{ site.position }}<br>PI since 2022</div>
     </a>
+    <div>
+      <div class="member-name" style="text-align:left;font-size:1.05rem">{{ site.name }} {{ site.name_cn }}</div>
+      <p class="small muted" style="margin-top:.3rem">
+        {{ site.position }}, Shenzhen University. Ph.D. and postdoctoral research at City University of Hong Kong
+        (VISAL lab), then Distinguished Associate Researcher at Guangming Lab before founding {{ site.lab }} in 2022.
+      </p>
+      <p class="chips" style="margin-top:.6rem">
+        <a class="chip" href="/about/">Full profile</a>
+        <a class="chip" href="/cv/">CV</a>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -83,34 +113,25 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
   </table>
 </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2>Publications with Group Members</h2>
-    <a class="section-more" href="/publications/">All papers &rarr;</a>
-  </div>
-  <p class="small muted" style="margin-bottom:.6rem">
-    Papers with group members as first author or key contributor; bold marks the group members.
-  </p>
-  {%- assign students = "" -%}
-  {%- for m in site.data.members.phd -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
-  {%- for m in site.data.members.master -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
-  {%- for m in site.data.members.alumni -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
-  {%- assign students = students | append: ",Sirui Chen,Hongtao Chen," | split: "," -%}
-  {%- for p in papers %}
-    {%- if picks contains p.id %}{% include pub.html paper=p bold=students %}{% endif %}
-  {%- endfor %}
-</section>
-
-<section class="section">
+<section class="section" id="recruiting">
   <div class="section-head"><h2>Join iMUSE</h2></div>
   <p>
-    We recruit Ph.D. and master&rsquo;s students each year, and host visiting undergraduates.
-    Recent calls for students:
+    We take Ph.D. and master&rsquo;s students every year, and host visiting undergraduates who want a project that
+    ends in something published. Prospective students normally join one of three efforts:
+    <strong>crowd simulation and generation</strong>, <strong>multi-view 3D reconstruction</strong>, or
+    <strong>4D occupancy forecasting from cameras only</strong>.
+  </p>
+  <p>
+    What matters to us: you can read a paper and reproduce part of it, you are comfortable with PyTorch and
+    geometry, and you are willing to ship code and data with whatever you write. If that describes you, write to
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> with a transcript, one project you are proud of, and
+    which of the three above you want to work on.
   </p>
   <p class="chips">
-    <a class="chip" href="/group/CFS/CFS2024.pdf">Call for Students 2024 (PDF)</a>
-    <a class="chip" href="/group/CFS/CFS2023.pdf">Call for Students 2023 (PDF)</a>
     <a class="chip" href="mailto:{{ site.email }}">Write to me</a>
+    <a class="chip" href="/research/">Research agenda</a>
+    <a class="chip" href="/group/CFS/CFS2024.pdf">Earlier call (2024, PDF)</a>
+    <a class="chip" href="/group/CFS/CFS2023.pdf">Earlier call (2023, PDF)</a>
   </p>
 </section>
 

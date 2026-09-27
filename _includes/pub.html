@@ -14,7 +14,7 @@
   {%- elsif forloop.last -%}{%- assign authors = authors | append: ' and ' | append: piece -%}
   {%- else -%}{%- assign authors = authors | append: ', ' | append: piece -%}{%- endif -%}
 {%- endfor -%}
-<div class="paper">
+<div class="paper{% if include.archive %} paper--archive{% endif %}">
   {%- if p.thumb -%}
   <a class="paper-thumb" href="{%- if target -%}{{ target }}{%- else -%}{{ p.thumb }}{%- endif -%}" rel="noopener">
     <img src="{{ p.thumb }}" alt="Figure from {{ p.title }}" loading="lazy" width="184" height="116">
@@ -30,7 +30,8 @@
     <span class="badge{% if p.kind == 'journal' %} badge--journal{% endif %}">{{ p.venue }} {{ p.year }}</span>
     {%- if status_label != '' -%}<span class="badge badge--status">{{ status_label }}</span>{%- endif -%}
     {%- if p.ccf -%}<span class="badge">CCF-{{ p.ccf }}</span>{%- endif -%}
-    {%- if p.volume -%}<span class="biblio">{{ p.volume }}({{ p.issue }}): {{ p.pages }}</span>
+    {%- if p.volume and p.issue -%}<span class="biblio">{{ p.volume }}({{ p.issue }}){%- if p.pages %}: {{ p.pages }}{%- endif -%}</span>
+    {%- elsif p.volume -%}<span class="biblio">{{ p.volume }}{%- if p.pages %}: {{ p.pages }}{%- endif -%}</span>
     {%- elsif p.pages -%}<span class="biblio">pp. {{ p.pages }}</span>{%- endif -%}
     {%- if p.note -%}<span class="biblio">{{ p.note }}</span>{%- endif -%}
     {%- if p.citations and p.citations > 0 -%}<span class="cites"><strong>{{ p.citations }}</strong> citations</span>{%- endif -%}

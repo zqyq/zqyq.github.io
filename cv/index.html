@@ -50,13 +50,17 @@ description: Curriculum vitae of Qi Zhang, Associate Professor at Shenzhen Unive
 
 <section class="section">
   <div class="section-head"><h2>Publications</h2></div>
+  {%- assign n_conf = papers | where: "kind", "conference" | size -%}
+  {%- assign n_journal = papers | where: "kind", "journal" | size -%}
+  {%- assign n_pre = papers | where: "kind", "preprint" | size -%}
   <p class="small muted" style="margin-bottom:.6rem">
-    {{ papers | size }} peer-reviewed papers. Bold = my name; * = corresponding author.
+    {{ n_conf }} conference and {{ n_journal }} journal papers, plus {{ n_pre }} preprints.
+    Bold = my name; * = corresponding author.
   </p>
   {%- assign groups = papers | group_by: "year" | sort: "name" | reverse -%}
   {%- for g in groups %}
     <div class="year-head"><h3>{{ g.name }}</h3><span class="rule"></span></div>
-    {%- for p in g.items %}{% include pub.html paper=p %}{% endfor -%}
+    {%- for p in g.items %}{% include pub.html paper=p archive=true %}{% endfor -%}
   {%- endfor %}
 </section>
 

@@ -2,7 +2,7 @@
 layout: default
 title: Research
 slug: research
-description: Research directions of Qi Zhang — multi-view crowd analysis and simulation, 3D reconstruction and scene understanding, multi-camera systems.
+description: The research agenda of iMUSE Lab — multi-view crowd intelligence, dynamic 3D scene understanding, and emerging work on street scenes and 4D occupancy forecasting.
 ---
 
 {%- assign papers = site.data.publications.papers -%}
@@ -10,34 +10,41 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
 <h1 class="hero-name" style="padding-top:2.6rem">Research</h1>
 
 <p class="lede" style="margin-top:1.2rem">
-  A camera network is the most scalable sensor for public space. We study what it can measure &mdash; how many,
-  where, who is moving where, and what happens next &mdash; when the scene is large, the cameras are many,
-  and the calibration you would like to have is exactly what you do not have.
+  Since founding the iMUSE Lab at Shenzhen University in 2022, our work has pursued one question with several
+  answers: <strong>what can a network of cameras know about a large, moving scene?</strong> We study scenes that are
+  too big, too crowded, or too badly instrumented for a single viewpoint &mdash; and we treat imperfect observations
+  (unknown calibration, unsynchronized streams, missing labels, occlusion) as part of the problem rather than a
+  preprocessing step.
+</p>
+
+<p style="margin-top:1.1rem">
+  This agenda builds on my doctoral and postdoctoral work on wide-area multi-view crowd counting at City University
+  of Hong Kong with <a href="http://www.cs.cityu.edu.hk/~abchan/" rel="noopener">{{ site.data.profile.advisor }}</a>
+  &mdash; the CVPR&nbsp;2019 and IJCV&nbsp;2022 papers below are where the ground-plane fusion idea came from.
+  Everything since 2022 has been carried out here, with our own students and our own funding.
 </p>
 
 <section class="section">
   <div class="section-head">
-    <h2>Multi-view Crowd Analysis &amp; Simulation</h2>
+    <h2>Core programme &middot; Multi-view crowd intelligence</h2>
     <a class="section-more" href="/publications/">All papers &rarr;</a>
   </div>
-  <p>
-    Our through-line since the Ph.D.: fusing several views into one density map over a ground plane, so that a
-    whole plaza, stadium or shoreline can be measured at once. Early work established wide-area counting with
-    ground-plane density maps and multi-view fusion (CVPR&nbsp;2019, extended in IJCV&nbsp;2022), 3D-domain
-    counting (AAAI&nbsp;2020, IJCV&nbsp;2022) and counting that transfers across views and scenes
-    (CVPR&nbsp;2021) or needs no camera calibration (ECCV&nbsp;2022). We then moved from &ldquo;how many&rdquo;
-    to &ldquo;who and where&rdquo;: people detection with learned view-wise weights (AAAI&nbsp;2024), crowd
-    localization by Mahalanobis-distance multi-view optimal transport (ECCV&nbsp;2024), weakly-supervised
-    calibration-free counting (PRCV&nbsp;2025) and multi-view tracking under large real-world scenes
-    (CVPR&nbsp;2026). Two recent threads push the setting outward: a large synthetic benchmark that covers
-    counting and localization together (IJCV&nbsp;2026), and a diffusion model that simulates crowd motion with
-    environmental conditioning and individual-group interaction (ICLR&nbsp;2026). Label cost is the bottleneck
-    in real deployments, so two further studies rank fusion models under partial labels and select the views
-    worth labeling when the budget is small. None of it holds unless the cameras share a clock, which is why
-    single-frame deep view synchronization and its dataset (TNNLS&nbsp;2023) sit at the bottom of this stack.
-  </p>
-  <p class="small muted">Also in this group: RGB-T crowd counting with an external collaboration (ICASSP&nbsp;2026).</p>
-
+  <p class="agenda-label">Problem</p>
+  <p>Measure a crowd the way a city would want it measured: total, per location, per person over time, and ahead of
+    time &mdash; from several fixed cameras covering a plaza, a stadium forecourt or a shoreline.</p>
+  <p class="agenda-label">What we have established</p>
+  <p>Fusing views onto a single ground-plane density map makes wide-area counting work
+    (CVPR&nbsp;2019, IJCV&nbsp;2022) and survive being moved to a new scene or a new camera layout
+    (CVPR&nbsp;2021). We removed the calibration requirement (ECCV&nbsp;2022), moved counting into the 3D domain
+    (AAAI&nbsp;2020, IJCV&nbsp;2022), and then moved from totals to identities and positions: people detection with
+    learned view-wise weights (AAAI&nbsp;2024), localization by Mahalanobis-distance multi-view optimal transport
+    (ECCV&nbsp;2024), weakly-supervised counting (PRCV&nbsp;2025), and SynMVCrowd, a synthetic benchmark built to
+    serve counting and localization at once (IJCV&nbsp;2026).</p>
+  <p class="agenda-label">What we are pursuing now</p>
+  <p>Following people rather than detecting them &mdash; multi-view tracking with explicit view&ndash;ground
+    interaction (CVPR&nbsp;2026) &mdash; and simulating them, so a system can be tested on situations no camera has
+    recorded (EnvSocial-Diff, ICLR&nbsp;2026). Two label-cost studies are in progress in the same direction:
+    ranking fusion models under partial labels, and choosing which views are worth labeling.</p>
   {%- for p in papers %}
     {%- if p.topic == "crowd" %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
@@ -45,17 +52,20 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
 
 <section class="section">
   <div class="section-head">
-    <h2>3D Reconstruction, Generation &amp; Scene Understanding</h2>
+    <h2>Core programme &middot; Dynamic 3D scene understanding</h2>
   </div>
-  <p>
-    Multi-view reconstruction is only as good as the views you feed it. We select views by the reconstruction
-    error they cause, which makes pipelines robust to view transformation (AAAI&nbsp;2025), and we push the
-    opposite direction too: recovering a full object from a single image by combining stable-diffusion
-    generation with farthest-view selection (ICIG&nbsp;2025), and recovering many people&rsquo;s meshes in a
-    large scene despite occlusion. Scene-level work targets the city itself &mdash; fine-grained building
-    instance segmentation at scale (SIGGRAPH&nbsp;2023, UrbanBIS) and its extension to adaptive region
-    dividing with spatially-supervised contrastive learning.
-  </p>
+  <p class="agenda-label">Problem</p>
+  <p>The same camera networks have to produce geometry: what the scene looks like in 3D, and what it looks like when
+    the views you were given are few, badly placed, or partly occluded.</p>
+  <p class="agenda-label">What we have established</p>
+  <p>Selecting views by the reconstruction error they cause makes multi-view 3D reconstruction robust to view
+    transformation (AAAI&nbsp;2025); a diffusion prior plus farthest-view selection recovers a full object from a
+    single image (ICIG&nbsp;2025); and at urban scale we introduced UrbanBIS, a large-scale benchmark for
+    fine-grained building instance segmentation (SIGGRAPH&nbsp;2023), extended with adaptive region dividing and
+    spatially-supervised contrastive learning.</p>
+  <p class="agenda-label">What we are pursuing now</p>
+  <p>People as 3D objects in a scene: recovering many meshes at once under occlusion across views, and treating
+    reconstruction and generation as one problem rather than two.</p>
   {%- for p in papers %}
     {%- if p.topic == "3d" %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
@@ -63,14 +73,15 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
 
 <section class="section">
   <div class="section-head">
-    <h2>Autonomous Driving &amp; Occupancy Forecasting</h2>
+    <h2>Emerging &middot; Street scenes and 4D occupancy</h2>
   </div>
-  <p>
-    Driving scenes are the hardest version of the same problem: many moving agents, no calibration you can
-    trust, and predictions that must hold over time. We start from cameras only and couple 2D image evidence
-    with 3D structure to forecast how occupied space evolves (InterOCF), and generate multi-view consistent
-    street data to train and test such models.
-  </p>
+  <p class="agenda-label">Problem</p>
+  <p>A moving vehicle faces a harder version of the same question: predict which space will be occupied next, from
+    cameras only, and get enough diverse scene data to train on.</p>
+  <p class="agenda-label">What we have so far</p>
+  <p>InterOCF couples 2D image evidence with 3D structure over time for camera-only 4D occupancy forecasting;
+    StreetDiff generates multi-view consistent street scenes from structure prompts. Both are currently preprints
+    and are listed as such.</p>
   {%- for p in papers %}
     {%- if p.topic == "driving" %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
@@ -78,33 +89,54 @@ description: Research directions of Qi Zhang — multi-view crowd analysis and s
 
 <section class="section">
   <div class="section-head">
-    <h2>Detection Beyond Crowds</h2>
+    <h2>Other applications &amp; collaborations</h2>
   </div>
   <p>
-    The fusion machinery transfers to other counting and detection targets: Chinese white dolphins in the wild
-    (ACM&nbsp;MMAsia&nbsp;2021), which began as a conservation request, and tri-plane multi-view counting of
-    silkie chickens (ChinaMM&nbsp;2026, an undergraduate final-year project). The 2016 hyperspectral
-    de-fencing paper is where the list begins.
+    Multi-view fusion transfers to targets outside crowds: Chinese white dolphins in the open sea
+    (ACM&nbsp;MMAsia&nbsp;2021, begun as a conservation request) and silkie chickens counted on a farm
+    (ChinaMM&nbsp;2026, an undergraduate final-year project). The 2016 hyperspectral de-fencing paper is where my
+    publication list begins.
   </p>
   {%- for p in papers %}
-    {%- if p.topic == "beyond" %}
-      {% include pub.html paper=p %}
-    {%- endif %}
+    {%- if p.topic == "beyond" %}{% include pub.html paper=p %}{% endif %}
   {%- endfor %}
 </section>
 
 <section class="section">
   <div class="section-head">
-    <h2>In Progress &amp; Recruiting</h2>
-    <a class="section-more" href="/group/">Join us &rarr;</a>
+    <h2>Research resources</h2>
+  </div>
+  <p class="small muted" style="margin-bottom:.8rem">
+    Datasets, benchmarks and code released by the group. Collaborations on any of these are welcome &mdash;
+    write to me rather than going through a form.
+  </p>
+  <ul class="rule-list">
+    <li><a href="https://github.com/zqyq/SynMVCrowd" rel="noopener">SynMVCrowd</a> &mdash; synthetic benchmark for
+      multi-view crowd counting and localization (IJCV 2026)</li>
+    <li><a href="https://github.com/zqyq/MVTrackTrans" rel="noopener">MVTrackTrans</a> &mdash; multi-view crowd
+      tracking model with MVCrowdTrack and CityTrack data (CVPR 2026)</li>
+    <li><a href="http://visal.cs.cityu.edu.hk/research/cvcs_dataset/" rel="noopener">CVCS dataset</a> &mdash;
+      cross-view cross-scene multi-view counting (CVPR 2021)</li>
+    <li><a href="https://vcc.tech/UrbanBIS" rel="noopener">UrbanBIS</a> &mdash; large-scale urban building instance
+      segmentation benchmark (SIGGRAPH 2023)</li>
+    <li><a href="https://github.com/zqyq/EnvSocial-Diff" rel="noopener">EnvSocial-Diff</a> &mdash; environment-conditioned
+      crowd simulation (ICLR 2026)</li>
+    <li><a href="https://github.com/zqyq/Weakly-MVCC" rel="noopener">Weakly-MVCC</a> &middot;
+      <a href="https://github.com/zqyq/VTR" rel="noopener">VTR</a> &middot;
+      <a href="https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS" rel="noopener">view synchronization</a>
+      &mdash; code and data</li>
+  </ul>
+</section>
+
+<section class="section" id="recruiting">
+  <div class="section-head">
+    <h2>Joining this agenda</h2>
+    <a class="section-more" href="/group/">The group &rarr;</a>
   </div>
   <p>
-    Autonomous driving and large-scene point cloud analysis are the group&rsquo;s newest lines; the
-    camera-only occupancy forecasting work above is the first result from them. Entries marked
-    <em>Preprint</em> are posted on arXiv and have not been peer-reviewed yet.
-  </p>
-  <p>
-    Prospective Ph.D. and master&rsquo;s students with solid coding skills and an interest in geometry,
-    perception or simulation are welcome &mdash; write to me with a transcript and one project you are proud of.
+    Students who join work on one of the three programmes above, usually on the part that is still open:
+    tracking and simulation for the crowd programme, generation and reconstruction for the 3D programme, and
+    occupancy forecasting for the emerging one. We are comfortable being measured on code and data &mdash;
+    every project above ships both.
   </p>
 </section>
