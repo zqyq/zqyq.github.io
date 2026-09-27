@@ -1,0 +1,146 @@
+# 履历类数据（职位、基金、教学、专利、学术服务），About 与 CV 页共用。
+
+positions:
+  - from: "2026.04"
+    to: "now"
+    role: "Associate Professor (Tenured)"
+    place: "Visual Computing Research Center, College of Computer Science and Software Engineering, Shenzhen University"
+    note: "Principal Investigator, iMUSE Lab"
+  - from: "2022.08"
+    to: "2026.04"
+    role: "Assistant Professor"
+    place: "Visual Computing Research Center, College of Computer Science and Software Engineering, Shenzhen University"
+  - from: "2022.04"
+    to: "2022.07"
+    role: "Distinguished Associate Researcher"
+    place: "Guangdong Laboratory of Artificial Intelligence and Digital Economy (SZ) (Guangming Lab) & VCC, Shenzhen University"
+  - from: "2021.05"
+    to: "2022.04"
+    role: "Postdoctoral Researcher"
+    place: "Department of Computer Science, City University of Hong Kong (VISAL)"
+  - from: "2017.09"
+    to: "2021.02"
+    role: "Ph.D. (UGC-funded)"
+    place: "Department of Computer Science, City University of Hong Kong"
+  - from: "2014.09"
+    to: "2017.06"
+    role: "M.Eng., Signal & Information Processing"
+    place: "University of Chinese Academy of Sciences & Xi'an Institute of Optics and Precision Mechanics, CAS"
+  - from: "2010.09"
+    to: "2014.06"
+    role: "B.Eng., Optoelectronic Information Engineering"
+    place: "Huazhong University of Science and Technology"
+
+advisor: "Prof. Antoni B. Chan (City University of Hong Kong)"
+
+grants:
+  - name: "National Natural Science Foundation of China, Young Scientists Fund"
+    amount: "300K CNY"
+    period: "2023-2025"
+    role: "PI"
+  - name: "Shenzhen Young Talents Start-Up Funding"
+    amount: "3M CNY"
+    period: "2024-2026"
+    role: "PI"
+  - name: "Shenzhen University Young Faculty Start-Up Funding"
+    amount: "200K CNY"
+    period: "2023-2025"
+    role: "PI"
+  - name: "Shenzhen Peacock Research Group Project"
+    amount: "15M CNY"
+    period: "2022-2027"
+    role: "Core Member"
+
+teaching:
+  - course: "College Computer Science"
+    level: "Undergraduate"
+    terms: "2022-2024, Fall"
+  - course: "Mobile Internet Applications"
+    level: "Undergraduate"
+    terms: "2024, Spring"
+  - course: "Optimization Methods"
+    level: "Postgraduate"
+    terms: "2023, 2024, Spring"
+
+patents:
+  - inventors: ["Antoni B. Chan", "Qi Zhang"]
+    title: "System and Method for Counting Objects"
+    number: "US Patent US11048948B2, 2021"
+    link: "https://patents.google.com/patent/US11048948B2/en"
+  - inventors: ["Xuelong Li", "Xiaoqiang Lu", "Qi Zhang"]
+    title: "A blind image deblurring method based on local constraint (一种基于局部约束的图像盲去模糊方法)"
+    number: "ZL201510112076, 2021"
+    link: "https://patents.google.com/patent/CN106033595B/zh"
+  - inventors: ["Qi Zhang", "Hui Huang", "Yunfei Gong"]
+    title: "A method and equipment for crowd detection based on weighted view contribution (基于视角贡献权重的人群检测方法及相关装置)"
+    number: "ZL202310809287, 2024"
+    link: "https://patents.google.com/patent/CN116524442A/"
+  - inventors: ["Qi Zhang", "Hui Huang", "Zhouhang Luo"]
+    title: "Multi-view three-dimensional object reconstruction method, terminal and storage medium (一种多视图三维物体重建方法、终端及存储介质)"
+    number: "ZL202410989536, 2024"
+    link: "https://patents.google.com/patent/CN118521721A/"
+  - inventors: ["Qi Zhang", "Hui Huang", "Kaiyi Zhang"]
+    title: "Point supervision-based multi-view optimal transmission crowd detection method, system and terminal (基于点监督的多视角最优传输人群检测方法、系统及终端)"
+    number: "ZL20241089136, 2024"
+    link: "https://patents.google.com/patent/CN118429781A"
+
+service_roles:
+  - { what: "Area Chair", venue: "NeurIPS", year: 2026 }
+  - { what: "Image & Video Processing Session Chair", venue: "CVM", year: 2023 }
+  - { what: "Publicity Chair", venue: "CVAI", year: 2027 }
+
+service_conferences:
+  - { name: "CVPR", years: "2020-" }
+  - { name: "AAAI", years: "2021-2026" }
+  - { name: "ICCV", years: "2021, 2023, 2025" }
+  - { name: "NeurIPS", years: "2023, 2025, 2026" }
+  - { name: "ECCV", years: "2022, 2024, 2026" }
+  - { name: "ICLR", years: "2024-2026" }
+  - { name: "ICML", years: "2024-2026" }
+  - { name: "IJCAI", years: "2024-2026" }
+  - { name: "ACM MM", years: "2021, 2024, 2025, 2026" }
+  - { name: "SIGGRAPH", years: "2025" }
+  - { name: "EUROGRAPHICS", years: "2024" }
+  - { name: "PG", years: "2026" }
+  - { name: "CVM", years: "2023-2026" }
+  - { name: "CGI", years: "2023-2026" }
+  - { name: "WACV", years: "2021-2026" }
+  - { name: "ACCV", years: "2020, 2022, 2024" }
+  - { name: "ICPR", years: "2020, 2022" }
+  - { name: "ICME", years: "2023" }
+  - { name: "3DV", years: "2022" }
+  - { name: "ACM MMAsia", years: "2025" }
+
+service_journals:
+  - "International Journal of Computer Vision (IJCV)"
+  - "IEEE Transactions on Image Processing (TIP)"
+  - "IEEE Transactions on Neural Networks and Learning Systems (TNNLS)"
+  - "IEEE Transactions on Multimedia (TMM)"
+  - "IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)"
+  - "IEEE Transactions on Consumer Electronics (TCE)"
+  - "IEEE Internet of Things Journal (IoT)"
+  - "IEEE Access"
+  - "Information Fusion"
+  - "Journal of Computer Science and Technology (JCST)"
+  - "Computer Animation & Virtual Worlds (CAVW)"
+  - "Scientific Reports"
+  - "International Journal of Machine Learning and Cybernetics"
+  - "IET Computer Vision"
+  - "IET Electronics Letters"
+  - "Frontiers of Computer Science"
+  - "Vicinagearth"
+  - "Journal of Visual Communication and Image Representation (JVCI)"
+  - "Neurocomputing"
+  - "Pattern Recognition"
+  - "Pattern Recognition Letters"
+  - "Computer Vision and Image Understanding (CVIU)"
+  - "The Visual Computer"
+  - "Knowledge-Based Systems"
+
+mentoring_awards:
+  - year: 2025
+    text: "Three graduate students (Yunfei Gong, Kaiyi Zhang, Jixuan Chen) were awarded the Shenzhen University Graduate Student Independent Training Project (50K CNY); only four projects were approved across the whole college."
+  - year: 2025
+    text: "Undergraduate student Juxing won the Third Prize in the Guangdong regional competition of the China Collegiate Computer Design Contest."
+  - year: 2024
+    text: "Yunfei Gong graduated as an Outstanding Graduate and continued to the Ph.D. program at Shenzhen University under my supervision."

@@ -1,3 +1,49 @@
-name: Qi ZHANG
+title: Qi ZHANG
+short_title: Qi ZHANG
+name: Qi Zhang
+name_cn: 张琦
+url: https://zqyq.github.io
+lab: iMUSE Lab
+position: Associate Professor (Tenured)
+affiliation_short: Shenzhen University
+affiliation_full: Visual Computing Research Center, College of Computer Science and Software Engineering, Shenzhen University
+email: qi.zhang.opt@gmail.com
+github: https://github.com/zqyq
+github_user: zqyq
+linkedin: https://www.linkedin.com/in/qi-zhang-64257488/
+scholar:
+orcid:
+dblp:
+description: >-
+  Qi Zhang (张琦) is an Associate Professor (tenured) at the Visual Computing
+  Research Center, College of Computer Science and Software Engineering,
+  Shenzhen University, and the Principal Investigator of iMUSE Lab. His research
+  covers multi-view crowd analysis and simulation, 3D reconstruction and
+  generation, and large-scene point cloud analysis.
+updated: 2026-09-27
+
+nav:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Group
+    url: /group/
+  - title: News
+    url: /blog/
+  - title: CV
+    url: /cv/
+
+interests:
+  - Crowd Analysis and Simulation
+  - 3D Reconstruction and Generation
+  - Autonomous Driving
+  - Large-scene Point Cloud Analysis
+
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+exclude:
+  - README.md
+  - group/js/jquery-3.6.0.min.js

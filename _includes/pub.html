@@ -1,0 +1,38 @@
+{%- assign p = include.paper -%}
+{%- assign target = p.links.landing | default: p.links.pdf | default: p.links.arxiv | default: p.links.doi | default: p.links.project -%}
+{%- if p.status == 'accepted' -%}{%- assign status_label = 'Accepted' -%}
+{%- elsif p.status == 'to_appear' -%}{%- assign status_label = 'To appear' -%}
+{%- else -%}{%- assign status_label = '' -%}{%- endif -%}
+{%- assign authors = '' -%}
+{%- for a in p.authors -%}
+  {%- if a == site.name -%}{%- assign piece = '<strong class="me">' | append: a | append: '</strong>' -%}
+  {%- else -%}{%- assign piece = a -%}{%- endif -%}
+  {%- if p.corr and p.corr contains a -%}{%- assign piece = piece | append: '<span class="corr">*</span>' -%}{%- endif -%}
+  {%- if forloop.first -%}{%- assign authors = authors | append: piece -%}
+  {%- elsif forloop.last -%}{%- assign authors = authors | append: ' and ' | append: piece -%}
+  {%- else -%}{%- assign authors = authors | append: ', ' | append: piece -%}{%- endif -%}
+{%- endfor -%}
+<div class="paper">
+  <div class="paper-title">
+    {%- if target -%}<a href="{{ target }}" rel="noopener">{{ p.title }}</a>
+    {%- else -%}{{ p.title }} <span class="tbd">link pending</span>{%- endif -%}
+  </div>
+  <div class="paper-authors">{{ authors }}</div>
+  <div class="paper-meta">
+    <span class="badge{% if p.kind == 'journal' %} badge--journal{% endif %}">{{ p.venue }} {{ p.year }}</span>
+    {%- if status_label != '' -%}<span class="badge badge--status">{{ status_label }}</span>{%- endif -%}
+    {%- if p.ccf -%}<span class="badge">CCF-{{ p.ccf }}</span>{%- endif -%}
+    {%- if p.volume -%}<span class="biblio">{{ p.volume }}({{ p.issue }}): {{ p.pages }}</span>
+    {%- elsif p.pages -%}<span class="biblio">pp. {{ p.pages }}</span>{%- endif -%}
+    {%- if p.note -%}<span class="biblio">{{ p.note }}</span>{%- endif -%}
+    <span class="plinks">
+      {%- if p.links.pdf -%}<a href="{{ p.links.pdf }}" rel="noopener">PDF</a>{%- endif -%}
+      {%- if p.links.arxiv -%}<a href="{{ p.links.arxiv }}" rel="noopener">arXiv</a>{%- endif -%}
+      {%- if p.links.doi -%}<a href="{{ p.links.doi }}" rel="noopener">Publisher</a>{%- endif -%}
+      {%- if p.links.code -%}<a href="{{ p.links.code }}" rel="noopener">Code</a>{%- endif -%}
+      {%- if p.links.dataset -%}<a href="{{ p.links.dataset }}" rel="noopener">Dataset</a>{%- endif -%}
+      {%- if p.links.project -%}<a href="{{ p.links.project }}" rel="noopener">Project</a>{%- endif -%}
+      {%- if p.links.video -%}<a href="{{ p.links.video }}" rel="noopener">Video</a>{%- endif -%}
+    </span>
+  </div>
+</div>

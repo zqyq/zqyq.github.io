@@ -1,169 +1,115 @@
 ---
 layout: default
-title: Qi ZHANG's Group
+title: Group
+slug: group
+description: iMUSE Lab — intelligent multi-sensing research at Shenzhen University. Members, student publications and openings.
 ---
 
+{%- assign papers = site.data.publications.papers -%}
+{%- assign picks = "mvd-aaai24,mvot-eccv24,vtr-aaai25,weak-mvcc-prcv25,rgbt-dualmod-icassp26,synmvcrowd-ijcv26,envsocial-diff-iclr26,mvtracktrans-cvpr26,tp-mvcc-chinamm26" | split: "," -%}
 
-<img src="photos/GroupPhotos/2025.jpg" alt="" width="800" height="600">
+<h1 class="hero-name" style="padding-top:2.6rem">{{ site.lab }}</h1>
+<p class="muted" style="margin-top:.4rem">
+  intelligent MUlti-Sensing lab &mdash; where &ldquo;MUSE&rdquo; also means inspiration.
+  <span class="serif">立足真实问题，服务社群大众，拓宽知识边界。</span>
+</p>
 
+<img src="/group/photos/GroupPhotos/2025.jpg" alt="iMUSE Lab group photo, 2025"
+     style="width:100%;border:1px solid var(--line);border-radius:3px;margin:1.6rem 0 .4rem" loading="lazy">
+<p class="small muted">Group photo, 2025.</p>
 
-<h4> iMUSE Lab</h4>
+<p style="margin-top:1.2rem">
+  We are a research group dedicated to solving real-world problems, benefiting people and the community, and
+  broadening the knowledge edge of computer vision, graphics and AI &mdash; currently focused on crowd analysis
+  and simulation, 3D vision, 3D reconstruction and large-scale scene understanding.
+  {{ site.data.members.phd | size }} Ph.D. and {{ site.data.members.master | size }} master&rsquo;s students
+  are with the group, and {{ site.data.members.alumni | size }} graduates have moved on to
+  <a href="https://www.szu.edu.cn/" rel="noopener">SZU</a>, industry and other programs.
+</p>
 
-<p>  This is the website page for the intelligent multi-sensing research lab (iMUSE Lab, where 'MUSE' means 'Inspiration'). 
-	We are a research group of researchers dedicated to solving real-world problems, benefiting the people and the community,  
-	and broadening the knowledge edge of computer vision, graphics, and artificial intelligence algorithms & systems 
-	(in Chinese: “立足真实问题，服务社群大众，拓宽知识边界”). 
-    Currently, we focus on 3D vision, 3D reconstruction, 3D scene understanding, crowd analysis and simulation, etc. 
-</p> 
+<section class="section">
+  <div class="section-head"><h2>Principal Investigator</h2></div>
+  <div class="member-grid" style="grid-template-columns:repeat(4,1fr);max-width:26rem">
+    <a class="member" href="/">
+      <img src="/assets/img/portrait.jpg" alt="Qi Zhang" loading="lazy">
+      <div class="member-name">Qi Zhang 张琦</div>
+      <div class="member-meta">{{ site.position }}<br>PI since 2022</div>
+    </a>
+  </div>
+</section>
 
+<section class="section">
+  <div class="section-head"><h2>Ph.D. Students</h2></div>
+  <div class="member-grid">
+    {%- for m in site.data.members.phd %}
+    <div class="member">
+      {%- if m.link %}<a href="{{ m.link }}" rel="noopener">{% endif %}
+      <img src="/group/photos/{{ m.name }}.jpg" alt="{{ m.name }}" loading="lazy">
+      <div class="member-name">{{ m.name }}</div>
+      <div class="member-meta">{{ m.direction }}<br>since {{ m.since }}{% if m.note %} &middot; {{ m.note }}{% endif %}</div>
+      {%- if m.link %}</a>{% endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>
 
-<h4> Group Members</h4>
+<section class="section">
+  <div class="section-head"><h2>Master&rsquo;s Students</h2></div>
+  <div class="member-grid">
+    {%- for m in site.data.members.master %}
+    <div class="member">
+      {%- if m.link %}<a href="{{ m.link }}" rel="noopener">{% endif %}
+      <img src="/group/photos/{{ m.name }}.jpg" alt="{{ m.name }}" loading="lazy">
+      <div class="member-name">{{ m.name }}</div>
+      <div class="member-meta">{{ m.direction }}<br>since {{ m.since }}</div>
+      {%- if m.link %}</a>{% endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Qi Zhang's Homepage - Services & Activities</title>
-	<style type="text/css">
-		body{
-			font-family:arial,sans-serif;
-		}
-		#home-title{
-			font-size: 36px;
-			font-weight:bold;
-			color: #3a7eb0;
-			display:inline-block;
-			position: relative;
-			left: 250px;
-			right: 220px;
-		}
-		#group{
-			width: 900px;
-			background-color: #eee;
-			position: relative;
-			margin-top: 40px;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-		}
-		.grp_title{
-			font-weight:bold;
-			font-size: 22px;
-			color: #3a7eb0;
-			position: relative;
-			left: 20px;
-		}
-		.card_img{
-			loading:eager;
-			align: center;
-			width: 160px;
-			height: 200px;
-			border: 10px solid #eee;
-		}
-		.member_name{
-			font-weight:bold;
-			font-size: 16px;
-			color: #000000;
-			text-align: center;
-			height: 30px;
-			width: 200px;
-<!--			display:inline-block;-->
-		 }
-		.member_research_direction{
-			text-align: center;
-			color: #000000;
-			font-size: 13px;
-			height: 30px;
-			width: 200px;
-			display:inline-block;
-		}
-		.member_graduate_time{
-			text-align: center;
-			color: #000000;
-			font-size: 13px;
-			height: 30px;
-			width: 200px;
-/* 			display:inline-block; */
-		}
+<section class="section">
+  <div class="section-head"><h2>Alumni</h2></div>
+  <table class="kv">
+    <thead><tr><th>Name</th><th>Degree</th><th>Next</th></tr></thead>
+    <tbody>
+    {%- for m in site.data.members.alumni %}
+      <tr>
+        <td>{%- if m.link %}<a href="{{ m.link }}" rel="noopener">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}</td>
+        <td class="num">{{ m.period }}</td>
+        <td>{{ m.where }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+</section>
 
-	</style>
-	<script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-<div id="wrapper">
-	<div id="header">
-		<!--<div id="header-title">-->
-		<!--<span class="home-logo">-->
-		<!--<a href="https://zqyq.github.io/" style="position: relative; ">-->
-		<!--<span id="home-title">Qi Zhang's Homepage</span>-->
-		<!--</a>-->
-		<!--</span></div>-->
-	</div>
+<section class="section">
+  <div class="section-head">
+    <h2>Publications with Group Members</h2>
+    <a class="section-more" href="/publications/">All papers &rarr;</a>
+  </div>
+  <p class="small muted" style="margin-bottom:.6rem">
+    Papers with group members as first author or key contributor; bold marks my name.
+  </p>
+  {%- for p in papers %}
+    {%- if picks contains p.id %}{% include pub.html paper=p %}{% endif %}
+  {%- endfor %}
+</section>
 
-	<div id="group">
-		<div id="group-content" class="group-not-footer" style="display:flex;    flex-direction: column;">
-			<div id="PhD">
-				<p class="grp_title">PhD Students</p>
+<section class="section">
+  <div class="section-head"><h2>Join iMUSE</h2></div>
+  <p>
+    We recruit Ph.D. and master&rsquo;s students each year, and host visiting undergraduates.
+    Recent calls for students:
+  </p>
+  <p class="chips">
+    <a class="chip" href="/group/CFS/CFS2024.pdf">Call for Students 2024 (PDF)</a>
+    <a class="chip" href="/group/CFS/CFS2023.pdf">Call for Students 2023 (PDF)</a>
+    <a class="chip" href="mailto:{{ site.email }}">Write to me</a>
+  </p>
+</section>
 
-				<table id="group_table_PhD" align="left" cellspacing="20">
-
-				</table>
-			</div>
-
-			<div id="Master">
-				<p class="grp_title">Master Students</p>
-
-				<table id="group_table_Master" align="left" cellspacing="20">
-				</table>
-			</div>
-
-			<div id="Alumni">
-				<p class="grp_title">Alumni</p>
-
-				<table id="group_table_Alumni" align="left" cellspacing="20">
-
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
-<script src="./js/js_scripts.js" type="text/javascript"></script>
-</html>
-
-
-
-<h4> Student Publications</h4>
-<p>[1] Qi Zhang, <strong>Yunfei Gong</strong>, <strong>Daijie Chen</strong>, Antoni B. Chan, and Hui Huang*. 
-	<a href='https://vcc.tech/research/2024/MVD'> Multi-view People Detection in Large Scenes via Supervised View-wise Contribution Weighting</a>. AAAI 2024. </p>
-<p>[2] Qi Zhang, <strong>Kaiyi Zhang</strong>, Antoni B. Chan, and Hui Huang*. <a href='https://vcc.tech/research/2024/MVOT'> Mahalanobis Distance-based Multi-view Optimal Transport for Multi-view Crowd Localization</a>. ECCV 2024. </p>
-<p>[3] Qi Zhang, <strong>Zhouhang Luo</strong>, <strong>Tao Yu</strong>, and Hui Huang*. <a href='https://arxiv.org/abs/2412.11428'>View Transformation Robustness for Multi-View 3D Object Reconstruction with Reconstruction Error-Guided View Selection</a>. AAAI 2025. 
-				[<a href="https://vcc.tech/research/2025/VTR">Project</a>]</p>
-<p>[4] <strong>Bin Li</strong>, <strong>Daijie Chen</strong>, and Qi Zhang*. <a href=''>Weakly-supervised Calibration-free Multi-view Crowd Counting</a>. PRCV 2025. 
-				</p>
-<p> [5] Yuhong Feng, <strong>Hongtao Chen</strong>,  Qi Zhang*, Jie Chen, Zhaoxi He, Mingzhe Liu, Jianghai Liao. 
-	<a href=''>A DUAL-MODULATION FRAMEWORK FOR RGB-T CROWD COUNTING VIA SPATIALLY MODULATED ATTENTION AND ADAPTIVE FUSION</a>. ICASSP 2026.
-		</p>
-<p> [6] Qi Zhang, <strong>Daijie Chen</strong>, <strong>Yunfei Gong</strong>, and Hui Huang. 
-	<a href=''>SynMVCrowd: A Large Synthetic Benchmark for Multi-view Crowd Counting and Localization</a>. IJCV 2026.
-		</p>
-			
-<p> [7] <strong>Bingxue Zhao</strong>,  Qi Zhang*, and Hui Huang. 
-	<a href=''>EnvSocial-Diff: A Diffusion-Based Crowd Simulation Model with Environmental Conditioning and Individual-Group Interaction</a>. ICLR 2026.
-<p> [8] Qi Zhang, <strong>Jixuan Chen</strong>, <strong>Kaiyi Zhang</strong>, Antoni B. Chan, and Hui Huang. 
-	<a href='https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.pdf'>Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes</a>. CVPR 2026.
-<p> [9] <strong>Sirui Chen</strong>, Yifeng Wang, Yuhong Feng, Jianghai Liao, and Qi Zhang*. 
-	<a href='https://arxiv.org/abs/2509.24329'>TP-MVCC: Tri-plane Multi-view Fusion Model for Silkie Chicken Counting</a>. Accepted to ChinaMM 2026. (Undergraduate Final Year Project)
-			
-<h4> Call for Students</h4>
-<ul class="contacts">
-	<li><a href=./CFS/CFS2024.pdf> CFS 2024 </a></li>
-	<li><a href=./CFS/CFS2023.pdf> CFS 2023 </a></li>
-	</ul>
-
-Acknowledgment: This group page is finished with the help of my wife. Thank you a lot, my dear.
-
-
-
-
+<p class="small muted" style="margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1rem">
+  The earlier version of this page was built with the help of my wife. Thank you.
+</p>

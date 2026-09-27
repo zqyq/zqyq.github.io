@@ -1,0 +1,89 @@
+---
+layout: default
+title: Research
+slug: research
+description: Research directions of Qi Zhang — multi-view crowd analysis and simulation, 3D reconstruction and scene understanding, multi-camera systems.
+---
+
+{%- assign papers = site.data.publications.papers -%}
+
+<h1 class="hero-name" style="padding-top:2.6rem">Research</h1>
+
+<p class="lede" style="margin-top:1.2rem">
+  A camera network is the most scalable sensor for public space. We study what it can measure &mdash; how many,
+  where, who is moving where, and what happens next &mdash; when the scene is large, the cameras are many,
+  and the calibration you would like to have is exactly what you do not have.
+</p>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Multi-view Crowd Analysis &amp; Simulation</h2>
+    <a class="section-more" href="/publications/">All papers &rarr;</a>
+  </div>
+  <p>
+    Our through-line since the Ph.D.: fusing several views into one density map over a ground plane, so that a
+    whole plaza, stadium or shoreline can be measured at once. Early work established wide-area counting with
+    ground-plane density maps and multi-view fusion (CVPR&nbsp;2019, extended in IJCV&nbsp;2022), 3D-domain
+    counting (AAAI&nbsp;2020, IJCV&nbsp;2022) and counting that transfers across views and scenes
+    (CVPR&nbsp;2021) or needs no camera calibration (ECCV&nbsp;2022). We then moved from &ldquo;how many&rdquo;
+    to &ldquo;who and where&rdquo;: people detection with learned view-wise weights (AAAI&nbsp;2024), crowd
+    localization by Mahalanobis-distance multi-view optimal transport (ECCV&nbsp;2024), weakly-supervised
+    calibration-free counting (PRCV&nbsp;2025) and multi-view tracking under large real-world scenes
+    (CVPR&nbsp;2026). Two recent threads push the setting outward: a large synthetic benchmark that covers
+    counting and localization together (IJCV&nbsp;2026), and a diffusion model that simulates crowd motion with
+    environmental conditioning and individual-group interaction (ICLR&nbsp;2026).
+  </p>
+  <p class="small muted">Also in this group: RGB-T crowd counting with an external collaboration (ICASSP&nbsp;2026).</p>
+
+  {%- for p in papers %}
+    {%- if p.topic == "crowd" %}{% include pub.html paper=p %}{% endif %}
+  {%- endfor %}
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>3D Reconstruction, Generation &amp; Scene Understanding</h2>
+  </div>
+  <p>
+    Multi-view reconstruction is only as good as the views you feed it. We select views by the reconstruction
+    error they cause, which makes pipelines robust to view transformation (AAAI&nbsp;2025); and we work on
+    large-scale urban scene understanding, where fine-grained building instances must be recovered from
+    aerial data (SIGGRAPH&nbsp;2023, UrbanBIS).
+  </p>
+  {%- for p in papers %}
+    {%- if p.topic == "3d" %}{% include pub.html paper=p %}{% endif %}
+  {%- endfor %}
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Multi-camera Systems &amp; Detection Beyond Crowds</h2>
+  </div>
+  <p>
+    Real deployments are unsynchronized and uncalibrated, so we also study the plumbing: single-frame deep view
+    synchronization for multicamera surveillance (TNNLS&nbsp;2023), with the accompanying dataset. The same
+    fusion machinery transfers to other counting and detection targets &mdash; Chinese white dolphins in the
+    wild (ACM&nbsp;MMAsia&nbsp;2021) and tri-plane multi-view counting of silkie chickens
+    (ChinaMM&nbsp;2026, an undergraduate final-year project).
+  </p>
+  {%- for p in papers %}
+    {%- if p.topic == "beyond" %}
+      {% include pub.html paper=p %}
+    {%- endif %}
+  {%- endfor %}
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>In Progress &amp; Recruiting</h2>
+    <a class="section-more" href="/group/">Join us &rarr;</a>
+  </div>
+  <p>
+    We are expanding into large-scene point cloud analysis and autonomous driving, listed among my research
+    interests; representative results will be added to this page as they appear.
+  </p>
+  <p>
+    Prospective Ph.D. and master&rsquo;s students with solid coding skills and an interest in geometry,
+    perception or simulation are welcome &mdash; write to me with a transcript and one project you are proud of.
+  </p>
+</section>

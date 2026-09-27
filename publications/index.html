@@ -1,0 +1,49 @@
+---
+layout: default
+title: Publications
+slug: publications
+description: Publications of Qi Zhang, multi-view crowd analysis and simulation, 3D reconstruction, Shenzhen University.
+---
+
+{%- assign papers = site.data.publications.papers -%}
+{%- assign n_journal = papers | where: "kind", "journal" | size -%}
+{%- assign n_conf = papers | where: "kind", "conference" | size -%}
+
+<h1 class="hero-name" style="padding-top:2.6rem">Publications</h1>
+
+<p class="muted" style="margin-top:.6rem">
+  {{ papers | size }} peer-reviewed papers &mdash; {{ n_conf }} conference, {{ n_journal }} journal.
+  Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
+  Every entry links to the official record where one is available; code and dataset links are given when released.
+</p>
+
+{%- assign groups = papers | group_by: "year" | sort: "name" | reverse -%}
+{%- for g in groups %}
+  <div class="year-head">
+    <h3>{{ g.name }}</h3>
+    <span class="rule"></span>
+    <span class="count">{{ g.size }} {%- if g.size == 1 %} paper{%- else %} papers{% endif %}</span>
+  </div>
+  {%- for p in g.items %}
+    {% include pub.html paper=p %}
+  {%- endfor %}
+{%- endfor %}
+
+<section class="section">
+  <div class="section-head">
+    <h2>Patents</h2>
+  </div>
+  <ul class="rule-list">
+    {%- for pt in site.data.profile.patents %}
+    <li>
+      <a href="{{ pt.link }}" rel="noopener">{{ pt.title }}</a>
+      <div class="small muted">{{ pt.inventors | join: ", " }} &middot; {{ pt.number }}</div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<p class="small muted" style="margin-top:2rem">
+  A machine-readable list of these papers is maintained in
+  <a href="https://github.com/zqyq/zqyq.github.io/blob/master/_data/publications.yml" rel="noopener">_data/publications.yml</a>.
+</p>

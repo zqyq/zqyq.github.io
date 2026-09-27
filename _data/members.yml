@@ -1,0 +1,74 @@
+# 团队成员。照片按 name 对应 group/photos/<Name>.jpg，缺照片的成员会以姓名首字母占位。
+# 由 Jekyll 静态渲染，不再需要 jQuery 与前端读取 CSV。
+
+phd:
+  - name: Zhenpeng Li
+    direction: "Point Cloud Processing"
+    since: "2022.09"
+    note: "joint supervision with Prof. Hui Huang"
+  - name: Yunfei Gong
+    direction: "3D Reconstruction"
+    since: "2024.09"
+    link: "https://scholar.google.com/citations?user=INbRChoAAAAJ&hl"
+  - name: Kaiyi Zhang
+    direction: "3D Vision"
+    since: "2025.09"
+    link: "https://scholar.google.com/citations?user=ipqmbg8AAAAJ"
+  - name: Ruiji Xue
+    direction: "Computer Vision"
+    since: "2026.09"
+
+master:
+  - name: Bingxue Zhao
+    direction: "Crowd Simulation"
+    since: "2024.09"
+  - name: Jixuan Chen
+    direction: "Computer Vision"
+    since: "2024.09"
+  - name: Weiyuan Zhang
+    direction: "Point Cloud Processing"
+    since: "2024.09"
+  - name: Xinquan Yu
+    direction: "3D Vision"
+    since: "2024.09"
+  - name: Yanyifan Wang
+    direction: "3D Vision"
+    since: "2024.09"
+  - name: Zhizi Wang
+    direction: "3D Vision"
+    since: "2025.09"
+  - name: Jiechao He
+    direction: "3D Vision"
+    since: "2025.09"
+  - name: Songjun Mai
+    direction: "3D Vision"
+    since: "2025.09"
+  - name: Pingqing Hou
+    direction: "Computer Vision"
+    since: "2026.09"
+
+# alumni 不写 direction —— 原 CSV 里这一列记录的是学位与去向，没有研究方向信息，不替作者编。
+alumni:
+  - name: Yunfei Gong
+    period: "M.Eng. 2022.04-2024.06"
+    where: "Ph.D. at Shenzhen University"
+    link: "https://scholar.google.com/citations?user=INbRChoAAAAJ&hl"
+  - name: Zhidan Xie
+    period: "M.Eng. 2022.04-2024.06"
+    where: "Qihoo 360"
+  - name: Daijie Chen
+    period: "M.Eng. 2022.09-2025.06"
+    where: "Linxi Games (Alibaba)"
+  - name: Kaiyi Zhang
+    period: "M.Eng. 2022.09-2025.06"
+    where: "Ph.D. at Shenzhen University"
+    link: "https://scholar.google.com/citations?user=ipqmbg8AAAAJ"
+  - name: Zhouhang Luo
+    period: "M.Eng. 2022.09-2025.06"
+    where: "Huawei"
+  - name: Bin Li
+    period: "M.Eng. 2023.09-2026.06"
+    where: "Ph.D. at NJUPT"
+  - name: Tao Yu
+    period: "M.Eng. 2023.09-2026.06"
+    where: "Bilibili"

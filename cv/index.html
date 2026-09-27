@@ -1,74 +1,103 @@
 ---
 layout: default
-title: Qi ZHANG's Homepage
+title: Curriculum Vitae
+slug: cv
+description: Curriculum vitae of Qi Zhang, Associate Professor at Shenzhen University.
 ---
 
-		<div class="blurb">
-			<img src="https://csse.szu.edu.cn/attachment/base64/img_17448576911631_.jpg" title="zq" alt="zq", height="200" width="200" >
-			<h3> Hi there, I'm ZHANG Qi (张琦)!</h3>
-			
-				<p>  April 2026-Now, Associate Professor (tenured) with <a href=https://vcc.tech/index.html> Visual Computing Research Center</a>, 
-					<a href=https://csse.szu.edu.cn/>College of Computer Science and Software Engineering</a>, 
-					<a href=https://www.szu.edu.cn/>Shenzhen University</a> (VCC, CSSE, SZU).
-				 </p>
-               <p>
-				From August 2022 to April 2026, I was an assistant professor with the College of Computer Science and Software Engineering, Shenzhen University.
-				   From May 2021 to April 2022, I was a Post-doc researcher at VISAL, Department of Computer Science, 
-				<a href="https://www.cityu.edu.hk/">City University of Hong Kong</a>, 
-				supervised by 
-				<a href="http://www.cs.cityu.edu.hk/~abchan/">Prof. Antoni Chan</a>. I earned my Ph.D. degree from the same lab in 2021.
-			</p>
-			<p>My research interests include 
-				<font color="black">Crowd Analysis and Simulation</font>,
-				<font color="black">3D Reconstruction and Generation</font>,
-				<font color="black">Autonomous Driving</font>, and 
-				<font color="black">Large-scene Point Cloud Analysis</font>.
-			</p>
-			
+{%- assign papers = site.data.publications.papers -%}
 
-			<p>
-				<a href="/about">Read more about me.</a>
-			</p>
-			
-			<h3>Selected Publications</h3>
-			<p> <strong>Qi Zhang</strong>, Jixuan Chen, Kaiyi Zhang, Antoni B. Chan, and Hui Huang. <a href=''>Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes</a>. Accepted to CVPR 2026.
-				[<a href="https://github.com/zqyq/MVTrackTrans">Code & Dataset</a>]</p>
+<div class="noprint" style="padding-top:2.6rem">
+  <h1 class="hero-name">Curriculum Vitae</h1>
+  <p class="muted" style="margin-top:.6rem">
+    This page is formatted for printing &mdash; use your browser&rsquo;s &ldquo;Print / Save as PDF&rdquo;
+    to turn it into a CV with the publication list, funding and service included.
+    <button class="chip" onclick="window.print()" style="cursor:pointer;font:inherit">Print</button>
+  </p>
+</div>
 
-			<p> <strong>Qi Zhang</strong>, Kaiyi Zhang, Antoni B. Chan, and Hui Huang. <a href='https://arxiv.org/pdf/2409.01726'>Mahalanobis Distance-based Multi-view Optimal Transport for Multi-view Crowd Localization</a>. ECCV 2024. 
-				[<a href="https://vcc.tech/research/2024/MVOT">Project & Code</a>]</p>
+<div class="print-only" style="margin-top:1.2rem">
+  <h1 style="font-size:1.6rem">{{ site.name }} {{ site.name_cn }}</h1>
+  <p class="small">{{ site.position }}, {{ site.affiliation_full }} &middot; {{ site.email }}</p>
+</div>
 
+<section class="section">
+  <div class="section-head"><h2>Appointments</h2></div>
+  <table class="kv">
+    <tbody>
+    {%- for j in site.data.profile.positions %}
+      <tr>
+        <td class="num" style="white-space:nowrap">{{ j.from }}&ndash;{{ j.to }}</td>
+        <td><strong>{{ j.role }}</strong>{% if j.note %} <span class="muted">({{ j.note }})</span>{% endif %}</td>
+        <td class="muted">{{ j.place }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+</section>
 
-			<p><strong>Qi Zhang</strong> and Antoni B. Chan. 					
-				<a href='https://link.springer.com/article/10.1007/s11263-022-01626-4'>Wide-Area Crowd Counting: Multi-View Fusion Networks for Counting in Large Scenes</a>. 
-				International Journal of Computer Vision (IJCV), 130:1938-1960, 2022.[<a href="http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/">Project Page</a>].
-			</p>						
-			
-										
-			<p><strong>Qi Zhang</strong>, Wei Lin, and Antoni B. Chan. 					
-				<a href='https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Cross-View_Cross-Scene_Multi-View_Crowd_Counting_CVPR_2021_paper.pdf'>Cross-View Cross-Scene Multi-View Crowd Counting</a>. 
-				In: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR):557-567, Jun 2021.
-				[<a href="http://visal.cs.cityu.edu.hk/research/cvcs/">Project Page</a>][<a href="http://visal.cs.cityu.edu.hk/research/cvcs_dataset/">Dataset</a>].
-                        </p>	
-			
-			<p><strong>Qi Zhang</strong> and Antoni B. Chan. 
-				<a href="http://visal.cs.cityu.edu.hk/static/pubs/conf/cvpr19-wacc.pdf">Wide-Area Crowd Counting via Ground-Plane Density Maps and Multi-View Fusion CNNs</a>. 
-				In: IEEE/CVF Conf. on Computer Vision and Pattern Recognition (CVPR), Long Beach, June 2019. 
-				[<a href="http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/">Project Page</a>].
-			</p>	
-		
-			<h3>Professional Service</h3>
-			<p> NeurIPS 2026 Area Chair, CVM 2023 Image & Video Processing Session Chair, CVAI 2027 Publicity Chair. <p>
+<section class="section">
+  <div class="section-head"><h2>Research Funding</h2></div>
+  <table class="kv">
+    <thead><tr><th>Grant</th><th>Period</th><th>Role</th><th>Amount</th></tr></thead>
+    <tbody>
+    {%- for g in site.data.profile.grants %}
+      <tr><td>{{ g.name }}</td><td class="num">{{ g.period }}</td><td>{{ g.role }}</td><td class="num">{{ g.amount }}</td></tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+</section>
 
- 			<p> CVPR (2020-), AAAI (2021-2026), ICCV (2021, 2023, 2025), ACM MM (2021, 2024, 2025, 2026),  ECCV (2022, 2024, 2026), NeurIPS (2023，2025, 2026), EUROGRAPHICS (2024), ICLR (2024-2026), ICML (2024-2026), IJCAI (2024-2026), 
-				SIGGRAPH (2025), ICPR (2020, 2022), ACCV (2020, 2022, 2024), WACV (2021-2026), ICME (2023), 3DV (2022), CVM (2023-2026), CGI (2023-2026), ACM MMAsia (2025), PG (2026) PC/Reviewer. <p>
-				
-			<p> International Journal of Computer Vision (IJCV), 
-			 IEEE Transactions on Image Processing (IEEE TIP),
-			 IEEE Transactions on Neural Networks and Learning Systems (IEEE TNNLS),
-			 IEEE Transactions on Multimedia (IEEE TMM), 
-			 IEEE Transactions on Circuits and Systems for Video Technology (IEEE TCSVT),
-			 Information Fusion, Journal of Computer Science and Technology (JCST), IEEE Internet of Things Journal (IoT), Computer Animation & Virtual Worlds (CAVW), 
-			 IEEE Transactions on Consumer Electronics (IEEE TCE), Scientific Reports, International Journal of Machine Learning and Cybernetics, 
-			 IEEE Access, IET Computer Vision, IET Electronics Letters, Frontiers of Computer Science, Vicinagearth, Journal of Visual Communication and Image Representation (JVCI), 
-			 Neurocomputing, Pattern Recognition Letters, Pattern Recognition, Computer Vision and Image Understanding (CVIU) Reviewer, The Visual Computer, and Knowledge-based Systems Reviewer. <p>
-		</div> 
+<section class="section">
+  <div class="section-head"><h2>Publications</h2></div>
+  <p class="small muted" style="margin-bottom:.6rem">
+    {{ papers | size }} peer-reviewed papers. Bold = my name; * = corresponding author.
+  </p>
+  {%- assign groups = papers | group_by: "year" | sort: "name" | reverse -%}
+  {%- for g in groups %}
+    <div class="year-head"><h3>{{ g.name }}</h3><span class="rule"></span></div>
+    {%- for p in g.items %}{% include pub.html paper=p %}{% endfor -%}
+  {%- endfor %}
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Patents</h2></div>
+  <ul class="rule-list">
+    {%- for pt in site.data.profile.patents %}
+    <li>{{ pt.title }} &mdash; <span class="muted">{{ pt.inventors | join: ", " }} &middot; {{ pt.number }}</span></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Teaching</h2></div>
+  <ul class="rule-list">
+    {%- for t in site.data.profile.teaching %}
+    <li>{{ t.course }} &middot; {{ t.level }} &middot; <span class="muted">{{ t.terms }}</span></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Student Awards &amp; Mentoring</h2></div>
+  <ul class="rule-list">
+    {%- for m in site.data.profile.mentoring_awards %}
+    <li><span class="muted tabnum">{{ m.year }}</span> &nbsp; {{ m.text }}</li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Academic Service</h2></div>
+  <ul class="rule-list">
+    {%- for r in site.data.profile.service_roles %}
+    <li><strong>{{ r.what }}</strong>, {{ r.venue }} {{ r.year }}</li>
+    {%- endfor %}
+  </ul>
+  <p class="small" style="margin-top:.9rem">
+    Program committee: {{ site.data.profile.service_conferences | map: "name" | join: ", " }}.
+  </p>
+  <p class="small muted">
+    Journal reviewer: {{ site.data.profile.service_journals | join: ", " }}.
+  </p>
+</section>

@@ -1,34 +1,68 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ page.title }}</title>
-    
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-  
-  </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- capture page_title -%}
+    {%- if page.title and page.title != site.name -%}{{ page.title }} &middot; {{ site.name }}
+    {%- else -%}{{ site.name }} &middot; {{ site.position }}, {{ site.affiliation_short }}
+    {%- endif -%}
+  {%- endcapture -%}
+  <title>{{ page_title | strip }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
+  <meta name="author" content="{{ site.name }} ({{ site.name_cn }})">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} — News" href="{{ site.url }}/blog/atom.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }} — {{ site.lab }}, {{ site.affiliation_short }}">
+  <meta property="og:title" content="{{ page_title | strip | strip_html }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | strip | strip_html }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/portrait.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0f2a43">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="page-{{ page.slug | default: 'home' }}">
 
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="brand-name">{{ site.name }} {{ site.name_cn }}</span>
+        <span class="brand-sub">{{ site.lab }} &middot; SZU</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        {%- for item in site.nav -%}
+          {%- if item.url == '/' and page.url == '/' -%}
+            <a href="{{ item.url }}" class="is-current">{{ item.title }}</a>
+          {%- elsif item.url != '/' and page.url contains item.url -%}
+            <a href="{{ item.url }}" class="is-current">{{ item.title }}</a>
+          {%- else -%}
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <nav>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/about">About</a></li>
-<li><a href="/group">Group</a></li>
-<li><a href="/blog">Blog</a></li>
-</ul>
-    </nav>
-<div class="container">
+  <main class="wrap">
+    {{ content }}
+  </main>
 
-  {{ content }}
-
-</div>
-  
-  <footer>
-   <ul>
-   <li><a href="mailto:qzhang364-c@my.cityu.edu.hk">email</a></li>
-   <!--<li><a href="https://github.com/zqhl">github.com/zqhl</a></li>-->
-   </ul>
+  <footer class="site-foot">
+    <div class="wrap">
+      <div>
+        {{ site.position }}, {{ site.lab }} &middot; VCC, CSSE, {{ site.affiliation_short }}
+        &nbsp;&middot;&nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div class="tabnum">
+        Updated {{ site.updated }} &nbsp;&middot;&nbsp;
+        <a href="https://github.com/zqyq/zqyq.github.io">Source</a>
+      </div>
+    </div>
   </footer>
-  </body>
 
+</body>
 </html>

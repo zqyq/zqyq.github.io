@@ -1,12 +1,24 @@
 ---
 layout: default
-title: Qi ZHANG's Blog
+title: News
+slug: blog
+description: News and updates from Qi Zhang and iMUSE Lab, Shenzhen University.
 ---
-<h1>{{ page.title }}</h1>
-<ul class="posts">
 
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-  {% endfor %}
-    
-</ul>
+<h1 class="hero-name" style="padding-top:2.6rem">News</h1>
+<p class="muted" style="margin-top:.4rem">Paper acceptances, student milestones, talks and service invitations.</p>
+
+<section class="section">
+  <ul class="posts">
+    {%- for post in site.posts %}
+    <li>
+      <span class="date">{{ post.date | date: "%d %b %Y" }}</span>
+      <span><a href="{{ post.url }}">{{ post.title }}</a></span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<p class="small muted">
+  Subscribe with <a href="/blog/atom.xml">Atom</a>.
+</p>

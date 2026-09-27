@@ -1,27 +1,24 @@
 ---
-layout: feed
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
- <title>Qi Zhang's Blog</title>
- <link href="http://zqhl.github.io/blog/atom.xml" rel="self"/>
- <link href="http://zqhl.github.io/blog"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://zqhl.github.io/blog</id>
- <author>
-   <name>Qi Zhang</name>
-   <email>qi.zhang.opt@gmail.com</email>
- </author>
-
- {% for post in site.posts %}
- <entry>
-   <title>{{ post.title }}</title>
-   <link href="http://zqhl.github.io{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://zqhl.github.io/{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
- </entry>
- {% endfor %}
- 
+  <title>{{ site.name }} — News</title>
+  <subtitle>News from {{ site.name }} and {{ site.lab }}, {{ site.affiliation_short }}</subtitle>
+  <link href="{{ site.url }}/blog/atom.xml" rel="self"/>
+  <link href="{{ site.url }}/blog/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
+  <author>
+    <name>{{ site.name }}</name>
+    <email>{{ site.email }}</email>
+  </author>
+  {%- for post in site.posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <summary type="html">{{ post.content | xml_escape }}</summary>
+  </entry>
+  {%- endfor %}
 </feed>

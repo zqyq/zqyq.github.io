@@ -1,0 +1,291 @@
+# 全站唯一的论文数据源。首页 / About / Publications / Group / CV 全部由此渲染。
+# status: published | accepted | to_appear        corr: 通讯作者（页面上以 * 标注）
+# ccf 字段暂空 —— CCF 等级需经核实后才写入页面，不凭印象填。
+
+papers:
+  - id: mvtracktrans-cvpr26
+    title: "Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes"
+    year: 2026
+    venue: CVPR
+    venue_full: "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+    kind: conference
+    status: published
+    pages: "13626-13635"
+    authors: ["Qi Zhang", "Jixuan Chen", "Kaiyi Zhang", "Xinquan Yu", "Antoni B. Chan", "Hui Huang"]
+    links:
+      landing: "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.html"
+      pdf: "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Multi-view_Crowd_Tracking_Transformer_with_View-Ground_Interactions_Under_Large_Real-World_CVPR_2026_paper.pdf"
+      code: "https://github.com/zqyq/MVTrackTrans"
+    selected: true
+    topic: crowd
+
+  - id: synmvcrowd-ijcv26
+    title: "SynMVCrowd: A Large Synthetic Benchmark for Multi-view Crowd Counting and Localization"
+    year: 2026
+    venue: IJCV
+    venue_full: "International Journal of Computer Vision"
+    kind: journal
+    status: accepted
+    authors: ["Qi Zhang", "Daijie Chen", "Yunfei Gong", "Hui Huang"]
+    corr: ["Hui Huang"]
+    links:
+      code: "https://github.com/zqyq/SynMVCrowd"
+    selected: true
+    topic: crowd
+
+  - id: envsocial-diff-iclr26
+    title: "EnvSocial-Diff: A Diffusion-Based Crowd Simulation Model with Environmental Conditioning and Individual-Group Interaction"
+    year: 2026
+    venue: ICLR
+    venue_full: "International Conference on Learning Representations"
+    kind: conference
+    status: accepted
+    authors: ["Bingxue Zhao", "Qi Zhang", "Hui Huang"]
+    corr: ["Qi Zhang", "Hui Huang"]
+    links:
+      code: "https://github.com/zqyq/EnvSocial-Diff"
+    selected: true
+    topic: crowd
+
+  - id: rgbt-dualmod-icassp26
+    title: "A Dual-Modulation Framework for RGB-T Crowd Counting via Spatially Modulated Attention and Adaptive Fusion"
+    year: 2026
+    venue: ICASSP
+    venue_full: "IEEE International Conference on Acoustics, Speech and Signal Processing"
+    kind: conference
+    status: to_appear
+    authors: ["Yuhong Feng", "Hongtao Chen", "Qi Zhang", "Jie Chen", "Zhaoxi He", "Mingzhe Liu", "Jianghai Liao"]
+    corr: ["Qi Zhang"]
+    links: {}
+    selected: false
+    topic: crowd
+
+  - id: tp-mvcc-chinamm26
+    title: "TP-MVCC: Tri-plane Multi-view Fusion Model for Silkie Chicken Counting"
+    year: 2026
+    venue: ChinaMM
+    venue_full: "Chinese Conference on Multimedia and Expo"
+    kind: conference
+    status: accepted
+    authors: ["Sirui Chen", "Yifeng Wang", "Yuhong Feng", "Jianghai Liao", "Qi Zhang"]
+    corr: ["Qi Zhang"]
+    links:
+      arxiv: "https://arxiv.org/abs/2509.24329"
+    note: "Undergraduate final-year project"
+    selected: false
+    topic: beyond
+
+  - id: weak-mvcc-prcv25
+    title: "Weakly-supervised Calibration-free Multi-view Crowd Counting"
+    year: 2025
+    venue: PRCV
+    venue_full: "Chinese Conference on Pattern Recognition and Computer Vision"
+    kind: conference
+    status: published
+    authors: ["Bin Li", "Daijie Chen", "Qi Zhang"]
+    corr: ["Qi Zhang"]
+    links:
+      code: "https://github.com/zqyq/Weakly-MVCC"
+    selected: false
+    topic: crowd
+
+  - id: vtr-aaai25
+    title: "View Transformation Robustness for Multi-View 3D Object Reconstruction with Reconstruction Error-Guided View Selection"
+    year: 2025
+    venue: AAAI
+    venue_full: "AAAI Conference on Artificial Intelligence"
+    kind: conference
+    status: published
+    volume: "39"
+    issue: "10"
+    pages: "10076-10084"
+    authors: ["Qi Zhang", "Zhouhang Luo", "Tao Yu", "Hui Huang"]
+    corr: ["Hui Huang"]
+    links:
+      arxiv: "https://arxiv.org/abs/2412.11428"
+      pdf: "https://arxiv.org/pdf/2412.11428"
+      project: "https://vcc.tech/research/2025/VTR"
+      code: "https://github.com/zqyq/VTR"
+    selected: true
+    topic: 3d
+
+  - id: mvot-eccv24
+    title: "Mahalanobis Distance-based Multi-view Optimal Transport for Multi-view Crowd Localization"
+    year: 2024
+    venue: ECCV
+    venue_full: "European Conference on Computer Vision"
+    kind: conference
+    status: published
+    authors: ["Qi Zhang", "Kaiyi Zhang", "Antoni B. Chan", "Hui Huang"]
+    corr: ["Hui Huang"]
+    links:
+      arxiv: "https://arxiv.org/abs/2409.01726"
+      pdf: "https://arxiv.org/pdf/2409.01726"
+      project: "https://vcc.tech/research/2024/MVOT"
+    selected: true
+    topic: crowd
+
+  - id: mvd-aaai24
+    title: "Multi-view People Detection in Large Scenes via Supervised View-wise Contribution Weighting"
+    year: 2024
+    venue: AAAI
+    venue_full: "AAAI Conference on Artificial Intelligence"
+    kind: conference
+    status: published
+    authors: ["Qi Zhang", "Yunfei Gong", "Daijie Chen", "Antoni B. Chan", "Hui Huang"]
+    corr: ["Hui Huang"]
+    links:
+      arxiv: "https://arxiv.org/abs/2405.19943"
+      pdf: "https://arxiv.org/pdf/2405.19943"
+      project: "https://vcc.tech/research/2024/MVD"
+    selected: false
+    topic: crowd
+
+  - id: urbanbis-siggraph23
+    title: "UrbanBIS: a Large-scale Benchmark for Fine-grained Urban Building Instance Segmentation"
+    year: 2023
+    venue: SIGGRAPH
+    venue_full: "ACM SIGGRAPH Annual Conference"
+    kind: conference
+    status: published
+    authors: ["Guoqing Yang", "Fuyou Xue", "Qi Zhang", "Ke Xie", "Chi-Wing Fu", "Hui Huang"]
+    corr: ["Hui Huang"]
+    links:
+      project: "https://vcc.tech/UrbanBIS"
+    selected: false
+    topic: 3d
+
+  - id: view-sync-tnnls23
+    title: "Single-Frame-Based Deep View Synchronization for Unsynchronized Multicamera Surveillance"
+    year: 2023
+    venue: TNNLS
+    venue_full: "IEEE Transactions on Neural Networks and Learning Systems"
+    kind: journal
+    status: published
+    volume: "34"
+    issue: "12"
+    pages: "10653-10667"
+    authors: ["Qi Zhang", "Antoni B. Chan"]
+    links:
+      doi: "https://ieeexplore.ieee.org/document/9775149"
+      project: "http://visal.cs.cityu.edu.hk/research/umvcc/"
+      code: "https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS"
+    selected: false
+    topic: beyond
+
+  - id: 3d-counting-ijcv22
+    title: "3D Crowd Counting via Geometric Attention-guided Multi-View Fusion"
+    year: 2022
+    venue: IJCV
+    venue_full: "International Journal of Computer Vision"
+    kind: journal
+    status: published
+    volume: "130"
+    pages: "3123-3139"
+    authors: ["Qi Zhang", "Antoni B. Chan"]
+    links:
+      doi: "https://link.springer.com/article/10.1007/s11263-022-01685-7"
+      project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
+    selected: false
+    topic: crowd
+
+  - id: cfmvcc-eccv22
+    title: "Calibration-free Multi-view Crowd Counting"
+    year: 2022
+    venue: ECCV
+    venue_full: "European Conference on Computer Vision"
+    kind: conference
+    status: published
+    authors: ["Qi Zhang", "Antoni B. Chan"]
+    links:
+      project: "http://visal.cs.cityu.edu.hk/research/cfmvcc/"
+    selected: false
+    topic: crowd
+
+  - id: wacc-ijcv22
+    title: "Wide-Area Crowd Counting: Multi-View Fusion Networks for Counting in Large Scenes"
+    year: 2022
+    venue: IJCV
+    venue_full: "International Journal of Computer Vision"
+    kind: journal
+    status: published
+    volume: "130"
+    pages: "1938-1960"
+    authors: ["Qi Zhang", "Antoni B. Chan"]
+    links:
+      doi: "https://link.springer.com/article/10.1007/s11263-022-01626-4"
+      project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
+    selected: false
+    topic: crowd
+
+  - id: dolphin-mmasia21
+    title: "Chinese White Dolphin Detection in the Wild"
+    year: 2021
+    venue: ACM MMAsia
+    venue_full: "ACM Multimedia Asia"
+    kind: conference
+    status: published
+    authors: ["Hao Zhang", "Qi Zhang", "Anh Nguyen Phuong", "Victor Lee", "Antoni B. Chan"]
+    corr: ["Qi Zhang"]
+    links:
+      doi: "https://doi.org/10.1145/3469877.3490574"
+      project: "http://visal.cs.cityu.edu.hk/research/cwd/"
+    selected: false
+    topic: beyond
+
+  - id: cvcs-cvpr21
+    title: "Cross-View Cross-Scene Multi-View Crowd Counting"
+    year: 2021
+    venue: CVPR
+    venue_full: "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+    kind: conference
+    status: published
+    pages: "557-567"
+    authors: ["Qi Zhang", "Wei Lin", "Antoni B. Chan"]
+    links:
+      pdf: "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Cross-View_Cross-Scene_Multi-View_Crowd_Counting_CVPR_2021_paper.pdf"
+      project: "http://visal.cs.cityu.edu.hk/research/cvcs/"
+      dataset: "http://visal.cs.cityu.edu.hk/research/cvcs_dataset/"
+    selected: true
+    topic: crowd
+
+  - id: 3d-mvcc-aaai20
+    title: "3D Crowd Counting via Multi-View Fusion with 3D Gaussian Kernels"
+    year: 2020
+    venue: AAAI
+    venue_full: "AAAI Conference on Artificial Intelligence"
+    kind: conference
+    status: published
+    authors: ["Qi Zhang", "Antoni B. Chan"]
+    links:
+      pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/aaai20-3dmvcc.pdf"
+      project: "http://visal.cs.cityu.edu.hk/research/aaai20-3d-counting/"
+    selected: false
+    topic: crowd
+
+  - id: wacc-cvpr19
+    title: "Wide-Area Crowd Counting via Ground-Plane Density Maps and Multi-View Fusion CNNs"
+    year: 2019
+    venue: CVPR
+    venue_full: "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+    kind: conference
+    status: published
+    authors: ["Qi Zhang", "Antoni B. Chan"]
+    links:
+      pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/cvpr19-wacc.pdf"
+      project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
+    selected: true
+    topic: crowd
+
+  - id: de-fencing-cits16
+    title: "Image de-fencing with hyperspectral camera"
+    year: 2016
+    venue: CITS
+    venue_full: "IEEE International Conference on Computer, Information and Telecommunication Systems"
+    kind: conference
+    status: published
+    authors: ["Qi Zhang", "Yuan Yuan", "Xiaoqiang Lu"]
+    links:
+      doi: "https://ieeexplore.ieee.org/abstract/document/7546396/"
+    selected: false
+    topic: beyond
