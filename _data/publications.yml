@@ -345,7 +345,7 @@ papers:
     status: published
     authors: ["Guoqing Yang", "Fuyou Xue", "Qi Zhang", "Ke Xie", "Chi-Wing Fu", "Hui Huang"]
     corr: ["Hui Huang"]
-    citations: 79
+    citations: 80
     links:
       project: "https://vcc.tech/UrbanBIS"
     thumb: /assets/img/papers/urbanbis-siggraph23.jpg
@@ -397,7 +397,7 @@ papers:
     kind: conference
     status: published
     authors: ["Qi Zhang", "Antoni B. Chan"]
-    citations: 22
+    citations: 23
     links:
       project: "http://visal.cs.cityu.edu.hk/research/cfmvcc/"
     thumb: /assets/img/papers/cfmvcc-eccv22.jpg
