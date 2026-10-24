@@ -122,20 +122,14 @@ description: The research agenda of iMUSE Lab — multi-view crowd intelligence,
     Datasets, benchmarks and code released by the group. Collaborations around these resources are welcome.
   </p>
   <ul class="rule-list">
-    <li><a href="https://github.com/zqyq/SynMVCrowd" rel="noopener">SynMVCrowd</a> &mdash; synthetic benchmark for
-      multi-view crowd counting and localization (IJCV 2026)</li>
-    <li><a href="https://github.com/zqyq/MVTrackTrans" rel="noopener">MVTrackTrans</a> &mdash; multi-view crowd
-      tracking model with MVCrowdTrack and CityTrack data (CVPR 2026)</li>
-    <li><a href="http://visal.cs.cityu.edu.hk/research/cvcs_dataset/" rel="noopener">CVCS dataset</a> &mdash;
-      cross-view cross-scene multi-view counting (CVPR 2021)</li>
-    <li><a href="https://vcc.tech/UrbanBIS" rel="noopener">UrbanBIS</a> &mdash; large-scale urban building instance
-      segmentation benchmark (SIGGRAPH 2023)</li>
-    <li><a href="https://github.com/zqyq/EnvSocial-Diff" rel="noopener">EnvSocial-Diff</a> &mdash; environment-conditioned
-      crowd simulation (ICLR 2026)</li>
-    <li><a href="https://github.com/zqyq/Weakly-MVCC" rel="noopener">Weakly-MVCC</a> &middot;
-      <a href="https://github.com/zqyq/VTR" rel="noopener">VTR</a> &middot;
-      <a href="https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS" rel="noopener">view synchronization</a>
-      &mdash; code and data</li>
+    {%- for p in papers %}
+      {%- if p.resource %}
+    <li><a href="{{ p.resource.url }}" rel="noopener">{{ p.resource.name }}</a> &mdash; {{ p.resource.what }}
+      <span class="muted">({{ p.venue }} {{ p.year }})</span></li>
+      {%- endif %}
+    {%- endfor %}
+    <li><a href="https://github.com/zqyq/Awesome-Crowd-Counting" rel="noopener">Awesome Crowd Counting</a> &mdash;
+      the running literature and dataset list we keep updated for the field</li>
   </ul>
 </section>
 

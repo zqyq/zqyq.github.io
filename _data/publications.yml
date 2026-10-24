@@ -16,6 +16,11 @@
 #        foundational: true 首页"Where this programme started"那一格
 #        group_pick: true   Group 页 Research by group members
 #        anchor: true       Research 页该研究线展示的锚点论文
+#     Research 页的 Research resources 全部由下面这段生成（按年份排序，不用改模板）：
+#        resource:
+#          name: "仓库或数据集名"
+#          url:   "必须同时是本条目 links 里出现过的地址，校验脚本会核对"
+#          what:  "一句话说明这里能拿到什么"
 #   4. 跑工作区里的校验脚本：python ../tools/check_pubs.py（它不在本仓库内，是本地开发工具）。
 #
 # 规矩：未核实的字段一律留空，不凭印象填。citations 是 Google Scholar 计数，快照日期见 _data/scholar.yml。
@@ -41,6 +46,10 @@ papers:
     selected: true
     group_pick: true
     anchor: true
+    resource:
+      name: "MVTrackTrans"
+      url: "https://github.com/zqyq/MVTrackTrans"
+      what: "tracking model plus the MVCrowdTrack and CityTrack large-scene data"
     topic: crowd
 
   - id: synmvcrowd-ijcv26
@@ -63,6 +72,10 @@ papers:
     thumb: /assets/img/papers/synmvcrowd-ijcv26.jpg
     selected: true
     group_pick: true
+    resource:
+      name: "SynMVCrowd"
+      url: "https://github.com/zqyq/SynMVCrowd"
+      what: "synthetic benchmark built to test counting and localization together"
     topic: crowd
 
   - id: mvot-tracking-ijcv26
@@ -76,13 +89,19 @@ papers:
     issue: "11"
     note: "Article 485, published online 2026-10-20"
     authors: ["Kaiyi Zhang", "Qi Zhang", "Jixuan Chen", "Antoni B. Chan", "Hui Huang"]
+    corr: ["Qi Zhang"]
     citations: 0
     links:
       doi: "https://link.springer.com/article/10.1007/s11263-026-03093-7"
       pdf: "https://link.springer.com/content/pdf/10.1007/s11263-026-03093-7.pdf"
+      code: "https://github.com/zqyq/MVOT-Track"
     thumb: /assets/img/papers/mvot-tracking-ijcv26.jpg
     group_pick: true
     anchor: true
+    resource:
+      name: "MVOT-Track"
+      url: "https://github.com/zqyq/MVOT-Track"
+      what: "point-level multi-view localization and tracking, without density-map supervision"
     topic: crowd
 
   - id: envsocial-diff-iclr26
@@ -102,6 +121,10 @@ papers:
     thumb: /assets/img/papers/envsocial-diff-iclr26.jpg
     selected: true
     group_pick: true
+    resource:
+      name: "EnvSocial-Diff"
+      url: "https://github.com/zqyq/EnvSocial-Diff"
+      what: "environment-conditioned diffusion simulation of crowd trajectories"
     topic: crowd
 
   - id: rgbt-dualmod-icassp26
@@ -267,6 +290,10 @@ papers:
       code: "https://github.com/zqyq/Weakly-MVCC"
     thumb: /assets/img/papers/weak-mvcc-prcv25.jpg
     group_pick: true
+    resource:
+      name: "Weakly-MVCC"
+      url: "https://github.com/zqyq/Weakly-MVCC"
+      what: "weakly-supervised, calibration-free counting with only coarse labels"
     topic: crowd
 
   - id: vtr-aaai25
@@ -290,6 +317,10 @@ papers:
     thumb: /assets/img/papers/vtr-aaai25.jpg
     selected: true
     anchor: true
+    resource:
+      name: "VTR"
+      url: "https://github.com/zqyq/VTR"
+      what: "reconstruction-error-guided view selection for robust multi-view 3D"
     topic: 3d
 
   - id: single-view-icig25
@@ -323,9 +354,14 @@ papers:
       arxiv: "https://arxiv.org/abs/2409.01726"
       pdf: "https://arxiv.org/pdf/2409.01726"
       project: "https://vcc.tech/research/2024/MVOT"
+      code: "https://github.com/zqyq/Mahalanobis-Distance-based-Multi-view-Optimal-Transport-for-Multi-view-Crowd-Localization"
     thumb: /assets/img/papers/mvot-eccv24.jpg
     selected: true
     group_pick: true
+    resource:
+      name: "MVOT"
+      url: "https://github.com/zqyq/Mahalanobis-Distance-based-Multi-view-Optimal-Transport-for-Multi-view-Crowd-Localization"
+      what: "Mahalanobis-distance multi-view optimal transport for localization"
     topic: crowd
 
   - id: mvd-aaai24
@@ -344,6 +380,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2405.19943"
       pdf: "https://arxiv.org/pdf/2405.19943"
       project: "https://vcc.tech/research/2024/MVD"
+      code: "https://github.com/zqyq/Multi-view-People-Detection-in-Large-Scenes-via-Supervised-View-wise-Contribution-Weighting"
     thumb: /assets/img/papers/mvd-aaai24.jpg
     topic: crowd
 
@@ -361,6 +398,10 @@ papers:
       project: "https://vcc.tech/UrbanBIS"
     thumb: /assets/img/papers/urbanbis-siggraph23.jpg
     anchor: true
+    resource:
+      name: "UrbanBIS"
+      url: "https://vcc.tech/UrbanBIS"
+      what: "city-scale benchmark for fine-grained building instance segmentation"
     topic: 3d
 
   - id: view-sync-tnnls23
@@ -380,6 +421,10 @@ papers:
       project: "http://visal.cs.cityu.edu.hk/research/umvcc/"
       code: "https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS"
     thumb: /assets/img/papers/view-sync-tnnls23.jpg
+    resource:
+      name: "View synchronization"
+      url: "https://github.com/zqyq/Unsynchronized-Multi-Camera-Surveillance---IEEE-TNNLS"
+      what: "single-frame synchronization of unsynchronized camera streams"
     topic: crowd
 
   - id: 3d-counting-ijcv22
@@ -463,6 +508,10 @@ papers:
       project: "http://visal.cs.cityu.edu.hk/research/cvcs/"
       dataset: "http://visal.cs.cityu.edu.hk/research/cvcs_dataset/"
     thumb: /assets/img/papers/cvcs-cvpr21.jpg
+    resource:
+      name: "CVCS dataset"
+      url: "http://visal.cs.cityu.edu.hk/research/cvcs_dataset/"
+      what: "cross-view, cross-scene counting data used to test transfer between scenes"
     topic: crowd
 
   - id: 3d-mvcc-aaai20
@@ -495,6 +544,7 @@ papers:
     links:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/cvpr19-wacc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
+      code: "https://github.com/zqyq/Wide-Area-Crowd-Counting_CVPR2019"
     thumb: /assets/img/papers/wacc-cvpr19.jpg
     selected: true
     foundational: true
