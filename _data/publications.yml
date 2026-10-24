@@ -326,7 +326,6 @@ papers:
     thumb: /assets/img/papers/mvot-eccv24.jpg
     selected: true
     group_pick: true
-    anchor: true
     topic: crowd
 
   - id: mvd-aaai24
