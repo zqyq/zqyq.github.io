@@ -81,6 +81,8 @@ papers:
       doi: "https://link.springer.com/article/10.1007/s11263-026-03093-7"
       pdf: "https://link.springer.com/content/pdf/10.1007/s11263-026-03093-7.pdf"
     thumb: /assets/img/papers/mvot-tracking-ijcv26.jpg
+    group_pick: true
+    anchor: true
     topic: crowd
 
   - id: envsocial-diff-iclr26

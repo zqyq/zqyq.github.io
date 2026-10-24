@@ -6,6 +6,7 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
 ---
 
 {%- assign papers = site.data.publications.papers -%}
+{%- assign group_papers = papers | where: "group_pick", true -%}
 {%- assign students = "" -%}
 {%- for m in site.data.members.phd -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
 {%- for m in site.data.members.master -%}{%- assign students = students | append: m.name | append: "," -%}{%- endfor -%}
@@ -56,8 +57,8 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
     <a class="section-more" href="/publications/">All {{ papers | size }} papers &rarr;</a>
   </div>
   <p class="small muted" style="margin-bottom:.6rem">
-    Six papers across the lab&rsquo;s directions with group members as first author or key contributor; bold marks
-    the group members.
+    {{ group_papers | size }} papers across the lab&rsquo;s directions with group members as first author or key
+    contributor; bold marks the group members.
   </p>
   {%- for p in papers %}
     {%- if p.group_pick %}{% include pub.html paper=p bold=students %}{% endif %}
