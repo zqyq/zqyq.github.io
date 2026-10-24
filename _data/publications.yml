@@ -305,7 +305,7 @@ papers:
     status: published
     authors: ["Qi Zhang", "Kaiyi Zhang", "Antoni B. Chan", "Hui Huang"]
     corr: ["Hui Huang"]
-    citations: 15
+    citations: 16
     links:
       arxiv: "https://arxiv.org/abs/2409.01726"
       pdf: "https://arxiv.org/pdf/2409.01726"
@@ -328,7 +328,7 @@ papers:
     pages: "7242-7250"
     authors: ["Qi Zhang", "Yunfei Gong", "Daijie Chen", "Antoni B. Chan", "Hui Huang"]
     corr: ["Hui Huang"]
-    citations: 11
+    citations: 12
     links:
       arxiv: "https://arxiv.org/abs/2405.19943"
       pdf: "https://arxiv.org/pdf/2405.19943"
@@ -345,7 +345,7 @@ papers:
     status: published
     authors: ["Guoqing Yang", "Fuyou Xue", "Qi Zhang", "Ke Xie", "Chi-Wing Fu", "Hui Huang"]
     corr: ["Hui Huang"]
-    citations: 80
+    citations: 81
     links:
       project: "https://vcc.tech/UrbanBIS"
     thumb: /assets/img/papers/urbanbis-siggraph23.jpg
@@ -447,7 +447,7 @@ papers:
     status: published
     pages: "557-567"
     authors: ["Qi Zhang", "Wei Lin", "Antoni B. Chan"]
-    citations: 103
+    citations: 106
     links:
       pdf: "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Cross-View_Cross-Scene_Multi-View_Crowd_Counting_CVPR_2021_paper.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvcs/"
@@ -481,7 +481,7 @@ papers:
     kind: conference
     status: published
     authors: ["Qi Zhang", "Antoni B. Chan"]
-    citations: 201
+    citations: 203
     links:
       pdf: "http://visal.cs.cityu.edu.hk/static/pubs/conf/cvpr19-wacc.pdf"
       project: "http://visal.cs.cityu.edu.hk/research/cvpr2019wacc/"
