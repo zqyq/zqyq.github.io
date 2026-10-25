@@ -199,6 +199,7 @@ papers:
     kind: preprint
     status: preprint
     authors: ["Weiyuan Zhang", "Qi Zhang", "Hui Huang"]
+    corr: ["Qi Zhang"]
     citations: 0
     links:
       arxiv: "https://arxiv.org/abs/2609.19631"
