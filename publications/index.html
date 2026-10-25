@@ -15,8 +15,6 @@ description: Publications of Qi Zhang, multi-view crowd analysis and simulation,
 <p class="muted" style="margin-top:.6rem">
   {{ n_conf }} conference and {{ n_journal }} journal papers, plus {{ n_pre }} preprints.
   Bold marks my name; <span style="color:var(--copper)"><strong>*</strong></span> denotes corresponding author.
-  Citation counts are a <a href="{{ site.data.scholar.profile }}" rel="noopener">Google Scholar</a> snapshot
-  taken {{ site.data.scholar.snapshot }}. Entries without a link have no verified public record yet.
 </p>
 
 {%- assign groups = papers | group_by: "year" | sort: "name" | reverse -%}
