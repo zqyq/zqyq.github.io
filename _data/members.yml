@@ -23,22 +23,22 @@ master:
     direction: "Crowd Simulation"
     since: "2024.09"
   - name: Jixuan Chen
-    direction: "Computer Vision"
+    direction: "Multi-view crowd tracking"
     since: "2024.09"
   - name: Weiyuan Zhang
-    direction: "Point Cloud Processing"
+    direction: "Urban scene understanding"
     since: "2024.09"
   - name: Xinquan Yu
-    direction: "3D Vision"
+    direction: "Crowd tracking and occupancy forecasting"
     since: "2024.09"
   - name: Yanyifan Wang
-    direction: "3D Vision"
+    direction: "Street scene generation"
     since: "2024.09"
   - name: Zhizi Wang
-    direction: "3D Vision"
+    direction: "Semi-supervised crowd counting"
     since: "2025.09"
   - name: Jiechao He
-    direction: "3D Vision"
+    direction: "Multi-person mesh recovery"
     since: "2025.09"
   - name: Songjun Mai
     direction: "3D Vision"
