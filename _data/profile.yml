@@ -120,6 +120,7 @@ professional_memberships:
   - "Technical Committee on Multimodal Interaction and Cognitive Simulation, China Simulation Society"
 
 service_roles:
+  - { what: "Area Chair", venue: "NeurIPS", year: 2026 }
   - { what: "Image & Video Processing Session Chair", venue: "CVM", year: 2023 }
   - { what: "Publicity Chair", venue: "CVAI", year: 2027 }
 
