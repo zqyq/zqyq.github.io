@@ -142,6 +142,7 @@ papers:
     links:
       arxiv: "https://arxiv.org/abs/2509.17079"
     thumb: /assets/img/papers/rgbt-dualmod-icassp26.jpg
+    group_pick: true
     topic: crowd
 
   - id: streetdiff-arxiv26
@@ -223,6 +224,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2509.24329"
     thumb: /assets/img/papers/tp-mvcc-chinamm26.jpg
     anchor: true
+    group_pick: true
     topic: beyond
 
   - id: listen-count-ijcai26
@@ -323,6 +325,7 @@ papers:
       name: "VTR"
       url: "https://github.com/zqyq/VTR"
       what: "reconstruction-error-guided view selection for robust multi-view 3D"
+    group_pick: true
     topic: 3d
 
   - id: single-view-icig25
@@ -384,6 +387,7 @@ papers:
       project: "https://vcc.tech/research/2024/MVD"
       code: "https://github.com/zqyq/Multi-view-People-Detection-in-Large-Scenes-via-Supervised-View-wise-Contribution-Weighting"
     thumb: /assets/img/papers/mvd-aaai24.jpg
+    group_pick: true
     topic: crowd
 
   - id: urbanbis-siggraph23
