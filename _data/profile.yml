@@ -99,6 +99,8 @@ patents:
     link: "https://patents.google.com/patent/CN118429781A"
 
 honors:
+  - year: 2026
+    text: "Invited to serve as an Area Chair at NeurIPS 2026."
   - year: 2023
     text: "Appointed to the Shenzhen &ldquo;Pengcheng Peacock&rdquo; Distinguished Talent Post (鹏城孔雀特聘岗位), a municipal high-level talent designation; member of the Shenzhen Peacock High-level Talent Innovation Team."
   - year: 2023
@@ -113,7 +115,6 @@ professional_memberships:
   - "Technical Committee on Multimodal Interaction and Cognitive Simulation, China Simulation Society"
 
 service_roles:
-  - { what: "Area Chair", venue: "NeurIPS", year: 2026 }
   - { what: "Image & Video Processing Session Chair", venue: "CVM", year: 2023 }
   - { what: "Publicity Chair", venue: "CVAI", year: 2027 }
 
