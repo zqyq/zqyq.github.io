@@ -58,7 +58,8 @@ description: iMUSE Lab — intelligent multi-sensing research at Shenzhen Univer
   </div>
   <p class="small muted" style="margin-bottom:.6rem">
     {{ group_papers | size }} papers across the lab&rsquo;s directions with group members as first author or key
-    contributor; bold marks the group members.
+    contributor; bold marks the group members and
+    <span style="color:var(--copper)"><strong>*</strong></span> marks the corresponding author.
   </p>
   {%- for p in papers %}
     {%- if p.group_pick %}{% include pub.html paper=p bold=students %}{% endif %}

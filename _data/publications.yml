@@ -112,7 +112,7 @@ papers:
     kind: conference
     status: accepted
     authors: ["Bingxue Zhao", "Qi Zhang", "Hui Huang"]
-    corr: ["Qi Zhang", "Hui Huang"]
+    corr: ["Qi Zhang"]
     citations: 0
     links:
       landing: "https://iclr.cc/virtual/2026/poster/10011733"
