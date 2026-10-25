@@ -13,7 +13,6 @@ phd:
   - name: Kaiyi Zhang
     direction: "Multi-view crowd localization and tracking"
     since: "2025.09"
-    note: "IJCV 2026 &middot; ECCV 2024"
     link: "https://scholar.google.com/citations?user=ipqmbg8AAAAJ"
   - name: Ruiji Xue
     direction: "Computer Vision"
