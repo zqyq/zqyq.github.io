@@ -27,6 +27,32 @@
 # ccf 字段暂空 —— CCF 等级需核实后才写入页面。
 
 papers:
+  - id: mvot-tracking-ijcv26
+    title: "Multi-View Optimal Transport for Multi-View Crowd Localization and Tracking"
+    year: 2026
+    venue: IJCV
+    venue_full: "International Journal of Computer Vision"
+    kind: journal
+    status: published
+    volume: "134"
+    issue: "11"
+    note: "Article 485, published online 2026-10-20"
+    authors: ["Kaiyi Zhang", "Qi Zhang", "Jixuan Chen", "Antoni B. Chan", "Hui Huang"]
+    corr: ["Qi Zhang"]
+    citations: 0
+    links:
+      doi: "https://link.springer.com/article/10.1007/s11263-026-03093-7"
+      pdf: "https://link.springer.com/content/pdf/10.1007/s11263-026-03093-7.pdf"
+      code: "https://github.com/zqyq/MVOT-Track"
+    thumb: /assets/img/papers/mvot-tracking-ijcv26.jpg
+    group_pick: true
+    anchor: true
+    resource:
+      name: "MVOT-Track"
+      url: "https://github.com/zqyq/MVOT-Track"
+      what: "point-level multi-view localization and tracking, without density-map supervision"
+    topic: crowd
+
   - id: mvtracktrans-cvpr26
     title: "Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes"
     year: 2026
@@ -76,32 +102,6 @@ papers:
       name: "SynMVCrowd"
       url: "https://github.com/zqyq/SynMVCrowd"
       what: "synthetic benchmark built to test counting and localization together"
-    topic: crowd
-
-  - id: mvot-tracking-ijcv26
-    title: "Multi-View Optimal Transport for Multi-View Crowd Localization and Tracking"
-    year: 2026
-    venue: IJCV
-    venue_full: "International Journal of Computer Vision"
-    kind: journal
-    status: published
-    volume: "134"
-    issue: "11"
-    note: "Article 485, published online 2026-10-20"
-    authors: ["Kaiyi Zhang", "Qi Zhang", "Jixuan Chen", "Antoni B. Chan", "Hui Huang"]
-    corr: ["Qi Zhang"]
-    citations: 0
-    links:
-      doi: "https://link.springer.com/article/10.1007/s11263-026-03093-7"
-      pdf: "https://link.springer.com/content/pdf/10.1007/s11263-026-03093-7.pdf"
-      code: "https://github.com/zqyq/MVOT-Track"
-    thumb: /assets/img/papers/mvot-tracking-ijcv26.jpg
-    group_pick: true
-    anchor: true
-    resource:
-      name: "MVOT-Track"
-      url: "https://github.com/zqyq/MVOT-Track"
-      what: "point-level multi-view localization and tracking, without density-map supervision"
     topic: crowd
 
   - id: envsocial-diff-iclr26
