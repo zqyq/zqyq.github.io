@@ -44,7 +44,7 @@ master:
     direction: "3D Vision"
     since: "2025.09"
   - name: Pingqing Hou
-    direction: "Computer Vision"
+    direction: "Video Understanding"
     since: "2026.09"
 
 # alumni 不写 direction —— 原 CSV 里这一列记录的是学位与去向，没有研究方向信息，不替作者编。
